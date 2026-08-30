@@ -1,0 +1,14 @@
+{
+  "version": "1.5.2",
+  "name": "@trungdo9/ClauKit",
+  "description": "Multi-agent orchestration for coding agents — 126 curated skills, 30 agents, 57 gated commands, 3 installable kits. Installs into any project via `ck init`.",
+  "buildDate": "2026-08-30T17:10:56.878Z",
+  "setupDate": "2026-08-30T17:10:56.879Z",
+  "templateVersion": "1.5.2",
+  "installedFrom": "https://github.com/trungdo9/ClauKit.git",
+  "kit": {
+    "name": "engineer",
+    "version": "1.4.0",
+    "description": "Engineer Kit — software engineering, /ck: namespace (default)"
+  }
+}

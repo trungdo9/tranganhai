@@ -1,0 +1,249 @@
+#!/bin/bash
+
+# Discord Notification Hook for Antigravity
+# This hook sends a notification to Discord when Antigravity finishes a task
+
+set -euo pipefail
+
+# Load environment variables with priority: process.env > .agents/.env > .agents/hooks/.env
+load_env() {
+    # 1. Start with lowest priority: .agents/hooks/.env
+    if [[ -f "$(dirname "$0")/.env" ]]; then
+        set -a
+        source "$(dirname "$0")/.env"
+        set +a
+    fi
+
+    # 2. Override with .agents/.env
+    if [[ -f .agents/.env ]]; then
+        set -a
+        source .agents/.env
+        set +a
+    fi
+
+    # 3. Process env (already loaded) has highest priority - no action needed
+    # Variables already in process.env will not be overwritten by 'source'
+}
+
+load_env
+
+# Read JSON input from stdin
+INPUT=$(cat)
+
+# JSON parser using Node.js (eliminates jq dependency)
+# Usage: json_get '<input>' '<jq-like path>'
+# Supported paths: .key, .nested.key, .array[]?.field, length, raw string
+json_get() {
+    local data="$1"
+    local path="$2"
+    INPUT_DATA="$data" JQ_PATH="$path" node -e '
+        try {
+            const data = JSON.parse(process.env.INPUT_DATA);
+            const path = process.env.JQ_PATH;
+            if (path === "hookType") console.log(data.hookType || "unknown");
+            else if (path === "projectDir") console.log(data.projectDir || "");
+            else if (path === "sessionId") console.log(data.sessionId || "");
+            else if (path === "subagentType") console.log(data.subagentType || "unknown");
+            else if (path === "toolsUsedLength") console.log((data.toolsUsed || []).length);
+            else if (path === "toolNames") {
+                (data.toolsUsed || []).forEach(t => { if (t && t.tool) console.log(t.tool); });
+            } else if (path === "filesModified") {
+                (data.toolsUsed || []).forEach(t => {
+                    if (t && ["Edit","Write","MultiEdit"].includes(t.tool) && t.parameters && t.parameters.file_path) {
+                        console.log(t.parameters.file_path);
+                    }
+                });
+            }
+        } catch (e) { process.exit(1); }
+    '
+}
+
+# Extract relevant information from the hook input
+HOOK_TYPE=$(json_get "$INPUT" "hookType")
+PROJECT_DIR=$(json_get "$INPUT" "projectDir")
+TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+SESSION_ID=$(json_get "$INPUT" "sessionId")
+PROJECT_NAME=$(basename "$PROJECT_DIR")
+
+# Configuration - these will be set via environment variables
+DISCORD_WEBHOOK_URL="${DISCORD_WEBHOOK_URL:-}"
+
+# Validate required environment variables
+if [[ -z "$DISCORD_WEBHOOK_URL" ]]; then
+    echo "⚠️  Discord notification skipped: DISCORD_WEBHOOK_URL not set" >&2
+    exit 0
+fi
+
+# Function to send Discord message with embeds
+send_discord_embed() {
+    local title="$1"
+    local description="$2"
+    local color="$3"
+    local fields="$4"
+
+    local payload=$(cat <<EOF
+{
+    "embeds": [{
+        "title": "$title",
+        "description": "$description",
+        "color": $color,
+        "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%S.000Z)",
+        "footer": {
+            "text": "ClauKit • ${PROJECT_NAME}"
+        },
+        "fields": $fields
+    }]
+}
+EOF
+)
+
+    curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+        -H "Content-Type: application/json" \
+        -d "$payload" > /dev/null 2>&1
+}
+
+# Generate summary based on hook type
+case "$HOOK_TYPE" in
+    "Stop")
+        # Extract tool usage summary
+        TOOLS_USED=$(json_get "$INPUT" "toolNames" | sort | uniq -c | sort -nr)
+        FILES_MODIFIED=$(json_get "$INPUT" "filesModified" | sort | uniq)
+
+        # Count operations
+        TOTAL_TOOLS=$(json_get "$INPUT" "toolsUsedLength")
+
+        # Build description
+        DESCRIPTION="✅ Antigravity session completed successfully"
+
+        # Build tools used text
+        TOOLS_TEXT=""
+        if [[ -n "$TOOLS_USED" ]]; then
+            TOOLS_TEXT=$(echo "$TOOLS_USED" | while read count tool; do
+                echo "• **${count}** ${tool}"
+            done | paste -sd '\n' -)
+        else
+            TOOLS_TEXT="No tools used"
+        fi
+
+        # Build files modified text
+        FILES_TEXT=""
+        if [[ -n "$FILES_MODIFIED" ]]; then
+            FILES_TEXT=$(echo "$FILES_MODIFIED" | while IFS= read -r file; do
+                if [[ -n "$file" ]]; then
+                    relative_file=$(echo "$file" | sed "s|^${PROJECT_DIR}/||")
+                    echo "• \`${relative_file}\`"
+                fi
+            done | paste -sd '\n' -)
+        else
+            FILES_TEXT="No files modified"
+        fi
+
+        # Build fields JSON
+        FIELDS=$(cat <<EOF
+[
+    {
+        "name": "⏰ Session Time",
+        "value": "${TIMESTAMP}",
+        "inline": true
+    },
+    {
+        "name": "🔧 Total Operations",
+        "value": "${TOTAL_TOOLS}",
+        "inline": true
+    },
+    {
+        "name": "🆔 Session ID",
+        "value": "\`${SESSION_ID:0:8}...\`",
+        "inline": true
+    },
+    {
+        "name": "📦 Tools Used",
+        "value": "${TOOLS_TEXT}",
+        "inline": false
+    },
+    {
+        "name": "📝 Files Modified",
+        "value": "${FILES_TEXT}",
+        "inline": false
+    },
+    {
+        "name": "📍 Location",
+        "value": "\`${PROJECT_DIR}\`",
+        "inline": false
+    }
+]
+EOF
+)
+
+        send_discord_embed "🤖 Antigravity Session Complete" "$DESCRIPTION" 5763719 "$FIELDS"
+        ;;
+
+    "SubagentStop")
+        SUBAGENT_TYPE=$(json_get "$INPUT" "subagentType")
+
+        DESCRIPTION="Specialized agent completed its task"
+
+        FIELDS=$(cat <<EOF
+[
+    {
+        "name": "⏰ Time",
+        "value": "${TIMESTAMP}",
+        "inline": true
+    },
+    {
+        "name": "🔧 Agent Type",
+        "value": "${SUBAGENT_TYPE}",
+        "inline": true
+    },
+    {
+        "name": "🆔 Session ID",
+        "value": "\`${SESSION_ID:0:8}...\`",
+        "inline": true
+    },
+    {
+        "name": "📍 Location",
+        "value": "\`${PROJECT_DIR}\`",
+        "inline": false
+    }
+]
+EOF
+)
+
+        send_discord_embed "🎯 Antigravity Subagent Complete" "$DESCRIPTION" 3447003 "$FIELDS"
+        ;;
+
+    *)
+        DESCRIPTION="Antigravity event triggered"
+
+        FIELDS=$(cat <<EOF
+[
+    {
+        "name": "⏰ Time",
+        "value": "${TIMESTAMP}",
+        "inline": true
+    },
+    {
+        "name": "📋 Event Type",
+        "value": "${HOOK_TYPE}",
+        "inline": true
+    },
+    {
+        "name": "🆔 Session ID",
+        "value": "\`${SESSION_ID:0:8}...\`",
+        "inline": true
+    },
+    {
+        "name": "📍 Location",
+        "value": "\`${PROJECT_DIR}\`",
+        "inline": false
+    }
+]
+EOF
+)
+
+        send_discord_embed "📝 Antigravity Event" "$DESCRIPTION" 10070709 "$FIELDS"
+        ;;
+esac
+
+# Log the notification (optional)
+echo "✅ Discord notification sent for $HOOK_TYPE event in project $PROJECT_NAME" >&2

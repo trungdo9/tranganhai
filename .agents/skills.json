@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "path": ".agents/skills/marketing"
+    },
+    {
+      "path": ".agents/skills/automation"
+    },
+    {
+      "path": ".agents/skills/integrations"
+    },
+    {
+      "path": ".agents/skills/software"
+    },
+    {
+      "path": ".agents/skills/workflows"
+    },
+    {
+      "path": ".agents/skills/commands"
+    }
+  ]
+}

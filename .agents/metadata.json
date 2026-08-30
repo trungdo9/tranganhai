@@ -1,0 +1,13 @@
+{
+  "version": "1.5.1",
+  "name": "@trungdo9/MarketingKit",
+  "description": "Antigravity configuration for Marketing Kit + Marketing Automation.",
+  "buildDate": "2026-08-23T18:44:52.108Z",
+  "setupDate": "2026-08-23T18:44:52.110Z",
+  "targetPlatform": "Google Antigravity",
+  "kit": {
+    "name": "marketing",
+    "version": "0.1.0",
+    "description": "Marketing Kit + Marketing Automation — /mk: namespace, 50+ skills, 13 agents, 12 commands, 6 workflows, 5 MCP wrappers, 6 automation skills, 2 integration skills (WordPress)"
+  }
+}

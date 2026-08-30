@@ -1,0 +1,79 @@
+{
+  "mcpServers": {
+    "ga4": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google-cloud/mcp-google-analytics"
+      ],
+      "env": {
+        "GA4_PROPERTY_ID": "${GA4_PROPERTY_ID}",
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}"
+      }
+    },
+    "gsc": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google-cloud/mcp-search-console"
+      ],
+      "env": {
+        "GSC_SITE_URL": "${GSC_SITE_URL}",
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}"
+      }
+    },
+    "sendgrid": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@sendgrid/mcp-server"
+      ],
+      "env": {
+        "SENDGRID_API_KEY": "${SENDGRID_API_KEY}"
+      }
+    },
+    "resend": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@resend/mcp-server"
+      ],
+      "env": {
+        "RESEND_API_KEY": "${RESEND_API_KEY}"
+      }
+    },
+    "reviewweb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@reviewweb/mcp-server"
+      ],
+      "env": {
+        "REVIEWWEB_API_KEY": "${REVIEWWEB_API_KEY}"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "YOUR_API_KEY"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  }
+}

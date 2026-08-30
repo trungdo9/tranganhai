@@ -1,0 +1,72 @@
+{
+  "scout-block": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/scout-block.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "guard-destructive": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/guard-destructive.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "branch-guard": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/branch-guard.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "modularization-check": {
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/modularization-hook.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "file-claims": {
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/file-claims.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

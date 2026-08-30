@@ -1,0 +1,7 @@
+# ClauKit runtime state — machine-local, never useful in history.
+# Session ids and edited-file paths do not belong in a shared repo, and the
+# claim registry conflicts on every merge between concurrent worktrees.
+.ck-file-claims.jsonl
+.ck-smoke-cache.json
+.ck-tail-approved
+settings.local.json

@@ -82,10 +82,40 @@ graph TD
     end
 ```
 
-### 3 Trụ Cột Định Vị Cốt Lõi:
-1. **Hệ thống hóa nguồn dữ liệu & Master RAG Lake (Zero Hallucination):** Toàn bộ dữ liệu doanh nghiệp (Bảng giá Excel gộp ô phức tạp, catalogue, thông số kỹ thuật TDS, quy trình SOP, hồ sơ CO/CQ, tiêu chuẩn QCVN/ASTM) được gom và số hóa thành **Master Knowledge Lake**. Kiến trúc RAG kết hợp **Dual Vectorization (BGE-M3 + BM25)**, **Parent-Child Chunking**, **Cross-Encoder Reranker** và **Deterministic SQL Pricing Engine** giúp Agent tra cứu chính xác 100% đến từng mã hàng, điều khoản và thông số, khử sạch hoàn toàn lỗi ảo giác.
-2. **Executive BI Dashboard & Trợ lý Ra Quyết Định Chiến Lược (CEO Copilot):** Tự động số liệu hóa các chỉ số kinh doanh thành **Báo Cáo Quản Trị 1 Trang (1-Page CEO Executive Dashboard)**. Agent đóng vai trò Cố vấn Chiến lược: phân tích điểm nghẽn dòng tiền, phát hiện sản phẩm biên lợi nhuận thấp, mô phỏng kịch bản kinh doanh (What-If Analysis) giúp Ban Giám Đốc ra quyết định dựa trên dữ liệu thực chứng (Data-driven).
-3. **Căn chỉnh luồng công việc liền mạch (Workflow Alignment):** Kết nối thông suốt toàn diện: *Khách hàng tìm kiếm (AI Search/GEO) $\rightarrow$ Chatbot CSKH 24/7 tiếp nhận $\rightarrow$ Zalo Copilot bóc tách và tạo báo giá PDF trong 8 giây $\rightarrow$ Sales kiểm tra 10 giây và gửi $\rightarrow$ Báo cáo cập nhật tức thì lên Executive Dashboard*.
+### DÂY CHUYỀN 5 MẮT XÍCH VẬN HÀNH B2B KHÉP KÍN (THE 5-NODE CLOSED-LOOP ENGINE)
+
+Toàn bộ sức mạnh của Trang Anh AI được cấu thành từ mối quan hệ tương hỗ khép kín giữa 5 node vận hành, tạo thành một dây chuyền tự động hóa từ Dữ liệu gốc đến Doanh thu:
+
+```mermaid
+graph LR
+    subgraph FiveNodes["DÂY CHUYỀN 5 MẮT XÍCH VẬN HÀNH B2B KHÉP KÍN (TRANG ANH AI)"]
+        direction LR
+        N1["<b>NODE 1: RAG DATA LAKE</b><br/>• Số hóa Excel gộp ô, TDS, Catalogue<br/>• Khử sạch ảo giác (SQL Pricing)<br/><i>Cấp tri thức sạch cho toàn bộ cỗ máy</i>"]
+        
+        N2["<b>NODE 2: FLOW CONTENT & GEO</b><br/>• Bài viết E-E-A-T chuẩn chuyên gia<br/>• Xuất hiện trên ChatGPT/Gemini<br/>• Chăm sóc 1-3+ website vệ tinh"]
+        
+        N3["<b>NODE 3: TIẾP ĐÓN 24/7 & CRM</b><br/>• AI Chatbot tư vấn kỹ thuật 24/7<br/>• Bắt SĐT/Zalo & Phân loại Lead<br/>• Tự động đồng bộ Deal vào CRM"]
+        
+        N4["<b>NODE 4: SALES & BÁO GIÁ NHANH</b><br/>• Trợ lý lập dự toán BOQ trong 2p<br/>• Xuất PDF Typst + VietQR tức thì<br/>• Nhân viên kiểm tra 10s bấm gửi"]
+        
+        N5["<b>NODE 5: EXECUTIVE DASHBOARD</b><br/>• Báo cáo quản trị 1 trang cho CEO<br/>• Đo lường: Traffic -> CRM -> Sales<br/>• Cố vấn chiến lược & Quyết định số"]
+
+        N1 ==>|Nuôi nội dung chuyên môn| N2
+        N1 ==>|Cung cấp thông số tra cứu| N3
+        N1 ==>|Khóa giá sỉ/lẻ chuẩn xác| N4
+        N2 ==>|Kéo khách hàng tiềm năng| N3
+        N3 ==>|Chuyển Lead & Ngữ cảnh| N4
+        N4 ==>|Ghi nhận kết quả chốt đơn| N5
+        N5 -.->|Tối ưu chính sách giá & danh mục| N1
+    end
+```
+
+#### Mối Quan Hệ Bản Lề Giữa 5 Node:
+1. **Node 1 (RAG Data Lake — Nền tảng tri thức sống):** Không có dữ liệu sạch thì Content sẽ là bài rác vô bổ, Chatbot sẽ bị ảo giác và Báo giá sẽ tính nhầm giá. Node 1 là cội nguồn nuôi sống cả 4 node còn lại.
+2. **Node 2 (Flow Content & Hiện diện AI Search — Kênh thu hút):** Dùng tri thức từ Node 1 để tự động sản xuất bài viết E-E-A-T chuyên môn sâu và phủ sóng trên Google lẫn các công cụ Chat AI (ChatGPT, Perplexity, Gemini), thu hút khách hàng B2B chất lượng cao vào hệ sinh thái 1–3+ website vệ tinh.
+3. **Node 3 (Tiếp đón 24/7 & Tự động hóa CRM — Giữ chân & Phân loại):** Khách vào website lúc nửa đêm hoặc cuối tuần được Chatbot AI tiếp đón, giải đáp thông số kỹ thuật chính xác từ Node 1. Khi bắt được nhu cầu, hệ thống tự động đẩy dữ liệu vào **CRM** (MISA AMIS, Brevo, Google Sheets), gắn tag và báo ngay cho Sales.
+4. **Node 4 (Sales Enablement & Báo giá nhanh — Chốt đơn thần tốc):** Đội ngũ Sales nhận Lead từ CRM kèm trọn vẹn lịch sử trò chuyện. Trợ lý kỹ thuật hỗ trợ lập Bảng dự toán chi phí (BOQ) trong 2 phút và xuất báo giá PDF Vector có sẵn mã VietQR trong vài giây. Nhân viên kiểm tra 10 giây và bấm gửi, rút ngắn chu kỳ chốt đơn từ vài ngày xuống vài phút.
+5. **Node 5 (Executive BI Dashboard — Kiểm soát & Tối ưu):** Ban Giám Đốc nhìn thấy bức tranh kinh doanh thời gian thực: *Bao nhiêu khách từ AI Search $\rightarrow$ Bao nhiêu Lead trong CRM $\rightarrow$ Tốc độ gửi báo giá $\rightarrow$ Tỷ lệ chốt đơn và Doanh số thực tế*. Số liệu này tiếp tục phản hồi ngược lại Node 1 để doanh nghiệp điều chỉnh chính sách giá và danh mục sản phẩm chủ lực.
 
 ---
 
@@ -168,34 +198,58 @@ graph LR
 
 ---
 
-## 6. HỆ SINH THÁI 8 MODULE GIẢI PHÁP TRANG ANH MULTI-AGENT & MASTER RAG LAKE
+## 6. HỆ THỐNG 8 MODULE GIẢI PHÁP TRANG ANH QUY CHIẾU TRÊN DÂY CHUYỀN 5 NODE VẬN HÀNH
 
-TRANG ANH AI xây dựng hệ thống các trợ lý AI Agent chuyên trách kết nối mượt mà theo kiến trúc **Hub-and-Spoke** xoay quanh **Master RAG Lake**:
+Toàn bộ 8 module chuyên trách của Trang Anh AI được tổ chức mạch lạc, vận hành tự động theo dây chuyền **5 Node Khép Kín**, xoay quanh **Master RAG Lake**:
 
 ```mermaid
 graph TD
-    subgraph TrangAnhSystem["KIẾN TRÚC HỆ SINH THÁI TRANG ANH MULTI-AGENT & MASTER RAG LAKE"]
-        MasterCore["<b>TRANG ANH CORE HUB & MASTER RAG LAKE (ZERO HALLUCINATION)</b><br/>• Unmerge & Flattening Bảng Giá Excel • Multimodal OCR TDS/Catalogue<br/>• Deterministic SQL Pricing • Dual Vectorization (BGE-M3 + BM25) • Cross-Encoder Reranker"]
+    subgraph FiveNodeMapping["QUY CHIẾU 8 MODULE VÀO DÂY CHUYỀN 5 NODE VẬN HÀNH B2B"]
+        direction TB
         
-        M0["<b>M0. Executive BI & Strategic Decision Copilot</b><br/>• Báo cáo quản trị 1 trang tức thì<br/>• Số liệu hóa hiệu suất kinh doanh<br/>• Mô phỏng kịch bản (What-If) & Cố vấn CEO"]
+        subgraph N1["NODE 1: RAG DATA HUB (GỐC RỄ TRI THỨC)"]
+            MasterCore["<b>CORE HUB: MASTER RAG LAKE (ZERO HALLUCINATION)</b><br/>• Unmerge & Flattening Bảng Giá Excel • Multimodal OCR TDS/Catalogue<br/>• Deterministic SQL Pricing • Dual Vectorization (BGE-M3 + BM25) • Cross-Encoder Reranker"]
+        end
 
-        M1["<b>M1. Contextual Content & Digital Presence (GEO)</b><br/>• Viết bài chuyên môn sâu E-E-A-T<br/>• Tối ưu hiện diện trên AI Search (ChatGPT/Gemini)<br/>• Schema Entity & Cập nhật tri thức tự động"]
-        
-        M2["<b>M2. Multi-Site Hub-and-Spoke Manager</b><br/>• Quản trị chăm sóc 1-3+ website tập trung<br/>• Tự động phân luồng bài viết độc bản<br/>• Tái sử dụng 80% tài nguyên tri thức"]
-        
-        M3["<b>M3. 24/7 AI Sales & Support Chatbot</b><br/>• Trực Website LiveChat, Fanpage, Zalo OA (Cửa sổ 48h + ZNS)<br/>• Tư vấn kỹ thuật theo Master RAG Lake<br/>• Bắt Lead & phân loại nhu cầu tự động"]
-        
-        M4["<b>M4. Zalo Copilot (Trợ lý Báo giá Sales 8s)</b><br/>• Bóc tách tiếng lóng, bảng mã Zalo 1-chạm<br/>• Fuzzy Matching & Deterministic Pricing<br/>• Xuất PDF Vector Typst chuẩn Print + VietQR"]
-        
-        M5["<b>M5. Marketing-to-Sales Workflow Engine</b><br/>• Luân chuyển Lead tự động từ Web/Ads sang Sales<br/>• Tạo Deal CRM & Kích hoạt Zalo Copilot<br/>• Nhắc lịch chăm sóc khách hàng tự động"]
-        
-        M6["<b>M6. Engineering & BOQ Estimator</b><br/>• Tính toán thông số kỹ thuật/thủy lực/công suất<br/>• Lập bảng dự toán BOQ vật tư trong 2 phút<br/>• Đề xuất cấu hình thiết bị tối ưu theo RAG"]
-        
-        M7["<b>M7. Tender & Bidding Copilot</b><br/>• Bóc tách Hồ sơ mời thầu (HSMT)<br/>• Ma trận tuân thủ kỹ thuật (Compliance Matrix)<br/>• Soạn Hồ sơ đề xuất kỹ thuật (HSĐXKT) trong 30 phút"]
-        
-        MasterCore ==> M0 & M1 & M2 & M3 & M4 & M5 & M6 & M7
+        subgraph N2["NODE 2: FLOW CONTENT & GEO (HIỆN DIỆN THU HÚT)"]
+            M1["<b>M1. Contextual Content & GEO</b><br/>• Bài viết chuyên sâu E-E-A-T<br/>• Tối ưu hiện diện ChatGPT/Gemini"]
+            M2["<b>M2. Multi-Site Hub Manager</b><br/>• Chăm sóc 1-3+ Web vệ tinh<br/>• Tự động phân luồng độc bản"]
+        end
+
+        subgraph N3["NODE 3: TIẾP ĐÓN 24/7 & CRM (BỘ LỌC & GIỮ CHÂN)"]
+            M3["<b>M3. 24/7 AI Sales & Support Chatbot</b><br/>• Trực Web LiveChat, Fanpage, Zalo OA<br/>• Tư vấn kỹ thuật theo RAG Node 1"]
+            M5["<b>M5. Marketing-to-Sales CRM Engine</b><br/>• Tự động bắt SĐT/Zalo & Tạo Deal CRM<br/>• Chấm điểm Lead & Kích hoạt Sales"]
+        end
+
+        subgraph N4["NODE 4: SALES & BÁO GIÁ NHANH (CHỐT ĐƠN THẦN TỐC)"]
+            M4["<b>M4. Fast Quote Assistant (Báo Giá 8s)</b><br/>• Bóc tách tin nhắn & mã hàng<br/>• Xuất PDF Vector Typst + VietQR"]
+            M6["<b>M6. Engineering BOQ Estimator</b><br/>• Tính toán thông số kỹ thuật/thủy lực<br/>• Lập bảng dự toán BOQ trong 2 phút"]
+            M7["<b>M7. Tender & Bidding Copilot</b><br/>• Bóc tách HSMT & Soạn HSĐXKT trong 30p"]
+        end
+
+        subgraph N5["NODE 5: EXECUTIVE DASHBOARD (KIỂM SOÁT & TỐI ƯU)"]
+            M0["<b>M0. Executive BI & Strategic Copilot</b><br/>• Báo cáo quản trị 1 trang thời gian thực<br/>• Đo lường: Traffic -> Lead CRM -> Báo giá -> Doanh thu<br/>• Mô phỏng kịch bản What-If & Cố vấn CEO"]
+        end
+
+        N1 ==>|Cấp tri thức sạch| N2
+        N1 ==>|Cấp dữ liệu tra cứu| N3
+        N1 ==>|Khóa giá sỉ/lẻ chuẩn| N4
+        N2 ==>|Kéo Traffic B2B| N3
+        N3 ==>|Chuyển Deal & Ngữ cảnh| N4
+        N4 ==>|Ghi nhận doanh số chốt| N5
+        N5 -.->|Tối ưu chính sách giá & danh mục| N1
     end
 ```
+
+### Bảng Ánh Xạ 8 Module Chuyên Trách Vào 5 Node Vận Hành:
+
+| Node Vận Hành | Các Module Chuyên Trách Đảm Nhiệm | Chức Năng Cốt Lõi Trong Dây Chuyền | Giá Trị Thực Tế Cho Doanh Nghiệp |
+|---|---|---|---|
+| **NODE 1: RAG DATA HUB** | **Core Master RAG Lake & SQL Pricing Engine** | Số hóa bảng giá Excel gộp ô, catalogue, TDS, CO/CQ, tiêu chuẩn QCVN/ASTM. Khóa giá xác định, cấm AI tính nhẩm. | Chuẩn xác 100% từng đồng, khử sạch hoàn toàn lỗi ảo giác. Doanh nghiệp sở hữu vĩnh viễn dữ liệu sạch. |
+| **NODE 2: FLOW CONTENT & GEO** | **M1 (Contextual Content & GEO)**<br/>**M2 (Multi-Site Hub Manager)** | Tự động sản xuất 16–24 bài E-E-A-T/tháng từ kho Node 1. Tối ưu cấu trúc Direct Answer & Schema để ChatGPT/Gemini trích dẫn. | Phủ sóng thương hiệu trên AI Search, chăm sóc 1–3+ web vệ tinh với nội dung độc bản, tiết kiệm 80% chi phí agency. |
+| **NODE 3: TIẾP ĐÓN 24/7 & CRM** | **M3 (24/7 AI Support Chatbot)**<br/>**M5 (Marketing-to-Sales CRM Engine)** | Trực kênh 24/7 trên Web LiveChat, Fanpage, Zalo OA. Tư vấn thông số chuẩn từ Node 1, bắt Lead & đồng bộ tự động vào CRM. | Không bao giờ sót khách hàng ngoài giờ làm việc. Tự động chấm điểm Lead (Lead Scoring) và báo động ngay cho Sales. |
+| **NODE 4: SALES & BÁO GIÁ NHANH** | **M4 (Fast Quote Assistant)**<br/>**M6 (Engineering BOQ Estimator)**<br/>**M7 (Tender & Bidding Copilot)** | Lập bảng dự toán BOQ vật tư trong 2 phút; xuất file báo giá PDF Vector kèm mã VietQR trong 8 giây; hỗ trợ bóc tách hồ sơ thầu. | Rút ngắn thời gian báo giá từ vài giờ xuống vài giây. Có nhân viên duyệt 10 giây trước khi gửi (Human-in-the-loop). |
+| **NODE 5: EXECUTIVE DASHBOARD** | **M0 (Executive BI & Strategic Decision Copilot)** | Màn hình điều hành 1 trang thời gian thực tổng hợp toàn bộ phễu: Traffic $\rightarrow$ Lead CRM $\rightarrow$ Báo giá $\rightarrow$ Doanh thu. | Giúp CEO & CMO nắm bắt toàn bộ bức tranh tài chính kinh doanh trong 30 giây mở điện thoại; phát hiện ngay điểm nghẽn. |
 
 ---
 

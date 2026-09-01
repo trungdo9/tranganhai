@@ -1,228 +1,285 @@
 # KẾ HOẠCH TỔNG THỂ XÂY DỰNG LANDING PAGE CHUYỂN ĐỔI CAO (TRANG ANH AI)
-## MASTER BLUEPRINT & TECHNICAL IMPLEMENTATION ROADMAP (HIGH-CONVERTING B2B LANDING PAGE)
+## MASTER BLUEPRINT & CONTENT ARCHITECTURE (B2B EXECUTIVE LANDING PAGE)
 ### ĐỊNH VỊ CHIẾN LƯỢC: ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ (CO-ARCHITECTURE & AUTONOMOUS TRANSFER)
 
 ```text
 ======================================================================================================
   LANDING PAGE MASTER PLAN: TRANG ANH AI — TRANG BỊ QUY TRÌNH. TINH ANH VẬN HÀNH.
-  CHUYÊN TRANG CHUYỂN ĐỔI CAO (CRO 25-POINT) & ĐỊNH VỊ AI AGENT OPERATIONS & WORKFLOW ALIGNMENT
-  MÔ HÌNH THỰC THI: ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ (CO-ARCHITECTURE & AUTONOMOUS TRANSFER)
+  CHUYÊN TRANG CHUYỂN ĐỔI DÀNH RIÊNG CHO CEO, CHỦ DOANH NGHIỆP & NHÀ QUẢN TRỊ MARKETING B2B
+  NGÔN NGỮ QUẢN TRỊ THỰC TIỄN — KHÔNG THUẬT NGỮ CÔNG NGHỆ ĐÁNH ĐỐ — MINH BẠCH GIÁ TRỊ KINH DOANH
 ======================================================================================================
 ```
 
 > **Hub Ngữ Cảnh Nguồn (SSOT):** [`plans/marketing-context.md`](file:///E:/Projects/done-with-you/plans/marketing-context.md)  
-> **Bộ Bản Quyền Thương Hiệu:** **TRANG ANH AI** (*"Trang bị quy trình. Tinh anh vận hành."* — *Elite Systems. Easy Growth.*)  
-> **Mục tiêu chuyển đổi cốt lõi:** Chuyển đổi khách hàng tiềm năng C-Level (CEO, Giám đốc kinh doanh, Chủ doanh nghiệp SME B2B) đăng ký **"Khám Sức Khỏe Vận Hành (AI Readiness Audit)"** và đặt lịch **"Live Demo 45 phút trên dữ liệu thật"**, chốt gói chào hàng **"The Ultimate 0-Setup Offer"** (Retainer 6 tháng thu trước Quý 1).
+> **Bộ Nhận Diện Thương Hiệu:** **TRANG ANH AI** (*"Trang bị quy trình. Tinh anh vận hành."* — *Elite Systems. Easy Growth.*)  
+> **Đối tượng độc giả trọng tâm:** **Chủ Doanh Nghiệp (CEO/Founder), Lãnh đạo kế nghiệp (F2), Giám đốc Marketing (CMO/Marketing Manager), Giám đốc Kinh doanh (CCO/Sales Director)** trong các ngành B2B Kỹ thuật, Vật tư, Công nghiệp, Phân phối và Sản xuất.  
+> **Mục tiêu chuyển đổi cốt lõi:** Đăng ký nhận **"Khám Sức Khỏe Vận Hành (AI Readiness Audit)"** và đặt lịch **"Trải Nghiệm Live Demo 45 Phút Trên Dữ Liệu Thật Của Doanh Nghiệp"**, chốt gói chào hàng **"The Ultimate 0-Setup Offer"** (Retainer 6 tháng thu trước Quý 1).
 
 ---
 
-## 🔍 1. PHÂN TÍCH & ĐỐI SOÁT 3 WEBSITE THAM KHẢO (BENCHMARK & GAP ANALYSIS)
+## 🧭 1. ĐỊNH HƯỚNG CHIẾN LƯỢC & NGUYÊN TẮC VIỆT HÓA THUẬT NGỮ
 
-Nhằm xây dựng một Landing Page đẳng cấp vượt trội, chúng tôi đã tiến hành bóc tách sâu 3 đối thủ và đơn vị công nghệ hàng đầu tại Việt Nam:
+Để thông điệp chạm đúng vào tâm lý ra quyết định của các nhà quản trị (vốn quan tâm đến **Chi phí, Doanh thu, Nhân sự và Sự kiểm soát** thay vì thuật ngữ kỹ thuật), toàn bộ nội dung landing page tuân thủ bảng chuyển ngữ sau:
+
+| Thuật Ngữ Kỹ Thuật Nội Bộ | Ngôn Ngữ Quản Trị Dành Cho CEO & Marketer | Lợi Ích Thực Tế Mang Lại Cho Doanh Nghiệp |
+|---|---|---|
+| **Master RAG Lake** | **Bộ Não Tri Thức Số Doanh Nghiệp (Không Ảo Giác)** | Gom toàn bộ catalogue, bảng giá Excel, tiêu chuẩn kỹ thuật về một nơi; nhân viên cũ nghỉ việc không lo mất bí kíp. |
+| **Generative Engine Optimization (GEO)** | **Cỗ Máy Xuất Hiện Tự Động Trên Các Công Cụ Chat AI** | Đưa thương hiệu và sản phẩm xuất hiện trực tiếp trong câu trả lời của ChatGPT, Perplexity, Gemini khi khách hàng B2B tìm kiếm. |
+| **Deterministic SQL Engine** | **Động Cơ Tính Giá Chuẩn Xác 100% (Cấm AI Đoán Mò)** | Đảm bảo mọi phép tính chiết khấu, giá sỉ/lẻ chuẩn xác đến từng đồng, tuyệt đối không để AI tính nhẩm sai lệch. |
+| **Workflow Alignment** | **Căn Chỉnh Luồng Vận Hành Liền Mạch Từ Web Đến Chốt Đơn** | Khách tìm thấy trên AI Search $\rightarrow$ Chatbot tư vấn 24/7 $\rightarrow$ Soạn dự toán/báo giá gửi nhân viên duyệt $\rightarrow$ Cập nhật báo cáo CEO. |
+| **Executive BI Dashboard (M0)** | **Báo Cáo Quản Trị 1 Trang Tức Thì Cho Ban Lãnh Đạo** | CEO nhìn thấy tức thì số lượng khách tiếp cận, tỷ lệ chuyển đổi và doanh số từng kênh mà không cần chờ nhân viên làm báo cáo. |
+| **Co-architecture & Transfer (DWY)** | **Đồng Hành Xây Dựng & Chuyển Giao Tự Chủ Sau 4 Tuần** | Trang Anh AI gánh 90% kỹ thuật ban đầu, cài trên tài khoản chính chủ của khách, bàn giao quy trình để doanh nghiệp tự làm chủ vĩnh viễn. |
+
+---
+
+## 🎨 2. HỆ THỐNG MÀU SẮC & NHẬN DIỆN THƯƠNG HIỆU (SOFT NORDIC TECH)
+
+Tuân thủ bộ nhận diện thương hiệu chuẩn mực tại [`plans/marketing-context.md`](file:///E:/Projects/done-with-you/plans/marketing-context.md) theo tỷ lệ thị giác vàng **60 - 30 - 10**:
+
+* **Màu Nền Tảng (Base - 60%):** `Deep Slate Charcoal` (`#1E293B`) — Tiêu đề chính, khung nền tối lịch thiệp, mang lại cảm giác vững chãi, uy tín và chuyên nghiệp.
+* **Màu Thương Hiệu (Brand - 30%):** `Brand AI Blue` (`#4F46E5`) — Thể hiện trí tuệ, hiện đại, sử dụng cho các biểu tượng chức năng và đường kết nối luồng.
+* **Màu Điểm Nhấn & Chuyển Đổi (Accent/CTA - 10%):** `Sage Teal` (`#0D9488`) — Tạo sự an tâm, tươi mới, dùng cho toàn bộ nút kêu gọi hành động (CTA) và số liệu tăng trưởng.
+* **Màu Cảnh Báo & Điểm Nhấn Phụ:** `Warm Amber` (`#F59E0B`) — Nhấn mạnh các cảnh báo rủi ro pháp lý và huy hiệu ưu đãi.
+* **Nền Phụ & Card Sáng:** `Soft Mist White` (`#F8FAFC` / `#FFFFFF`) — Nền các khối nội dung, tạo cảm giác thoáng đãng, dễ đọc.
+
+---
+
+## 🏛️ 3. CẤU TRÚC 9 KHỐI NỘI DUNG CHUYỂN ĐỔI CAO (9-SECTION BLUEPRINT)
 
 ```mermaid
 graph TD
-    subgraph BenchmarkGrid["ĐỐI SOÁT 3 MÔ HÌNH LANDING PAGE THAM KHẢO"]
-        FPT["<b>1. FPT DIGITAL (digital.fpt.com)</b><br/>• Thế mạnh: Định vị C-Level, Uy tín Tập đoàn, Khung phân tích 4 bất cập GenAI<br/>• Điểm yếu: Quá hàn lâm, triển khai kéo dài 3-6 tháng, giá tiền tỷ, xa rời SME"]
-        
-        UPT["<b>2. UPTECH (uptech.vn)</b><br/>• Thế mạnh: UI Dark Mode hiện đại, dẫn chứng Gartner/IBM/PwC, chia tab theo ngành<br/>• Điểm yếu: PoC 4-6 tuần, MVP 6-10 tuần (quá lâu), không có bảng giá và gói 0-Setup"]
-        
-        ICSC["<b>3. ICSC CORPORATION (icsc.vn)</b><br/>• Thế mạnh: Nhấn mạnh Multi-Agent & Custom Tool Use<br/>• Điểm yếu: Layout Divi cũ, thiếu demo trực quan, không có case study cụ thể"]
-        
-        TA["<b>🌟 TRANG ANH AI (WINNING FORMULA)</b><br/>• Lấy Uy tín & Phân tích bất cập của FPT + UI hiện đại & Tab ngành của UPTECH<br/>• ĐỘT PHÁ: Demo Zalo Copilot 8s + Lộ trình 4 Tuần Đồng Hành Kiến Trúc & Chuyển Giao Tự Chủ"]
-
-        FPT & UPT & ICSC -.->|Chắt lọc tinh hoa & Khắc phục điểm yếu| TA
-    end
-```
-
-### Bảng Đối Soát Tính Năng & Trải Nghiệm Khách Hàng:
-
-| Tiêu chí So Sánh | FPT Digital | UPTECH | ICSC Corp | TRANG ANH AI (Vị Thế Vượt Trội) |
-|---|---|---|---|---|
-| **Đối tượng Trọng tâm** | Doanh nghiệp Top đầu, Bank | Doanh nghiệp vừa và lớn | Outsourcing đa ngành | **SME B2B Kỹ thuật (5–50 người, 1–3+ Web)** |
-| **Mũi khoan Tiếp cận (Wedge)** | Báo cáo tư vấn chiến lược | Đề xuất PoC tùy chỉnh | Tư vấn phần mềm | **Zalo Copilot 8 Giây (Báo giá PDF + VietQR)** |
-| **Mô hình Dịch vụ** | Tư vấn lộ trình (Consulting) | Dịch vụ theo dự án (Project) | Phần mềm theo yêu cầu | **Đồng Hành Kiến Trúc & Chuyển Giao Tự Chủ** |
-| **Thời gian có kết quả** | 3 – 6 tháng | 10 – 16 tuần (PoC 4-6w) | Chưa xác định | **4 TUẦN BÀN GIAO TRỌN GÓI (Demo Ngày 1)** |
-| **Minh bạch Bảng giá** | Ẩn giá (Báo giá theo dự án) | Ẩn giá (Liên hệ sales) | Ẩn giá | **Minh bạch 3 Gói (12.5tr - 24tr - 41.5tr)** |
-| **Gói Chào hàng Đột phá** | Không có | Không có | Không có | **The Ultimate 0-Setup Offer (Free Setup 35tr)** |
-| **Giải quyết Bảng giá Excel** | Tư vấn chung chung | Tích hợp ERP/DB | Xây dựng theo yêu cầu | **Deterministic SQL Engine + Excel Unmerge** |
-| **An toàn Môi trường Zalo** | Không hỗ trợ Zalo cá nhân | Tích hợp Zalo OA | API cơ bản | **Non-invasive Desktop 1-Chạm (100% An toàn)** |
-
----
-
-## 🎨 2. HỆ THỐNG THIẾT KẾ & BẢNG MÀU THƯƠNG HIỆU (BRAND DESIGN TOKENS)
-
-Học hỏi phong cách hiện đại từ UPTECH kết hợp tính trang nhã, tin cậy từ FPT Digital, Trang Anh AI áp dụng tỷ lệ thị giác vàng **60 - 30 - 10** theo bộ nhận diện **Soft Nordic Tech**:
-
-```text
-+---------------------------------------------------------------------------------------------------+
-|  MÀU CHỦ ĐẠO (60%)           MÀU NHẬN DIỆN (30%)             MÀU ĐIỂM NHẤN / CTA (10%)            |
-|  Deep Slate Charcoal         Brand AI Blue (Soft Iris)       Sage Teal / Growth Green             |
-|  HEX: #1E293B                HEX: #4F46E5                    HEX: #0D9488                         |
-|  RGB: (30, 41, 59)           RGB: (79, 70, 229)              RGB: (13, 148, 136)                  |
-+---------------------------------------------------------------------------------------------------+
-```
-
-* **Nền phụ & Card sáng (Light BG):** `Soft Mist White` (`#F8FAFC` / `#FFFFFF`).
-* **Đường viền & Phân tách (Borders):** `Subtle Slate Border` (`#E2E8F0`).
-* **Cảnh báo & Huy hiệu Hot (Badge/Alert):** `Warm Amber` (`#F59E0B`).
-* **Kiểu chữ (Typography):** Inter / Plus Jakarta Sans (Tiêu đề SemiBold/Bold, Body Regular 16px, Line-height 1.6).
-
----
-
-## 🏛️ 3. CẤU TRÚC 9 SECTION CHUYỂN ĐỔI CAO (9-SECTION HYBRID ARCHITECTURE)
-
-```mermaid
-graph TD
-    S1["<b>SECTION 1: HERO (Above the Fold)</b><br/>• Eyebrow: Hệ điều hành AI Agent & Đồng Hành Kiến Trúc<br/>• H1: Báo giá chuẩn xác 8s. Tự chủ vận hành trên hạ tầng chính chủ.<br/>• Primary CTA: Đăng ký Khám Sức Khỏe Vận Hành (Sage Teal #0D9488)<br/>• Visual: Mockup tương tác Zalo Copilot 8s ra file PDF Vector"]
+    S1["<b>SECTION 1: HERO (Above the Fold)</b><br/>• Tiêu đề: Xóa bỏ điểm nghẽn vận hành & Tự chủ cỗ máy AI Doanh nghiệp<br/>• Visual: Bảng điều khiển vận hành 3 tầng (Tri thức - Tác nghiệp - Báo cáo CEO)<br/>• CTA: Đăng ký Khám Sức Khỏe Vận Hành & Live Demo 45 phút"]
     
-    S2["<b>SECTION 2: TRUST STATS & 4 BẤT CẬP GENAI (HỌC TỪ FPT & UPTECH)</b><br/>• Dữ liệu Gartner, PwC, AWS, Bộ KH&ĐT (48.8% dừng CĐS)<br/>• Bóc trần 4 Bất cập: Ảo giác, Lệch ngành, Bảo mật & Không cá nhân hóa"]
+    S2["<b>SECTION 2: THỰC TRẠNG THỊ TRƯỜNG & 4 BẤT CẬP AI HIỆN TẠI</b><br/>• 48.8% DN dừng CĐS (Bộ KH&ĐT), 41% khó chứng minh ROI<br/>• 4 Rủi ro: AI tự bịa thông số, tàng hình trên AI Search, rò rỉ dữ liệu, nhân viên không dùng"]
     
-    S3["<b>SECTION 3: PAIN POINTS MATRIX (3 ĐIỂM NGHẼN B2B VIỆT NAM)</b><br/>• 68% mất đơn vì chậm 30p, Nuôi 1 nhân sự tốn 19.3tr, Data rải rác Zalo/Excel"]
+    S3["<b>SECTION 3: 3 ĐIỂM NGHẼN VẬN HÀNH B2B VIỆT NAM</b><br/>• 1. Tri thức nằm trong đầu cá nhân • 2. Mất đơn vì báo giá chậm • 3. CEO mù mờ số liệu"]
     
-    S4["<b>SECTION 4: CORE VALUE & ZALO COPILOT INTERACTIVE DEMO</b><br/>• Zalo Copilot 8s (Human-in-the-loop)<br/>• Master RAG Lake (Zero Hallucination SQL-Based)<br/>• Executive BI Dashboard 1-Trang cho CEO"]
+    S4["<b>SECTION 4: BỘ BA TRỤ CỘT CỐT LÕI (HỆ ĐIỀU HÀNH AI TRANG ANH)</b><br/>• 1. Bộ Não Tri Thức Số & Hiện Diện AI Search (GEO) • 2. Luồng Tác Nghiệp Tự Động • 3. Báo Cáo Quản Trị 1 Trang"]
     
-    S5["<b>SECTION 5: ỨNG DỤNG THEO NGÀNH B2B (INDUSTRY USE CASES TABS)</b><br/>• Tab 1: Hóa chất & Môi trường | Tab 2: Van & Thiết bị M&E | Tab 3: Đa Website Vệ Tinh"]
+    S5["<b>SECTION 5: ỨNG DỤNG THỰC TẾ THEO NGÀNH B2B (INDUSTRY USE CASES)</b><br/>• Tab 1: Hóa chất & Môi trường | Tab 2: Van & Cơ điện M&E | Tab 3: Doanh nghiệp Đa Website"]
     
-    S6["<b>SECTION 6: LỘ TRÌNH 4 TUẦN KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ</b><br/>• Tuần 1-2: Kiến trúc RAG Lake & Setup Chính Chủ -> Tuần 3-4: Căn chỉnh luồng & Chuyển giao SOP"]
+    S6["<b>SECTION 6: LỘ TRÌNH 4 TUẦN ĐỒNG HÀNH & CHUYỂN GIAO TỰ CHỦ</b><br/>• Tuần 1: Chuẩn hóa dữ liệu -> Tuần 2: Cài đặt chính chủ -> Tuần 3: Căn chỉnh luồng -> Tuần 4: Đào tạo & Bàn giao"]
     
-    S7["<b>SECTION 7: 3-TIER PRICING & THE ULTIMATE 0-SETUP OFFER</b><br/>• Gói 1: Nền tảng (12.5tr) | Gói 2: Tăng trưởng (24tr - Hero) | Gói 3: Toàn diện (41.5tr)<br/>• Miễn phí 100% Phí Kiến Trúc & Chuyển Giao khi ký 6 tháng thu trước Quý 1"]
+    S7["<b>SECTION 7: BẢNG GIÁ 3 GÓI RETAINER & THE ULTIMATE 0-SETUP OFFER</b><br/>• Gói 1: Nền tảng (12.5tr) | Gói 2: Tăng trưởng (24tr - Hero) | Gói 3: Toàn diện (41.5tr)<br/>• Tặng 100% phí kiến trúc ban đầu khi ký 6 tháng thu trước Quý 1"]
     
-    S8["<b>SECTION 8: LEGAL COMPLIANCE & FAQ ACCORDION</b><br/>• Luật 91/2025/QH15, Luật AI 134/2025/QH15, 6 câu hỏi bẻ gãy hoài nghi"]
+    S8["<b>SECTION 8: MINH BẠCH PHÁP LÝ & GIẢI ĐÁP THẮC MẮC (FAQ)</b><br/>• Luật Dữ Liệu 91/2025, Luật AI 134/2025, Cam kết QBR ngày 75, Tài khoản Enterprise riêng"]
     
-    S9["<b>SECTION 9: LEAD CAPTURE & FAST AUDIT FORM (FINAL CTA)</b><br/>• Form 4 trường tinh gọn, Webhook bắn CRM & Telegram Admin trong 3s"]
+    S9["<b>SECTION 9: ĐĂNG KÝ AUDIT & TRẢI NGHIỆM LIVE DEMO (FINAL CTA)</b><br/>• Form 4 trường tinh gọn, cam kết bảo mật thông tin, kết nối chuyên gia trong 2 giờ"]
 
     S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
 ```
 
 ---
 
-## 🧩 4. CHI TIẾT NỘI DUNG TỪNG SECTION (SECTION-BY-SECTION BLUEPRINT)
+## 📝 4. CHI TIẾT KỊCH BẢN NỘI DUNG TỪNG SECTION (COPYWRITING SCRIPTS)
 
-### Section 1: Hero Section (Above The Fold — Tối Đa Chuyển Đổi Không Cần Cuộn Trang)
-* **Badge (Eyebrow):** `🛡️ ĐỐI TÁC KIẾN TRÚC VẬN HÀNH AI AGENT — ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ`
-* **Headline (H1):**
-  > **Báo Giá Chuẩn Xác Trong 8 Giây.**  
-  > **Tự Chủ Vận Hành Doanh Nghiệp Trên Hạ Tầng Chính Chủ.**
-* **Subheadline (H2):**
-  > *"Không bán công cụ bỏ mặc, không làm hộ rỗng ruột. Trang Anh AI trực tiếp kiến tạo kho dữ liệu Master RAG Lake, căn chỉnh luồng Zalo Copilot và chuyển giao quy trình SOP để doanh nghiệp làm chủ cỗ máy chỉ sau 4 tuần."*
-* **CTA Button (Sage Teal `#0D9488`):** `[ ĐĂNG KÝ KHÁM SỨC KHỎE VẬN HÀNH & LIVE DEMO 45 PHÚT ]`
-* **Micro-copy (Giảm ma sát & Bảo mật):** *🔒 Cài đặt trên tài khoản Enterprise chính chủ • Bảo mật 100% theo Luật Dữ Liệu 91/2025/QH15 • Sở hữu vĩnh viễn dữ liệu & quy trình.*
-* **Hero Visual:** Mockup giao diện Zalo Copilot mở song song bên cạnh tin nhắn Zalo, minh họa dòng văn bản viết tắt được dịch tự động thành bảng giá PDF Vector Typst có đính kèm mã VietQR trong 8 giây.
+### SECTION 1: HERO SECTION (ĐỈNH CAO ĐỊNH VỊ QUẢN TRỊ)
 
----
-
-### Section 2: Dữ Liệu Thực Chứng & 4 Bất Cập Của GenAI Truyền Thống *(Học hỏi từ FPT Digital + UPTECH)*
-
-#### A. 3 Con số thị trường biết nói (Authority Stats):
-* **50%** quyết định kinh doanh sẽ được AI Agents hỗ trợ hoặc tự động hóa vào năm 2027 *(Gartner)*.
-* **48,8%** doanh nghiệp Việt Nam từng dùng giải pháp Chuyển đổi số rồi **buộc phải dừng lại** do quá phức tạp *(Báo cáo Thường niên CĐS — Bộ KH&ĐT + GIZ)*.
-* **41%** nhà quản lý Việt Nam khó chứng minh hiệu quả tài chính ROI từ AI *(Yandex Ads + YouGov)*.
-
-#### B. 4 Bất cập khiến Doanh nghiệp B2B thất vọng với GenAI thông thường (và Giải pháp Trang Anh AI):
-1. **Bất cập 1 — Ảo giác & Thiếu tin cậy:** LLM tự tính nhẩm giá tiền gây sai lệch số liệu $\rightarrow$ **Trang Anh AI:** Sử dụng *Deterministic SQL Pricing Engine*, cấm LLM tính nhẩm, chuẩn xác 100% đến từng đồng.
-2. **Bất cập 2 — Ngôn ngữ không sát ngành:** AI trả lời chung chung, không hiểu mã hàng kỹ thuật $\rightarrow$ **Trang Anh AI:** *Dual Vectorization (BGE-M3 + BM25)* hiểu sâu TDS, catalogue, tiêu chuẩn QCVN/ASTM.
-3. **Bất cập 3 — Rò rỉ dữ liệu & Rủi ro pháp lý:** Nhân viên dán dữ liệu lên AI công cộng vi phạm Luật 91/2025 $\rightarrow$ **Trang Anh AI:** Triển khai 100% trên *Tài khoản Enterprise chính chủ* của khách hàng.
-4. **Bất cập 4 — Bội thực công cụ, không nối vào luồng:** Mua nhiều tool nhưng nhân viên không dùng $\rightarrow$ **Trang Anh AI:** Căn chỉnh vào đúng thói quen Zalo qua *Zalo Copilot 1-chạm*.
+* **Huy hiệu đầu trang (Eyebrow Badge):**  
+  `🛡️ ĐỐI TÁC ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO HỆ THỐNG AI AGENT VẬN HÀNH B2B`
+* **Tiêu đề chính (Headline H1):**  
+  # Xóa Bỏ Điểm Nghẽn Vận Hành.  
+  # Xây Dựng Cỗ Máy Doanh Nghiệp Tự Chủ Bằng AI Agent Trên Hạ Tầng Chính Chủ.
+* **Tiêu đề phụ (Subheadline H2):**  
+  > *Không bán công cụ rời rạc, không làm hộ rỗng ruột. Trang Anh AI đồng hành số hóa toàn bộ tài sản tri thức doanh nghiệp, tự động hóa hiện diện trên các công cụ Chat AI (ChatGPT, Gemini), căn chỉnh luồng tác nghiệp từ Tiếp thị đến Bán hàng, và trang bị Báo Cáo Quản Trị 1 Trang để Ban Lãnh Đạo làm chủ cỗ máy chỉ sau 4 tuần.*
+* **Nút kêu gọi hành động chính (Primary CTA - Màu Sage Teal `#0D9488`):**  
+  `[ ĐĂNG KÝ KHÁM SỨC KHỎE VẬN HÀNH & LIVE DEMO TRÊN DỮ LIỆU THẬT ]`
+* **Cam kết an toàn & bảo mật (Trust Markers):**  
+  *🔒 Cài đặt 100% trên tài khoản Enterprise chính chủ • Tuân thủ Luật Dữ Liệu 91/2025/QH15 & Luật AI 134/2025/QH15 • Sở hữu vĩnh viễn quy trình & dữ liệu sạch.*
+* **Hình ảnh tương tác trực quan (Hero Visual Mockup):**  
+  Minh họa **Bảng Điều Khiển Vận Hành Đa Tầng (Executive Operations Command Center)** hiển thị sống động 3 kết quả cụ thể:
+  1. *Khối Dữ Liệu:* Kho tri thức đã chuẩn hóa (bảng giá, hồ sơ năng lực, catalogue kỹ thuật).
+  2. *Khối Tác Nghiệp:* Khách hỏi trên AI Search $\rightarrow$ LiveChat 24/7 tiếp nhận $\rightarrow$ Trợ lý kỹ thuật soạn dự toán và báo giá chuẩn xác gửi nhân viên duyệt.
+  3. *Khối Quản Trị:* Báo cáo 1 trang thời gian thực hiển thị doanh số, số khách mới và năng suất tiết kiệm được cho Ban Giám Đốc.
 
 ---
 
-### Section 3: Bức Tranh 3 Nỗi Đau Vận Hành B2B Việt Nam (Market Pain Points)
-1. **Bẫy Mất Đơn Do Báo Giá Chậm:** 68% khách hàng B2B chuyển sang đối thủ vì chờ báo giá quá 30 phút.
-2. **Bẫy Chi Phí Nuôi Người:** Nuôi 1 nhân sự 12tr tiêu tốn 19.3tr/tháng; làm 6 tháng nhảy việc là mất quy trình.
-3. **Bẫy Dữ Liệu Rải Rác:** 90% bảng giá nằm ở file Excel gộp ô rối rắm, catalogue scan mờ và kiến thức "nằm trong đầu" của sếp.
+### SECTION 2: THỰC TRẠNG THỊ TRƯỜNG & 4 BẤT CẬP KHI DÙNG AI TỰ PHÁT
+
+* **Tiêu đề khối (H2):**  
+  ## Tại Sao 48,8% Doanh Nghiệp Từng Ứng Dụng Công Nghệ Buộc Phải Dừng Lại?  
+  *(Nguồn số liệu: Báo cáo Thường niên Chuyển Đổi Số — Bộ Kế Hoạch & Đầu Tư phối hợp cùng Tổ chức GIZ)*
+* **Thông điệp dẫn dắt:** Doanh nghiệp B2B không thiếu công cụ AI (ChatGPT, Copilot, Canva...). Thứ doanh nghiệp đang thiếu là **một nền tảng dữ liệu chuẩn xác** và **một quy trình vận hành gắn kết**. 
+* **Bảng so sánh 4 Bất Cập của AI Truyền Thống vs. Giải Pháp Trang Anh AI:**
+
+| Bất Cập Khiến Doanh Nghiệp Thất Vọng Với AI Tự Phát | Chuẩn Mực Giải Pháp Của TRANG ANH AI |
+|---|---|
+| **1. AI tự bịa thông số & tính nhẩm sai:** LLM tự đoán mã hàng kỹ thuật, tính toán sai đơn giá chiết khấu, gây rủi ro thất thoát hoặc đền hợp đồng. | **Dữ Liệu Chuẩn Xác 100% (Cấm AI Tính Nhẩm):** Toàn bộ phép tính giá và tra cứu thông số được khóa chặt vào cơ sở dữ liệu gốc của công ty. Chính xác tuyệt đối từng đồng. |
+| **2. Tàng hình trên các công cụ Chat AI mới:** Khách hàng B2B ngày nay hỏi ChatGPT, Perplexity để tìm nhà cung ứng, nhưng website của bạn không hề được AI nhắc đến. | **Cỗ Máy Hiện Diện AI Search Tự Động:** Sản xuất các bài viết chuyên gia sâu sắc từ chính dữ liệu của công ty, tối ưu cấu trúc để các công cụ Chat AI trích dẫn thương hiệu của bạn. |
+| **3. Rò rỉ dữ liệu & Nguy cơ pháp lý:** Nhân viên copy bảng giá mật, thông tin khách hàng dán lên các công cụ AI công cộng, đối mặt án phạt theo Luật Dữ Liệu 91/2025. | **Hạ Tầng Enterprise Độc Lập:** Cài đặt trực tiếp trên không gian làm việc chính chủ của doanh nghiệp. Dữ liệu không bao giờ bị lộ ra ngoài hay bị dùng để huấn luyện AI chung. |
+| **4. Bội thực công cụ, nhân viên không dùng:** Mua nhiều phần mềm đắt tiền nhưng nhân viên vẫn quay về nhắn Zalo, gõ Excel thủ công vì công cụ quá phức tạp. | **Nhúng Nhẹ Nhàng Vào Quy Trình Có Sẵn:** AI chuẩn bị sẵn 95% công việc (soạn bài, tra giá, làm dự toán), nhân viên chỉ cần **10 giây kiểm tra và bấm duyệt**. |
 
 ---
 
-### Section 4: Bộ Ba Giải Pháp Đột Phá — Core Value Trang Anh AI
-1. **Zalo Copilot 8 Giây (Human-in-the-loop):** Bóc tách tiếng lóng Zalo, truy vấn SQL giá sỉ/lẻ, xuất PDF Typst vector chuẩn in ấn kèm mã VietQR động trong 8 giây.
-2. **Master RAG Lake (Zero Hallucination Architecture):** 5 lớp số hóa: Unmerge Excel, Multimodal OCR TDS/CO/CQ, Deterministic Pricing, Dual Vectorization và Cross-Encoder Reranking.
-3. **Executive BI Dashboard & Strategic Decision Copilot (M0):** Báo cáo quản trị 1 trang tức thì cho CEO, phát hiện điểm nghẽn doanh thu và mô phỏng kịch bản What-If.
+### SECTION 3: 3 ĐIỂM NGHẼN VẬN HÀNH B2B VIỆT NAM (PAIN POINTS)
+
+* **Tiêu đề khối (H2):**  
+  ## Ba "Lỗ Rò Rỉ Vận Hành" Đang Âm Thầm Bào Mòn Biên Lợi Nhuận Của Doanh Nghiệp
+* **Chi tiết 3 điểm nghẽn thực tế:**
+  1. **Điểm nghẽn 1: Tri thức doanh nghiệp bị "bắt cóc" bởi cá nhân:**  
+     Bảng giá lưu trong máy cá nhân, quy trình kỹ thuật nằm trong đầu người cũ, catalogue rải rác khắp các nhóm chat. Khi một nhân sự kỳ cựu nghỉ việc, doanh nghiệp mất từ 3–6 tháng và hàng chục triệu đồng để tuyển và đào tạo người mới.
+  2. **Điểm nghẽn 2: Mất khách hàng vào tay đối thủ vì phản hồi chậm trễ:**  
+     Khách hỏi bảng giá dự toán hoặc thông số thử nghiệm, nhân viên mất hàng giờ lục tìm file cũ. 68% người mua B2B chọn đơn vị phản hồi chuyên nghiệp đầu tiên; sự chậm trễ đồng nghĩa với việc nhường doanh thu cho đối thủ.
+  3. **Điểm nghẽn 3: Ban Giám Đốc điều hành bằng cảm tính vì thiếu số liệu:**  
+     CEO và Giám đốc Marketing muốn biết hiệu quả các kênh, số lượng khách hỏi và tình hình chốt đơn phải chờ đợi báo cáo tổng hợp thủ công cuối tháng. Thiếu bức tranh số liệu tức thì khiến việc ra quyết định kinh doanh luôn bị trễ nhịp.
 
 ---
 
-### Section 5: Ứng Dụng Thực Tế Theo Ngành B2B (Industry Use-Cases Tabs)
+### SECTION 4: DÂY CHUYỀN 5 NODE VẬN HÀNH B2B KHÉP KÍN (THE 5-NODE INTERACTIVE PIPELINE)
+
+* **Tiêu đề khối (H2):**  
+  ## Dây Chuyền Vận Hành 5 Node Khép Kín: Từ Tri Thức Gốc Đến Doanh Thu Thực Tế
+* **Mô hình trực quan hóa quan hệ giữa 5 Node (Interactive Flowchart):**  
+  Giao diện thể hiện một sơ đồ dòng chảy dữ liệu trực quan kết nối sống động 5 Node, cho phép người dùng click vào từng Node để xem chi tiết dữ liệu vào (Input), bộ máy xử lý (Engine) và kết quả bàn giao (Output):
 
 ```text
-+---------------------------------------------------------------------------------------------------+
-| [ TAB 1: HÓA CHẤT & XỬ LÝ NƯỚC ]  | [ TAB 2: VAN & THIẾT BỊ CƠ ĐIỆN ] | [ TAB 3: ĐA WEBSITE VỆ TINH ]     |
-+---------------------------------------------------------------------------------------------------+
-| • Bóc tách tiếng lóng: "than gd 6-12", "hạt cation C100E", "PAC vàng", "màng RO 8040".          |
-| • Tra cứu tự động TDS, chứng chỉ CO/CQ, bảng kết quả thử nghiệm Quatest trong 5 giây.             |
-| • Tính toán thể tích bồn lọc, lưu lượng m3/h và xuất BOQ vật tư hoàn chỉnh trong 2 phút.          |
-+---------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+|                              SƠ ĐỒ 5 NODE VẬN HÀNH LIỀN MẠCH — TRANG ANH OPERATIONS ENGINE                            |
++-----------------------------------------------------------------------------------------------------------------------+
+| [NODE 1: RAG DATA HUB]       ==> [NODE 2: FLOW CONTENT & GEO]  ==> [NODE 3: TIẾP ĐÓN 24/7 & CRM]                      |
+| • Số hóa Excel gộp ô             • Xuất bản 16-24 bài E-E-A-T      • Chatbot AI tư vấn kỹ thuật 24/7                  |
+| • TDS, Catalogue, Tiêu chuẩn     • Phủ sóng ChatGPT / Gemini       • Thu thập SĐT/Zalo, gắn tag Lead                  |
+| • Khử sạch ảo giác (SQL)         • Chăm sóc 1-3+ Web vệ tinh       • Tự động đồng bộ Deal vào CRM                     |
+|            ||                                                                    ||                                   |
+|            \/                                                                    \/                                   |
+|            ========================> [NODE 4: SALES & BÁO GIÁ NHANH] <============                                    |
+|                                      • Trợ lý lập dự toán BOQ vật tư 2 phút                                           |
+|                                      • Xuất file báo giá PDF Vector + VietQR                                          |
+|                                      • Nhân viên kiểm tra 10s bấm gửi khách                                           |
+|                                                         ||                                                            |
+|                                                         \/                                                            |
+|                                      [NODE 5: EXECUTIVE BI DASHBOARD]                                                 |
+|                                      • Màn hình điều hành 1 trang thời gian thực cho CEO                              |
+|                                      • Nắm bắt: Khách AI Search -> Lead CRM -> Báo giá -> Doanh thu                   |
+|                                      • Tối ưu ngược lại chính sách giá & danh mục Node 1                              |
++-----------------------------------------------------------------------------------------------------------------------+
 ```
 
----
-
-### Section 6: Lộ Trình 4 Tuần: Đồng Hành Kiến Trúc & Chuyển Giao Tự Chủ
-*So sánh tốc độ: FPT Digital (3–6 tháng) vs UPTECH (10–16 tuần) vs **Trang Anh AI (4 Tuần Đồng Hành & Chuyển Giao Trọn Gói)**:*
-
-* **GIAI ĐOẠN 1 (Tuần 1–2): ĐỒNG HÀNH KIẾN TRÚC HẠ TẦNG** *(Trang Anh AI gánh 90% kỹ thuật)*
-  * **Tuần 1:** Audit Dữ Liệu, Unmerge Bảng Giá Excel & Xây Dựng Master RAG Lake (Zero Hallucination).
-  * **Tuần 2:** Cài đặt Hệ Thống Multi-Agent trên Tài Khoản Enterprise Chính Chủ của Khách Hàng.
-* **GIAI ĐOẠN 2 (Tuần 3–4): CĂN CHỈNH LUỒNG & CHUYỂN GIAO TỰ CHỦ** *(Đưa nhân sự vào làm chủ cỗ máy)*
-  * **Tuần 3:** Căn Chỉnh Luồng: Zalo Copilot 8s $\rightarrow$ Chatbot CSKH 24/7 $\rightarrow$ Dashboard CEO.
-  * **Tuần 4:** Đào Tạo 3 Tầng Nhân Sự (Operator, Maintainer, Supervisor) & Bàn Giao SOP Tự Chủ Vận Hành.
+* **Chi tiết 5 Node Vận Hành:**
+  1. **Node 1 — RAG Data Hub (Gốc rễ tri thức):** Nền tảng sống của toàn bộ hệ thống. Gom sạch bảng giá, catalogue, tiêu chuẩn kỹ thuật (ASTM, QCVN, Quatest) vào một nơi, khử sạch hoàn toàn lỗi tính nhẩm của AI.
+  2. **Node 2 — Flow Content & Hiện diện AI Search (Kênh thu hút):** Lấy nhiên liệu từ Node 1 để tự động sản xuất bài viết chuyên gia và đưa thương hiệu xuất hiện khi người mua B2B tìm kiếm trên Google và ChatGPT/Gemini.
+  3. **Node 3 — Tiếp đón 24/7 & Tự động hóa CRM (Bộ lọc & Lưu trữ):** Giữ chân khách truy cập bất kể ngày đêm, tư vấn kỹ thuật chuẩn xác và tự động bắn dữ liệu khách vào CRM (MISA AMIS, Brevo, Google Sheets), không bao giờ để rơi rụng cơ hội.
+  4. **Node 4 — Sales Enablement & Báo giá nhanh (Cỗ máy chốt đơn):** Đội ngũ Sales nhận Lead kèm lịch sử tư vấn. Trợ lý kỹ thuật hỗ trợ lập dự toán BOQ trong 2 phút và xuất báo giá PDF kèm VietQR tức thì, giúp sales chốt deal nhanh gấp 10 lần đối thủ.
+  5. **Node 5 — Executive BI Dashboard (Ban Lãnh Đạo kiểm soát):** Màn hình đo lường dòng chảy doanh thu thực tế, giúp CEO và Marketing Manager ra quyết định dựa trên dữ liệu thật.
 
 ---
 
-### Section 7: Bảng Giá 3 Gói Retainer & "The Ultimate 0-Setup Offer"
+### SECTION 5: ỨNG DỤNG THỰC TẾ THEO NGÀNH B2B (INDUSTRY USE CASES TABS)
 
-| Quyền lợi & Tính năng | GÓI 1: NỀN TẢNG | GÓI 2: TĂNG TRƯỞNG (⭐ Hero) | GÓI 3: TOÀN DIỆN |
+* **Tiêu đề khối (H2):**  
+  ## Giải Pháp Được May Đo Chuẩn Xác Cho Từng Ngành Kỹ Thuật & Công Nghiệp
+* **3 Tab nội dung thực tế:**
+
+#### TAB 1: Ngành Hóa Chất, Vật Liệu Lọc & Xử Lý Nước
+* **Thu hút khách hàng mới:** Khách hàng hỏi ChatGPT *"So sánh than hoạt tính gáo dừa và than đá trong xử lý nước cấp?"* $\rightarrow$ AI trích dẫn bài phân tích kỹ thuật trên website của bạn làm câu trả lời chuẩn.
+* **Hỗ trợ bán hàng:** Khách gửi tin nhắn hỏi nhanh hoặc ảnh chụp tem bao bì $\rightarrow$ Trợ lý đối chiếu tức thì với hồ sơ Quatest, chỉ số Iodine, tự động tính toán thể tích bồn lọc và xuất bảng giá kèm mã thanh toán trong vài giây.
+* **Quản trị:** CEO theo dõi được nhu cầu tìm kiếm của các nhà máy công nghiệp theo từng khu vực.
+
+#### TAB 2: Ngành Van, Thiết Bị Công Nghiệp & Cơ Điện (M&E)
+* **Thu hút khách hàng mới:** Xuất hiện đầu tiên trên các công cụ tìm kiếm khi kỹ sư tra cứu tiêu chuẩn mặt bích DIN, van điều khiển khí nén hoặc thông số chịu áp lực PN16.
+* **Hỗ trợ bán hàng:** Tiếp nhận danh mục yêu cầu dự án gồm hàng chục mã vật tư $\rightarrow$ Tự động bóc tách quy cách, kiểm tra tồn kho và lập **Bảng dự toán chi phí (BOQ)** hoàn chỉnh cho phòng kỹ thuật.
+* **Quản trị:** Nắm bắt tỷ lệ chuyển đổi từ giai đoạn gửi báo giá dự thầu đến khi ký hợp đồng.
+
+#### TAB 3: Doanh Nghiệp Vận Hành Nhiều Website Vệ Tinh (1–3+ Sites)
+* **Bài toán:** Muốn mở rộng độ phủ thị trường bằng 2–3 website vệ tinh nhưng không đủ nhân sự viết bài, lo sợ bị phạt vì nội dung trùng lặp.
+* **Giải pháp Trang Anh AI:** **Mô hình Một Trung Tâm — Đa Chi Nhánh** — Toàn bộ tri thức nằm tại một bộ não tập trung, hệ thống tự động biên tập và phân luồng nội dung độc bản cho từng website theo từng tệp khách hàng riêng biệt. Tiết kiệm 80% chi phí duy trì đội ngũ nội dung.
+
+---
+
+### SECTION 6: LỘ TRÌNH 4 TUẦN ĐỒNG HÀNH & CHUYỂN GIAO TỰ CHỦ (DONE-WITH-YOU)
+
+* **Tiêu đề khối (H2):**  
+  ## Lộ Trình 4 Tuần Đồng Hành: Trang Anh AI Gánh 90% Khối Lượng Kỹ Thuật Ban Đầu
+* **Nội dung 4 cột mốc tuần:**
+  * **Tuần 1 — Khảo Sát & Chuẩn Hóa Dữ Liệu:**  
+    *Trang Anh AI thực hiện:* Tiếp nhận bảng giá Excel, catalogue, tài liệu kỹ thuật; xử lý gỡ gộp ô phức tạp, số hóa dữ liệu thành bộ não tri thức sạch.  
+    *Doanh nghiệp cần làm:* Bàn giao tài liệu hiện có và cử 1 đầu mối đối soát thông tin.
+  * **Tuần 2 — Cài Đặt Hệ Thống Trên Tài Khoản Chính Chủ:**  
+    *Trang Anh AI thực hiện:* Thiết lập cỗ máy trên không gian làm việc Enterprise riêng biệt của khách hàng; cài đặt giọng văn thương hiệu, thiết lập luồng xuất bản bài viết và Chatbot 24/7.
+  * **Tuần 3 — Căn Chỉnh Luồng Vận Hành Thực Tế:**  
+    *Trang Anh AI thực hiện:* Kiểm thử thực tế các tình huống hỏi đáp kỹ thuật, lập bảng dự toán và báo giá; kết nối dữ liệu về màn hình Báo Cáo Quản Trị 1 Trang cho lãnh đạo.
+  * **Tuần 4 — Đào Tạo Nhân Sự & Bàn Giao Quy Trình (SOP):**  
+    *Trang Anh AI thực hiện:* Tổ chức 2 buổi đào tạo thực chiến cho nhân viên tác nghiệp (cách kiểm tra và duyệt việc trong 10 giây) và Ban Giám Đốc (cách khai thác số liệu báo cáo).  
+    *Bàn giao:* Doanh nghiệp chính thức làm chủ 100% hệ thống, ký nghiệm thu chuyển tiếp sang giai đoạn duy trì Retainer.
+
+---
+
+### SECTION 7: BẢNG GIÁ ĐẦU TƯ MINH BẠCH & "THE ULTIMATE 0-SETUP OFFER"
+
+* **Tiêu đề khối (H2):**  
+  ## Chi Phí Đầu Tư Minh Bạch — Đem Lại Giá Trị Vận Hành Vượt Trội
+* **Huy hiệu Ưu đãi Đột phá:**  
+  > 🎁 **THE ULTIMATE 0-SETUP OFFER:** **TẶNG MIỄN PHÍ 100% PHÍ KIẾN TRÚC & CHUYỂN GIAO BAN ĐẦU (TIẾT KIỆM TỚI 35.000.000 Đ)** khi ký Hợp đồng Retainer 06 tháng thu trước theo Quý. Áp dụng giới hạn cho **20 Doanh nghiệp Tiên phong**.
+
+* **Bảng Giá 3 Gói Retainer Chuẩn:**
+
+| Hạng Mục Quyền Lợi & Tính Năng | GÓI 1: NỀN TẢNG (Foundation) | GÓI 2: TĂNG TRƯỞNG (Growth) ⭐ *(Gói Chủ Lực)* | GÓI 3: TOÀN DIỆN (Enterprise) |
 |---|---|---|---|
-| **Phí Retainer Đồng Hành Hàng Tháng** | **12.500.000 đ/tháng** | **24.000.000 đ/tháng** | **41.500.000 đ/tháng** |
-| **Phí Kiến Trúc Master Lake & Chuyển Giao SOP** | ~~20.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** | ~~25.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** | ~~35.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** |
-| **Kỳ hạn HĐ & Thanh toán** | 06 tháng (Thu trước Quý 1: 37.5tr) | 06 tháng (Thu trước Quý 1: 72.0tr) | 06 tháng (Thu trước Quý 1: 124.5tr) |
-| **Quy mô Website Quản trị** | 01 Website chính | **1 – 3 Website vệ tinh tập trung** | 3 – 5+ Website vệ tinh |
-| **Zalo Copilot Báo Giá 8s** | — | **Có (Đầy đủ tính năng báo giá 8s)** | Có (Báo giá 8s + Chiết khấu nâng cao) |
-| **AI Sales & CSKH 24/7** | LiveChat Web cơ bản | **LiveChat Web + Fanpage + Zalo OA** | Toàn kênh đa nền tảng |
-| **Executive BI Dashboard** | Báo cáo tháng | **Dashboard 1 Trang Real-time** | BI Dashboard + Mô phỏng What-If |
-| **Bảo Đảm Hoàn Tiền QBR** | Ngày thứ 75 | **Ngày thứ 75 (Hoàn tiền 100%)** | Ngày thứ 75 (Hoàn tiền 100%) |
-
-* **Banner Đột Phá:**  
-  > 🎁 **THE ULTIMATE 0-SETUP OFFER:** **TẶNG MIỄN PHÍ 100% PHÍ KIẾN TRÚC & CHUYỂN GIAO (TIẾT KIỆM ĐẾN 35 TRIỆU)** khi ký Hợp đồng Retainer 6 tháng thu trước Quý 1. Áp dụng cho **20 Doanh nghiệp Tiên phong**.
-
----
-
-### Section 8: Lá Chắn Pháp Lý & Câu Hỏi Thường Gặp (FAQ Accordion)
-* **Bảo mật tuyệt đối:** Tuân thủ Luật Bảo vệ Dữ liệu Cá nhân **91/2025/QH15** (Nghị định 356/2025/NĐ-CP) và Luật AI **134/2025/QH15**.
-* **FAQ Bẻ Gãy Hoài Nghi:**
-  1. *Nói "Đồng hành kiến trúc & Chuyển giao tự chủ" thì bên tôi có phải làm nhiều việc không?* $\rightarrow$ Không! Trang Anh AI trực tiếp gánh 90% khối lượng kỹ thuật (làm sạch Excel, xây RAG Lake, viết code bóc tách, cài đặt Zalo Copilot). Doanh nghiệp chỉ cần cung cấp file ban đầu và cử nhân sự tham gia 2 buổi nhận bàn giao SOP tại Tuần 4.
-  2. *Dùng Zalo Copilot có bị Zalo khóa tài khoản không?* $\rightarrow$ Không! Hoạt động ở tầng Desktop Shortcut, không can thiệp API ngầm.
-  3. *Nếu bảng giá Excel gộp ô phức tạp AI có đọc sai không?* $\rightarrow$ Không! Chuyển đổi thành Deterministic SQL Database, chính xác 100%.
-  4. *Chính sách Cam kết Hoàn tiền Ngày 75 (QBR) thế nào?* $\rightarrow$ Không tiết kiệm $\ge 30$ giờ/tháng $\rightarrow$ Hoàn tiền 100% phí tháng tiếp theo, khách giữ vĩnh viễn dữ liệu đã làm sạch.
+| **Mức Phí Đầu Tư Vận Hành / Tháng** | **12.500.000 VNĐ** | **24.000.000 VNĐ** | **41.500.000 VNĐ** |
+| **Phí Kiến Trúc Ban Đầu & SOP** | ~~20.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** | ~~25.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** | ~~35.000.000 đ~~ $\rightarrow$ **MIỄN PHÍ** |
+| **Kỳ hạn HĐ & Thanh toán Quý 1** | **37.500.000 VNĐ** *(03 tháng)* | **72.000.000 VNĐ** *(03 tháng)* | **124.500.000 VNĐ** *(03 tháng)* |
+| **Quy mô Website Vận Hành** | 01 Website chính | **1 – 3 Website vệ tinh tập trung** | 3 – 5+ Website vệ tinh |
+| **Hiện Diện Trên Chat AI & Bài Viết** | 8 – 12 bài chuyên sâu / tháng | **16 – 24 bài chuyên sâu đa site** | 30+ bài + Tài liệu kỹ thuật chuyên biệt |
+| **Bộ Não Tri Thức Số Doanh Nghiệp** | Cập nhật định kỳ hàng tháng | **Cập nhật Real-time + Đa kênh** | Master Lake toàn diện + Tra cứu đa tầng |
+| **AI Tư Vấn Khách Hàng 24/7** | LiveChat Web cơ bản | **LiveChat Web + Fanpage + Zalo OA** | Hệ thống CSKH Đa kênh hoàn chỉnh |
+| **Trợ Lý Dự Toán & Báo Giá** | — | **Có (Dự toán BOQ & Báo giá chuẩn)** | Dự toán BOQ nâng cao + Hồ sơ thầu |
+| **Báo Cáo Quản Trị 1 Trang (CEO)** | Báo cáo tóm tắt hàng tháng | **Dashboard 1 Trang Real-time** | Dashboard Quản trị + Mô phỏng kịch bản |
+| **Bảo Đảm Hoàn Tiền Ngày 75 (QBR)** | Có | **Cam kết hoàn tiền 100%** | Cam kết hoàn tiền 100% |
+| **Quy đổi giá trị nhân sự tương đương** | ~1 Nhân viên Content (13.5tr/tháng) | ~1 Sales Admin + 1 Content + 1 SEO (~35tr/tháng) | Cả phòng Kỹ thuật + Marketing + Thầu (~70tr/tháng) |
 
 ---
 
-### Section 9: Form Đăng Ký Khám Sức Khỏe Vận Hành (Final Lead Capture)
-* **Form Fields:**
-  1. *Họ và Tên Quản lý / Giám đốc* (Bắt buộc)
-  2. *Số điện thoại / Zalo kết nối* (Bắt buộc)
-  3. *Tên Doanh nghiệp & Ngành nghề B2B* (Bắt buộc)
-  4. *Số lượng website hoặc quy mô đội Sales* (Dropdown nhanh)
-* **Nút bấm CTA (Màu Sage Teal `#0D9488`):** `[ GỬI THÔNG TIN — NHẬN BÁO CÁO AUDIT & ĐẶT LỊCH LIVE DEMO ]`
-* **Micro-copy Bảo mật:** *🔒 Bảo mật 100% theo tiêu chuẩn ISO 27001 và Luật 91/2025/QH15.*
+### SECTION 8: MINH BẠCH PHÁP LÝ & GIẢI ĐÁP BĂN KHOĂN (FAQ)
+
+* **Tiêu đề khối (H2):**  
+  ## Minh Bạch Pháp Lý & Giải Đáp Băn Khoăn Của Nhà Quản Trị
+* **4 Câu hỏi giải tỏa rào cản tâm lý:**
+  1. *Dữ liệu nội bộ và bí mật kinh doanh của công ty tôi có bị rò rỉ hoặc bị chia sẻ cho bên ngoài không?*  
+     $\rightarrow$ **Tuyệt đối an toàn.** Hệ thống được thiết lập hoàn toàn trên tài khoản Enterprise chính chủ của doanh nghiệp bạn. Mọi dữ liệu khách hàng, bảng giá và công thức kỹ thuật đều được mã hóa và bảo vệ theo tiêu chuẩn của **Luật Dữ Liệu 91/2025/QH15**. Doanh nghiệp sở hữu vĩnh viễn toàn bộ dữ liệu và quy trình đã chuẩn hóa.
+  2. *Nói là "Đồng hành kiến trúc" thì phía doanh nghiệp tôi có phải cử người làm nhiều việc kỹ thuật phức tạp không?*  
+     $\rightarrow$ **Không.** Trang Anh AI trực tiếp thực hiện 90% khối lượng công việc nặng nhọc nhất trong 4 tuần đầu (làm sạch file, cài đặt hệ thống, kết nối luồng). Nhân sự của bạn chỉ cần cung cấp file mẫu và tham gia 2 buổi nhận bàn giao quy trình ở tuần thứ 4. Quy trình tác nghiệp hàng ngày được thiết kế sao cho nhân viên chỉ cần **10 giây để kiểm tra và bấm duyệt**.
+  3. *Làm sao Ban Giám Đốc đo lường được hiệu quả thực tế (ROI) sau khi đưa hệ thống vào hoạt động?*  
+     $\rightarrow$ Hiệu quả được chứng minh bằng các con số thực tế ngay trên Báo Cáo Quản Trị 1 Trang: (1) Số lượng khách hàng tiềm năng đến từ các công cụ tìm kiếm và Chat AI; (2) Số giờ công lao động được giải phóng cho đội ngũ bán hàng và kỹ thuật; (3) Tốc độ phản hồi báo giá rút ngắn từ nhiều giờ xuống còn vài giây.
+  4. *Chính sách Cam Kết Đánh Giá Quý Ngày 75 (QBR) và Hoàn tiền được thực hiện thế nào?*  
+     $\rightarrow$ Vào ngày thứ 75 của hợp đồng, hai bên tổ chức buổi họp đánh giá kết quả thực tế. Nếu hệ thống không giúp tiết kiệm tối thiểu 30 giờ công lao động mỗi tháng hoặc không đạt được các tiêu chuẩn vận hành đã thống nhất, Trang Anh AI cam kết **hoàn trả 100% chi phí dịch vụ của tháng tiếp theo**, và doanh nghiệp vẫn giữ lại toàn bộ cơ sở dữ liệu đã được làm sạch.
 
 ---
 
-## 💻 5. KIẾN TRÚC CÔNG NGHỆ THỰC THI (TECH STACK)
+### SECTION 9: FORM ĐĂNG KÝ AUDIT & TRẢI NGHIỆM LIVE DEMO (FINAL CTA)
 
-* **Frontend:** Next.js 14+ (App Router, Server Components) + Tailwind CSS + Lucide Icons + Framer Motion.
-* **Tốc độ Core Web Vitals:** LCP $< 1.2\text{s}$, FID/INP $< 100\text{ms}$, CLS $< 0.05$ (Điểm PageSpeed $\ge 95$).
-* **SEO & GEO Schema:** Cấu trúc JSON-LD (`Organization`, `ProfessionalService`, `Product`, `FAQPage`) tối ưu trích dẫn AI Search (ChatGPT, Gemini, Perplexity).
-* **Form & Webhook:** React Hook Form + Zod validation $\rightarrow$ API Route `/api/leads` $\rightarrow$ Webhook tự động đồng bộ CRM (MISA AMIS / Brevo) và gửi thông báo Telegram Admin tức thì trong 3 giây.
+* **Tiêu đề khối (H2):**  
+  ## Đăng Ký Khám Sức Khỏe Vận Hành & Trải Nghiệm Live Demo 45 Phút
+* **Lời dẫn:**  
+  > *Nhận báo cáo phân tích các điểm nghẽn dữ liệu thực tế tại doanh nghiệp của bạn và trực tiếp chứng kiến cỗ máy AI xử lý tài liệu, bóc tách thông số kỹ thuật ngay trên màn hình.*
+* **Form Đăng ký 4 Trường Tinh Gọn:**
+  1. *Họ và Tên Lãnh đạo / Người đại diện:* (Bắt buộc)
+  2. *Số điện thoại / Zalo kết nối:* (Bắt buộc)
+  3. *Tên Doanh nghiệp & Ngành nghề kinh doanh:* (Bắt buộc)
+  4. *Quy mô hiện tại (Số lượng nhân sự / Số lượng website):* (Dropdown chọn nhanh)
+* **Nút bấm CTA nổi bật (Màu Sage Teal `#0D9488`):**  
+  `[ GỬI THÔNG TIN — NHẬN BÁO CÁO AUDIT & ĐẶT LỊCH LIVE DEMO ]`
+* **Cam kết bảo mật dưới chân form:**  
+  *🔒 Thông tin của bạn được cam kết bảo mật 100% theo tiêu chuẩn Luật 91/2025/QH15. Chuyên gia của Trang Anh AI sẽ liên hệ xác nhận lịch trong vòng 2 giờ làm việc.*
 
 ---
 
-## 📅 6. LỘ TRÌNH 4 SPRINT TRIỂN KHAI
+## 💻 5. THIẾT KẾ KỸ THUẬT & TRẢI NGHIỆM NGƯỜI DÙNG (TECH & UX SPECIFICATIONS)
 
-| Sprint | Thời gian | Nội dung triển khai chính | Tiêu chí hoàn thành (Deliverable) |
+* **Nền tảng công nghệ:** Next.js 14+ (App Router, Server Components) + Tailwind CSS + Lucide Icons + Framer Motion.
+* **Tốc độ tải trang & Trải nghiệm (Core Web Vitals):** Điểm PageSpeed $\ge 95$ trên cả Desktop và Mobile; LCP $< 1.2\text{s}$, FID/INP $< 100\text{ms}$, CLS $< 0.05$.
+* **Tối ưu hiển thị In-App:** Tương thích hoàn hảo khi người dùng mở link từ Zalo, Facebook Messenger hoặc LinkedIn (không bị lỗi layout hay vỡ form).
+* **Tự động hóa luồng dữ liệu (Data Pipeline):** Dữ liệu từ form đăng ký được gửi qua API Route `/api/leads`, tự động bắn thông báo tức thì về Telegram Admin trong 3 giây và đồng bộ vào hệ thống CRM/Email Marketing.
+
+---
+
+## 📅 6. KẾ HOẠCH TRIỂN KHAI 4 SPRINT LẬP TRÌNH
+
+| Sprint | Thời Gian | Mục Tiêu Triển Khai | Kết Quả Bàn Giao (Deliverable) |
 |---|---|---|---|
-| **Sprint 1** | 2 ngày | Khởi tạo Next.js App, cấu hình Tailwind Tokens (`#1E293B`, `#4F46E5`, `#0D9488`), Layout Header/Footer. | Khung repo sạch & Brand theme chuẩn |
-| **Sprint 2** | 3 ngày | Dựng Hero tương tác, Bảng 4 Bất cập GenAI, Bảng nỗi đau, 3 Trụ cột, Tab Ngành B2B, Lộ trình 4 tuần, Bảng giá 3 gói và FAQ. | Toàn bộ giao diện Desktop & Mobile hoàn chỉnh |
-| **Sprint 3** | 2 ngày | Lập trình Lead Form, Honeypot chống spam, API Route `/api/leads`, Webhook bắn CRM & Email tự động qua Resend. | Luồng thu Lead & Automation kích hoạt 100% |
-| **Sprint 4** | 2 ngày | Audit CRO 25 tiêu chí, kiểm thử Zalo In-App Browser, tối ưu Core Web Vitals $\ge 95$ và trỏ Domain chính thức. | Landing Page chính thức xuất bản |
+| **Sprint 1** | 2 ngày | Khởi tạo dự án Next.js, cấu hình Brand Theme (Deep Slate `#1E293B`, AI Blue `#4F46E5`, Sage Teal `#0D9488`), Layout Header/Footer chuẩn mực. | Khung giao diện sạch & Brand Tokens chuẩn |
+| **Sprint 2** | 3 ngày | Lập trình giao diện 9 Section: Hero tương tác, Bảng 4 bất cập, 3 Trụ cột vận hành, Tabs ngành B2B, Lộ trình 4 tuần, Bảng giá và FAQ. | Toàn bộ giao diện tương tác Desktop & Mobile |
+| **Sprint 3** | 2 ngày | Lập trình Form thu thập Lead, cơ chế chống spam (Honeypot), API Route xử lý webhook gửi Telegram Admin và đồng bộ CRM. | Luồng tiếp nhận Lead vận hành trơn tru |
+| **Sprint 4** | 2 ngày | Rà soát 25 tiêu chuẩn tối ưu chuyển đổi (CRO), kiểm thử hiển thị trên trình duyệt Zalo Mobile, kiểm tra Core Web Vitals $\ge 95$, trỏ tên miền chính thức. | Landing Page chính thức phát hành |
 
 ---
-*Kế hoạch được cập nhật định vị mới bởi **TRANG ANH AI** — Sẵn sàng tiến hành lập trình mã nguồn.*
+*Kế hoạch đã được chuẩn hóa toàn diện theo tư duy quản trị kinh doanh bởi **TRANG ANH AI** — Sẵn sàng cho giai đoạn lập trình mã nguồn.*

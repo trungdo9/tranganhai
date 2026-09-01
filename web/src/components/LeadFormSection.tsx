@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, ShieldCheck, Sparkles, Clock, Lock, MessageCircle, PhoneCall, ArrowRight } from "lucide-react";
+import { Send, CheckCircle2, ShieldCheck, Sparkles, Lock, MessageCircle, PhoneCall, ArrowRight } from "lucide-react";
 
 export default function LeadFormSection() {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
     company: "",
-    industry: "Hóa chất / Môi trường",
-    websiteCount: "1 - 3 Website",
+    industry: "Hóa chất / Môi trường / Nước",
+    websiteCount: "1 Website chính",
     honeypot: "",
   });
 
@@ -39,7 +39,7 @@ export default function LeadFormSection() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setErrorMsg("Có lỗi xảy ra trong quá trình gửi. Vui lòng thử lại hoặc gọi trực tiếp.");
+        setErrorMsg("Có lỗi xảy ra trong quá trình gửi. Vui lòng thử lại hoặc liên hệ Hotline.");
       }
     } catch (err) {
       setErrorMsg("Kết nối mạng không ổn định. Vui lòng thử lại.");
@@ -49,45 +49,45 @@ export default function LeadFormSection() {
   };
 
   return (
-    <section id="dang-ky" className="py-14 sm:py-20 bg-gradient-to-b from-[#F8FAFC] to-[#EEF2F6]">
+    <section id="dang-ky" className="py-16 sm:py-24 bg-gradient-to-b from-[#F8FAFC] to-[#EEF2F6]">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-2xl shadow-slate-200/60 text-left">
+        <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 shadow-lg shadow-slate-200/50 text-left">
           
           {/* Header */}
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-black text-[#0D9488] border border-emerald-200 mb-3">
-              <Sparkles className="h-4 w-4" />
-              <span>TÀI TRỢ MIỄN PHÍ 100% PHÍ THIẾT LẬP (TIẾT KIỆM 35 TRIỆU)</span>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-bold text-[#0D9488] border border-emerald-200/70 mb-3">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>THE ULTIMATE 0-SETUP OFFER: TẶNG 100% PHÍ THIẾT LẬP (TIẾT KIỆM ĐẾN 35 TRIỆU)</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#1E293B] tracking-tight">
-              Đăng Ký Khảo Sát Quy Trình Vận Hành & Live Demo
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E293B] tracking-tight">
+              Đăng Ký Khám Sức Khỏe Vận Hành & Live Demo 45 Phút
             </h2>
-            <p className="mt-2 text-xs sm:text-sm text-slate-600">
-              Trang Anh sẽ phân tích trực tiếp trên <strong>file Excel và đoạn chat Zalo mẫu</strong> của doanh nghiệp bạn trong 45 phút.
+            <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Nhận báo cáo phân tích các điểm nghẽn dữ liệu thực tế tại doanh nghiệp của bạn và trực tiếp chứng kiến cỗ máy AI xử lý tài liệu, bóc tách thông số kỹ thuật ngay trên dữ liệu mẫu của bạn.
             </p>
             
             {/* Scarcity Badge */}
-            <div className="mt-3 inline-block rounded-lg bg-amber-50 px-3 py-1 text-xs font-bold text-amber-800 border border-amber-200">
-              🔥 Ưu đãi The Ultimate 0-Setup: <strong>Chỉ còn 6 suất</strong> ưu tiên trong tháng này.
+            <div className="mt-3.5 inline-block rounded-lg bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800 border border-amber-200/80">
+              🔥 Ưu đãi The Ultimate 0-Setup: Giới hạn chỉ còn <strong>6 suất ưu tiên</strong> trong tháng này.
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left: Quick Zalo Contact Option */}
-            <div className="lg:col-span-5 rounded-2xl bg-[#F8FAFC] p-6 border border-slate-200 text-left space-y-4">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600">
+            {/* Left: Direct Expert Connect */}
+            <div className="lg:col-span-5 rounded-2xl bg-[#F8FAFC] p-6 border border-slate-200/80 text-left space-y-4">
+              <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#4F46E5]">
                 <MessageCircle className="h-4 w-4" />
-                <span>KẾT NỐI TRỰC TIẾP KỸ SƯ</span>
+                <span>KẾT NỐI TRỰC TIẾP CHUYÊN GIA</span>
               </div>
               
-              <h3 className="text-lg font-bold text-[#1E293B]">
-                Ngại Điền Form? Chat Zalo Ngay Để Gửi File Dò Thử!
+              <h3 className="text-base sm:text-lg font-bold text-[#1E293B]">
+                Ngại Điền Form? Kết Nối Trực Tiếp Chuyên Gia Chiến Lược!
               </h3>
               
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Gửi thẳng 1 trang bảng giá Excel hoặc hình chụp catalogue qua Zalo. Kỹ sư Trang Anh sẽ bóc tách và gửi lại bản Demo Báo Giá trong 5 phút.
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Gửi 1 trang bảng giá hoặc tài liệu kỹ thuật mẫu qua Zalo. Chuyên gia của Trang Anh sẽ phân tích nhanh các điểm nghẽn dữ liệu và gửi lại góc nhìn giải pháp trong vòng 15 phút.
               </p>
 
               <div className="space-y-2.5 pt-2">
@@ -95,42 +95,42 @@ export default function LeadFormSection() {
                   href="https://zalo.me"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#0068FF] py-3 text-xs sm:text-sm font-black text-white shadow hover:bg-[#0052cc] transition-all"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#0068FF] py-3 text-xs sm:text-sm font-bold text-white shadow-xs hover:bg-[#0052cc] transition-all"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  <span>Chat Zalo Với Kỹ Sư Trưởng</span>
+                  <span>Chat Zalo Với Chuyên Gia</span>
                 </a>
 
                 <a
                   href="tel:0912345678"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-white border border-slate-300 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-white border border-slate-300 py-3 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all shadow-xs"
                 >
                   <PhoneCall className="h-4 w-4 text-[#0D9488]" />
-                  <span>Gọi Hotline: 0912 345 678</span>
+                  <span>Hotline: 0912 345 678</span>
                 </a>
               </div>
 
               <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-                <p>✓ Phản hồi trong vòng 5 phút trên Zalo</p>
-                <p>✓ Bảo mật 100% theo Luật Dữ Liệu 91/2025</p>
-                <p>✓ Không spam, không chèo kéo</p>
+                <p>✓ Phản hồi nhanh chóng qua Zalo</p>
+                <p>✓ Cam kết bảo mật 100% theo Luật Dữ Liệu 91/2025</p>
+                <p>✓ Tư vấn đúng trọng tâm, không chèo kéo</p>
               </div>
             </div>
 
             {/* Right: Registration Form */}
             <div className="lg:col-span-7">
               {submitted ? (
-                <div className="rounded-2xl bg-emerald-50 p-8 text-center border border-emerald-200">
+                <div className="rounded-2xl bg-emerald-50/80 p-8 text-center border border-emerald-200">
                   <CheckCircle2 className="mx-auto h-12 w-12 text-[#0D9488] mb-3" />
-                  <h3 className="text-xl font-bold text-emerald-950 mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-emerald-950 mb-2">
                     Đăng Ký Thành Công!
                   </h3>
                   <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto leading-relaxed">
-                    Cảm ơn <strong>{formData.fullName}</strong>. Kỹ sư tư vấn của Trang Anh sẽ liên hệ qua Zalo số <strong>{formData.phone}</strong> trong vòng 2 giờ để gửi Bản Khảo Sát Quy Trình và chốt lịch Live Demo.
+                    Cảm ơn <strong>{formData.fullName}</strong>. Chuyên gia tư vấn của Trang Anh AI sẽ liên hệ qua Zalo/SĐT <strong>{formData.phone}</strong> trong vòng 2 giờ làm việc để xác nhận thông tin và gửi lịch hẹn Live Demo 45 phút.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3.5">
                   {/* Honeypot field (hidden from humans) */}
                   <div className="hidden" aria-hidden="true">
                     <input
@@ -145,15 +145,15 @@ export default function LeadFormSection() {
 
                   {/* Full Name */}
                   <div>
-                    <label className="block text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-1">
-                      Họ và Tên Quản lý / Giám đốc <span className="text-rose-500">*</span>
+                    <label className="block text-xs font-semibold text-[#1E293B] uppercase tracking-wide mb-1">
+                      Họ và Tên Lãnh đạo / Người đại diện <span className="text-rose-500">*</span>
                     </label>
                     <input
                       type="text"
                       placeholder="Ví dụ: Nguyễn Văn Tuấn (Giám đốc)"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all"
+                      className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all bg-white"
                       required
                     />
                   </div>
@@ -161,7 +161,7 @@ export default function LeadFormSection() {
                   {/* Phone / Zalo */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-1">
+                      <label className="block text-xs font-semibold text-[#1E293B] uppercase tracking-wide mb-1">
                         Số Điện Thoại / Zalo <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -169,13 +169,13 @@ export default function LeadFormSection() {
                         placeholder="Ví dụ: 0912 345 678"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all"
+                        className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all bg-white"
                         required
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-1">
+                      <label className="block text-xs font-semibold text-[#1E293B] uppercase tracking-wide mb-1">
                         Tên Doanh Nghiệp <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -183,7 +183,7 @@ export default function LeadFormSection() {
                         placeholder="Ví dụ: Thiết bị Nước Xuyên Việt"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all"
+                        className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs sm:text-sm text-[#1E293B] focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all bg-white"
                         required
                       />
                     </div>
@@ -192,7 +192,7 @@ export default function LeadFormSection() {
                   {/* Industry & Website Scale */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-1">
+                      <label className="block text-xs font-semibold text-[#1E293B] uppercase tracking-wide mb-1">
                         Lĩnh vực hoạt động
                       </label>
                       <select
@@ -202,14 +202,15 @@ export default function LeadFormSection() {
                       >
                         <option value="Hóa chất / Môi trường / Nước">Hóa chất / Môi trường / Lọc nước</option>
                         <option value="Van vòi / Đường ống / M&E">Van công nghiệp / Co ống / M&E</option>
-                        <option value="Thiết bị điện & Cơ khí">Thiết bị điện & Tự động hóa</option>
+                        <option value="Thiết bị điện & Tự động hóa">Thiết bị điện & Tự động hóa</option>
+                        <option value="Cơ khí & Sản xuất gia công">Cơ khí & Sản xuất gia công</option>
                         <option value="Vật tư công nghiệp khác">Vật tư công nghiệp khác</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-1">
-                        Số lượng Website hiện có
+                      <label className="block text-xs font-semibold text-[#1E293B] uppercase tracking-wide mb-1">
+                        Quy mô Website hiện có
                       </label>
                       <select
                         value={formData.websiteCount}
@@ -235,17 +236,17 @@ export default function LeadFormSection() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#0D9488] py-3.5 text-xs sm:text-sm font-bold text-white shadow-teal hover:bg-[#0f766e] hover:shadow-xl transition-all disabled:opacity-50 active:scale-95 cursor-pointer"
+                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#0D9488] py-3.5 text-xs sm:text-sm font-semibold text-white shadow-sm hover:bg-[#0f766e] transition-all disabled:opacity-50 active:scale-95 cursor-pointer"
                     >
                       <Send className="h-4 w-4" />
-                      <span>{loading ? "Đang Gửi Dữ Liệu..." : "GỬI THÔNG TIN — NHẬN BÁO CÁO KHẢO SÁT MIỄN PHÍ"}</span>
+                      <span>{loading ? "Đang Gửi Dữ Liệu..." : "GỬI THÔNG TIN — NHẬN BÁO CÁO AUDIT & ĐẶT LỊCH LIVE DEMO"}</span>
                     </button>
                   </div>
 
                   {/* Security guarantee */}
                   <div className="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1">
                     <Lock className="h-3 w-3 text-slate-400" />
-                    <span>Cam kết bảo mật dữ liệu theo Luật 91/2025/QH15. Không làm phiền.</span>
+                    <span>Cam kết bảo mật dữ liệu 100% theo Luật 91/2025/QH15.</span>
                   </div>
                 </form>
               )}

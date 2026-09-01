@@ -1,69 +1,70 @@
 "use client";
 
 import React from "react";
-import { Clock, Users, Database, ArrowDownRight, TrendingDown } from "lucide-react";
+import { Clock, Users, Database, ArrowDownRight, TrendingDown, AlertCircle } from "lucide-react";
 
 export default function PainPointsSection() {
   const pains = [
     {
+      icon: Database,
+      badge: "ĐỨT GÃY DỮ LIỆU",
+      stat: "Mất 3–6 Tháng",
+      title: "1. Tri Thức Bị 'Bắt Cóc' Bởi Cá Nhân",
+      desc: "Bảng giá, quy trình lưu máy cá nhân. Người cũ nghỉ việc → Mất 3–6 tháng đào tạo lại từ đầu.",
+    },
+    {
       icon: Clock,
-      badge: "MẤT ĐƠN HÀNG",
-      stat: "68% Rời Đi",
-      title: "Chậm 30 Phút Là Mất Khách",
-      desc: "Khách hỏi giá trên Zalo lúc 9h sáng. Sales loay hoay mở Excel dò giá, tính chiết khấu đến 9h30 mới gửi thì khách đã chốt bên khác.",
+      badge: "MẤT ĐƠN VÀO ĐỐI THỦ",
+      stat: "68% Khách Rời Đi",
+      title: "2. Mất Khách Vì Phản Hồi Chậm Trễ",
+      desc: "68% người mua B2B chọn bên báo giá đầu tiên. Nhân viên lục tìm file cả giờ → Nhường đơn cho đối thủ.",
     },
     {
       icon: Users,
-      badge: "LÃNG PHÍ QUỸ LƯƠNG",
-      stat: "19.3Tr / Nhân Sự",
-      title: "Nuôi Người Đắt & Dễ Mất Quy Trình",
-      desc: "Lương 12tr thực chi 19.3tr (BHXH, quản lý, thiết bị). Đào tạo 6 tháng vừa thạo việc thì nghỉ, mang theo toàn bộ khách và dữ liệu.",
-    },
-    {
-      icon: Database,
-      badge: "DỮ LIỆU TẢN MÁC",
-      stat: "90% Trong Đầu Sếp",
-      title: "Sếp Đi Vắng Là Cả Công Ty Đình Trệ",
-      desc: "Bảng giá nằm ở file Excel gộp ô rối rắm, catalogue scan mờ. Chỉ có sếp mới nhớ giá chiết khấu, nhân viên không dám tự chốt.",
+      badge: "THIẾU KIỂM SOÁT",
+      stat: "Trễ Quyết Định",
+      title: "3. Ban Lãnh Đạo Điều Hành Bằng Cảm Tính",
+      desc: "Chờ báo cáo thủ công cuối tháng. Thiếu số liệu thời gian thực → Quyết định kinh doanh luôn trễ nhịp.",
     },
   ];
 
   return (
-    <section className="py-14 sm:py-20 bg-[#1E293B] text-white">
+    <section className="py-16 sm:py-24 bg-[#1E293B] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="rounded-full bg-rose-500/20 px-3.5 py-1 text-xs font-bold text-rose-300 border border-rose-500/30 uppercase">
-            3 NÚT THẮT DÒNG TIỀN B2B
-          </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-            Doanh Nghiệp Đang Mất Tiền Ở Đâu?
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/10 px-3.5 py-1 text-xs font-semibold text-rose-300 border border-rose-500/20 uppercase tracking-wider">
+            <AlertCircle className="h-3.5 w-3.5 text-rose-400" />
+            <span>3 ĐIỂM NGHẼN VẬN HÀNH B2B</span>
+          </div>
+          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+            Ba "Lỗ Rò Rỉ Vận Hành" Âm Thầm Bào Mòn Lợi Nhuận
           </h2>
-          <p className="mt-2 text-slate-300 text-sm">
-            Những điểm nghẽn âm thầm bào mòn lợi nhuận mỗi ngày mà báo cáo tài chính không thể hiện.
+          <p className="mt-3 text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
+            Những điểm nghẽn thực tế khiến doanh nghiệp SME thất thoát doanh thu mỗi ngày.
           </p>
         </div>
 
-        {/* 3 Pain Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* 3 Pain Cards - Clean Dark Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
           {pains.map((p, idx) => {
             const Icon = p.icon;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-700 bg-slate-800/80 p-6 text-left flex flex-col justify-between hover:border-slate-500 transition-all"
+                className="rounded-2xl border border-slate-700/80 bg-slate-800/60 p-6 text-left flex flex-col justify-between hover:border-slate-600 transition-all shadow-xs"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-500/20 text-rose-400">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/15 text-rose-400">
+                      <Icon className="h-4 w-4" />
                     </div>
-                    <span className="rounded-md bg-rose-500/10 px-2.5 py-1 text-xs font-black text-rose-400 border border-rose-500/20">
+                    <span className="rounded-md bg-rose-500/10 px-2.5 py-1 text-xs font-semibold text-rose-300 border border-rose-500/20">
                       {p.stat}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-white mb-2 leading-snug">
                     {p.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
@@ -75,43 +76,43 @@ export default function PainPointsSection() {
           })}
         </div>
 
-        {/* VISUAL COST COMPARISON BAR CHART */}
-        <div className="max-w-3xl mx-auto rounded-2xl border border-slate-700 bg-slate-800/90 p-6 sm:p-8">
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-300">
-              📊 SO SÁNH CHI PHÍ VẬN HÀNH THÁNG
+        {/* VISUAL COST COMPARISON BAR CHART - CLEAN STYLING */}
+        <div className="max-w-3xl mx-auto rounded-2xl border border-slate-700/80 bg-slate-800/80 p-6 sm:p-8 text-left shadow-md">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <span className="text-xs font-semibold uppercase tracking-wider text-indigo-300">
+              📊 SO SÁNH CHI PHÍ VẬN HÀNH HÀNG THÁNG
             </span>
-            <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-black text-emerald-300 border border-emerald-500/30">
-              TIẾT KIỆM 58% CHI PHÍ
+            <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-300 border border-emerald-500/25">
+              TIẾT KIỆM ĐẾN 58% CHI PHÍ
             </span>
           </div>
 
-          <div className="space-y-5 text-left">
+          <div className="space-y-5">
             {/* In-House Bar */}
             <div>
-              <div className="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
-                <span className="text-slate-300">Nuôi 3 Nhân Sự In-House (Sales Admin + Kỹ Thuật + IT):</span>
-                <span className="text-rose-400 font-mono text-base">58.500.000 đ/tháng</span>
+              <div className="flex justify-between text-xs sm:text-sm font-semibold mb-1.5">
+                <span className="text-slate-300">Nuôi 3 Nhân Sự In-House (Sales Admin + Kỹ Thuật + Content):</span>
+                <span className="text-rose-400 font-mono text-base font-bold">58.500.000 đ/tháng</span>
               </div>
-              <div className="h-4 w-full rounded-full bg-slate-700 overflow-hidden">
+              <div className="h-3.5 w-full rounded-full bg-slate-700/80 overflow-hidden">
                 <div className="h-full rounded-full bg-rose-500 w-full" />
               </div>
             </div>
 
             {/* Trang Anh Bar */}
             <div>
-              <div className="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
-                <span className="text-emerald-300">Gói Tăng Trưởng Trang Anh (Trọn Gói 4 Tuần & Duy Trì):</span>
+              <div className="flex justify-between text-xs sm:text-sm font-semibold mb-1.5">
+                <span className="text-emerald-300">Hệ Thống Vận Hành Trang Anh AI (Gói Tăng Trưởng):</span>
                 <span className="text-emerald-400 font-mono text-base font-black">24.000.000 đ/tháng</span>
               </div>
-              <div className="h-4 w-full rounded-full bg-slate-700 overflow-hidden">
+              <div className="h-3.5 w-full rounded-full bg-slate-700/80 overflow-hidden">
                 <div className="h-full rounded-full bg-[#0D9488] w-[41%]" />
               </div>
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-slate-700 text-center text-xs text-slate-400 font-medium">
-            💡 Tiết kiệm ngay <strong>34.500.000 đ/tháng</strong> (414 triệu/năm) — Vận hành tự chủ trên hạ tầng chính chủ.
+          <div className="mt-6 pt-4 border-t border-slate-700/80 text-center text-xs text-slate-400 font-normal">
+            💡 Tiết kiệm ngay <strong className="text-white font-semibold">34.500.000 đ/tháng</strong> (tương đương 414 triệu/năm) — Tự chủ cỗ máy trên hạ tầng Enterprise chính chủ.
           </div>
         </div>
 

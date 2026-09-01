@@ -1,0 +1,25 @@
+# robots.txt for https://tranganh.vn
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI Search & Generative Engine Crawlers (GEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://tranganhai.com/sitemap.xml

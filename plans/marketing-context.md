@@ -21,6 +21,7 @@
 > **Nền tảng công nghệ thực thi:** **Antigravity Engine** kết hợp **Google AI Pro (Gemini 1M–2M Context Window, Native Multimodal, Code Execution)**  
 > **Mô hình kinh doanh cốt lõi (Core Business Model):** **Managed AI Agent Operations & Workflow Retainer** (Gói chào hàng đỉnh cao: Miễn phí 100% Setup khi cam kết Retainer 6 tháng thu trước theo Quý).  
 > **Chuẩn mực tuân thủ:** Luật Bảo vệ Dữ liệu Cá nhân **91/2025/QH15** (Nghị định 356/2025/NĐ-CP) & Luật Trí tuệ Nhân tạo **134/2025/QH15**  
+> **Trực tuyến / Domain:** `https://tranganhai.com` | Email: `contact@tranganhai.com`  
 > **Trạng thái tài liệu:** Hub Ngữ Cảnh & Bản Đề Xuất Chiến Lược Hợp Nhất (Single Source of Truth - SSOT)  
 > **Phiên bản cập nhật:** 2026.3.0 (Cập nhật toàn diện tháng 08/2026)  
 

@@ -57,7 +57,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-[#0D9488] shrink-0" />
-                <span>contact@tranganh.vn</span>
+                <span>contact@tranganhai.com</span>
               </div>
             </div>
             

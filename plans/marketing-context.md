@@ -9,7 +9,7 @@
    | | |  _ <  / ___ \| |\  | |_| |  / ___ \| |\  |  _  |  / ___ \ | | 
    |_| |_| \_\/_/   \_\_| \_|\____| /_/   \_\_| \_|_| |_| /_/   \_\___|
   TRANG ANH AI — TRANG BỊ QUY TRÌNH. TINH ANH VẬN HÀNH. (ELITE SYSTEMS. EASY GROWTH.)
-  AI AGENT OPERATIONS & WORKFLOW ALIGNMENT — ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO (DONE-WITH-YOU)
+  AI AGENT OPERATIONS & WORKFLOW ALIGNMENT — ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ (CO-ARCHITECTURE & AUTONOMOUS TRANSFER)
 ======================================================================================================
 ```
 
@@ -129,17 +129,17 @@ graph TD
 
 ---
 
-## 4. MÔ HÌNH DONE-WITH-YOU: ĐỒNG HÀNH & CHUYỂN GIAO NĂNG LỰC VẬN HÀNH
+## 4. MÔ HÌNH THỰC THI: ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO TỰ CHỦ (CO-ARCHITECTURE & AUTONOMOUS TRANSFER)
 
-**TRANG ANH AI không bán phần mềm đóng kín, không bán dịch vụ agency chắp vá. Chúng tôi là Đối tác Kiến trúc Vận hành & Căn chỉnh Luồng Doanh nghiệp bằng AI Agent:**
+**TRANG ANH AI không bán phần mềm bỏ mặc (DIY), không bán dịch vụ agency làm hộ rỗng ruột (DFY). Chúng tôi là Đối tác Đồng hành Kiến trúc Vận hành & Chuyển giao Tự chủ Luồng Doanh nghiệp bằng AI Agent:**
 
 ```mermaid
 graph LR
-    subgraph TrangAnhDWY["QUY TRÌNH 4 BƯỚC ALIGN VẬN HÀNH (DONE-WITH-YOU)"]
+    subgraph TrangAnhTransfer["LỘ TRÌNH 4 BƯỚC: TỪ KIẾN TRÚC ĐẾN CHUYỂN GIAO TỰ CHỦ"]
         D1["<b>TUẦN 1</b><br/>Audit & Xây dựng Master RAG Lake (Zero Hallucination)"]
         D2["<b>TUẦN 2</b><br/>Setup Hệ Thống AI Agent trên Tài Khoản Chính Chủ"]
         D3["<b>TUẦN 3</b><br/>Căn Chỉnh Luồng: Zalo Copilot 8s -> CSKH 24/7 -> Dashboard CEO"]
-        D4["<b>TUẦN 4</b><br/>Đào Tạo 3 Tầng Nhân Sự & Chuyển Giao SOP Vận Hành"]
+        D4["<b>TUẦN 4</b><br/>Đào Tạo 3 Tầng Nhân Sự & Chuyển Giao SOP Tự Chủ Vận Hành"]
         
         D1 --> D2 --> D3 --> D4
     end

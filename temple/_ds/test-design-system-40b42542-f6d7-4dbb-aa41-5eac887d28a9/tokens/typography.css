@@ -1,0 +1,55 @@
+:root{
+  /* Type scale — 1.25 major third, tuned for B2B executive density */
+  --text-2xs:11px;
+  --text-xs:12px;
+  --text-sm:13px;
+  --text-base:15px;
+  --text-md:17px;
+  --text-lg:20px;
+  --text-xl:24px;
+  --text-2xl:30px;
+  --text-3xl:38px;
+  --text-4xl:48px;
+  --text-5xl:60px;
+
+  --leading-tight:1.08;
+  --leading-snug:1.25;
+  --leading-normal:1.5;
+  --leading-relaxed:1.65;
+
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-black:800;
+
+  --tracking-tight:-0.022em;
+  --tracking-snug:-0.012em;
+  --tracking-normal:0em;
+  --tracking-wide:0.06em;
+  --tracking-caps:0.11em;
+
+  /* Semantic roles */
+  --type-hero-size:var(--text-5xl);
+  --type-hero-weight:var(--weight-black);
+  --type-hero-leading:var(--leading-tight);
+  --type-hero-tracking:var(--tracking-tight);
+
+  --type-h2-size:var(--text-3xl);
+  --type-h2-weight:var(--weight-bold);
+  --type-h3-size:var(--text-xl);
+  --type-h3-weight:var(--weight-semibold);
+
+  --type-body-size:var(--text-base);
+  --type-body-leading:var(--leading-relaxed);
+  --type-lead-size:var(--text-md);
+
+  --type-eyebrow-size:var(--text-xs);
+  --type-eyebrow-weight:var(--weight-semibold);
+  --type-eyebrow-tracking:var(--tracking-caps);
+
+  --type-metric-size:var(--text-3xl);
+  --type-metric-weight:var(--weight-bold);
+  --type-metric-family:var(--font-mono);
+}

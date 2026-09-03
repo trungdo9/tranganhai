@@ -8,3 +8,14 @@ plans/**/reports/*-brief-*.md
 web/node_modules/
 web/.next/
 web/out/
+
+# Environment and sensitive keys
+.env
+.env.*
+*.env
+.agents/.env
+.claude/.env
+!*.env.example
+!.agents/.env.example
+
+

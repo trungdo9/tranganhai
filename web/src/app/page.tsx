@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
 import PainPointsSection from "@/components/PainPointsSection";
 import CoreValueSection from "@/components/CoreValueSection";
+import ZaloQuoteWorkflow from "@/components/ZaloQuoteWorkflow";
 import IndustryUseCases from "@/components/IndustryUseCases";
 import WorkflowSection from "@/components/WorkflowSection";
 import PricingSection from "@/components/PricingSection";
@@ -14,35 +14,35 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC]">
-      {/* 1. Sticky Navigation Bar */}
+      {/* Sticky Navigation Bar with Progress Indicator */}
       <Header />
 
       <main className="flex-1">
-        {/* Section 1: Hero Section với Bảng Điều Khiển Vận Hành 3 Tầng (Tri Thức - Tác Nghiệp - Báo Cáo CEO) */}
+        {/* Section 1: Hero Section (2-Column: Value Proposition & Executive BI Dashboard Card) */}
         <HeroSection />
 
-        {/* Section 2: Thực Trạng Thị Trường & 4 Bất Cập Khi Dùng AI Tự Phát */}
-        <StatsSection />
-
-        {/* Section 3: Bức Tranh 3 Điểm Nghẽn Vận Hành B2B & Biểu Đồ So Sánh Chi Phí TCO */}
+        {/* Section 2: Điểm Nghẽn Vận Hành (#leak) - 4 Rò Rỉ Doanh Thu Đối Chiếu Hiện Trạng vs Chuẩn Trang Anh */}
         <PainPointsSection />
 
-        {/* Section 4: Hệ Điều Hành 3 Trụ Cột: Bộ Não Tri Thức & GEO - Luồng Tác Nghiệp - Báo Cáo Quản Trị 1 Trang */}
+        {/* Section 3: Cỗ Máy Vòng Kín 5 Node (#engine) - Interactive Stepper với Agent/Người, Input/Output SLA & Modules */}
         <CoreValueSection />
 
-        {/* Section 5: Ứng Dụng Thực Tế May Đo Cho Từng Ngành B2B (Hóa Chất, M&E, Đa Web) */}
+        {/* Section 4: Workflow Tiêu Biểu M4 (#demo) - Một Dòng Tin Trên Zalo, 8 Giây Sau Có Báo Giá PDF & VietQR */}
+        <ZaloQuoteWorkflow />
+
+        {/* Section 5: May Đo Thực Chiến Theo Ngành B2B (Hóa chất/Xử lý nước, Van M&E, Đa Website) */}
         <IndustryUseCases />
 
-        {/* Section 6: Lộ Trình 4 Tuần Done-With-You: Đồng Hành Kiến Trúc & Chuyển Giao Tự Chủ */}
+        {/* Section 6: Lộ Trình 4 Tuần Co-Architecture (#roadmap) - Trang Anh Gánh 90% Kỹ Thuật, Ban Giám Đốc Quyết 3 Điểm */}
         <WorkflowSection />
 
-        {/* Section 7: Bảng Giá 3 Gói Retainer Minh Bạch & The Ultimate 0-Setup Offer */}
+        {/* Section 7: Đầu Tư Vận Hành (#pricing) - Ba Mức Retainer, Ưu Đãi 0-Setup Miễn 20-35Tr */}
         <PricingSection />
 
-        {/* Section 8: Lá Chắn Pháp Lý & Câu Hỏi Thường Gặp (FAQ) */}
+        {/* Section 8: Minh Bạch & Pháp Lý (#faq) - Những Câu Ban Giám Đốc Hỏi Trước Khi Ký */}
         <LegalFaqSection />
 
-        {/* Section 9: Form Đăng Ký Khám Sức Khỏe Vận Hành & Trải Nghiệm Live Demo 45 Phút */}
+        {/* Section 9: Khám Sức Khỏe Vận Hành (#dang-ky) - 2 Giờ Làm Việc Trên Dữ Liệu Thật Của Doanh Nghiệp */}
         <LeadFormSection />
       </main>
 

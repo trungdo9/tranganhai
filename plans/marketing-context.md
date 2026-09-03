@@ -23,7 +23,7 @@
 > **Chuẩn mực tuân thủ:** Luật Bảo vệ Dữ liệu Cá nhân **91/2025/QH15** (Nghị định 356/2025/NĐ-CP) & Luật Trí tuệ Nhân tạo **134/2025/QH15**  
 > **Trực tuyến / Domain:** `https://tranganhai.com` | Email: `contact@tranganhai.com`  
 > **Trạng thái tài liệu:** Hub Ngữ Cảnh & Bản Đề Xuất Chiến Lược Hợp Nhất (Single Source of Truth - SSOT)  
-> **Phiên bản cập nhật:** 2026.3.0 (Cập nhật toàn diện tháng 08/2026)  
+> **Phiên bản cập nhật:** 2026.3.1 (Tích hợp Bộ Kiến Trúc Phòng Thủ 5 Node & KDD-GEO Benchmark)  
 
 ---
 
@@ -116,7 +116,37 @@ graph LR
 2. **Node 2 (Flow Content & Hiện diện AI Search — Kênh thu hút):** Dùng tri thức từ Node 1 để tự động sản xuất bài viết E-E-A-T chuyên môn sâu và phủ sóng trên Google lẫn các công cụ Chat AI (ChatGPT, Perplexity, Gemini), thu hút khách hàng B2B chất lượng cao vào hệ sinh thái 1–3+ website vệ tinh.
 3. **Node 3 (Tiếp đón 24/7 & Tự động hóa CRM — Giữ chân & Phân loại):** Khách vào website lúc nửa đêm hoặc cuối tuần được Chatbot AI tiếp đón, giải đáp thông số kỹ thuật chính xác từ Node 1. Khi bắt được nhu cầu, hệ thống tự động đẩy dữ liệu vào **CRM** (MISA AMIS, Brevo, Google Sheets), gắn tag và báo ngay cho Sales.
 4. **Node 4 (Sales Enablement & Báo giá nhanh — Chốt đơn thần tốc):** Đội ngũ Sales nhận Lead từ CRM kèm trọn vẹn lịch sử trò chuyện. Trợ lý kỹ thuật hỗ trợ lập Bảng dự toán chi phí (BOQ) trong 2 phút và xuất báo giá PDF Vector có sẵn mã VietQR trong vài giây. Nhân viên kiểm tra 10 giây và bấm gửi, rút ngắn chu kỳ chốt đơn từ vài ngày xuống vài phút.
-5. **Node 5 (Executive BI Dashboard — Kiểm soát & Tối ưu):** Ban Giám Đốc nhìn thấy bức tranh kinh doanh thời gian thực: *Bao nhiêu khách từ AI Search $\rightarrow$ Bao nhiêu Lead trong CRM $\rightarrow$ Tốc độ gửi báo giá $\rightarrow$ Tỷ lệ chốt đơn và Doanh số thực tế*. Số liệu này tiếp tục phản hồi ngược lại Node 1 để doanh nghiệp điều chỉnh chính sách giá và danh mục sản phẩm chủ lực.
+
+### 1.1. BẢN PHẢN BIỆN KIẾN TRÚC & BỘ GIẢI PHÁP PHÒNG THỦ CẤP ĐỘ ENTERPRISE (AI ARCHITECT DEFENSIVE SUITE)
+
+Dựa trên kết quả **Exa Deep Research** (Nghiên cứu KDD 2024 của Đại học Princeton về Generative Engine Optimization, mô hình Semantic Layer của BDB, và kiến trúc Multi-Agent Defense-in-Depth của AWS), Trang Anh AI chủ động phản biện các rủi ro kỹ thuật ngầm và thiết lập 5 tầng phòng thủ kỹ thuật nhằm đảm bảo cỗ máy vận hành ổn định trong môi trường B2B thực tế:
+
+```mermaid
+graph TD
+    subgraph EnterpriseDefense["5 TẦNG PHÒNG THỦ KIẾN TRÚC DOANH NGHIỆP (ENTERPRISE DEFENSE)"]
+        D1["<b>NODE 1: DATA CONTRACT & SCHEMA GUARD</b><br/>• Chống vỡ cấu trúc (Schema Drift) khi đổi file Excel<br/>• Pydantic/Zod Validator + Fallback Alert"]
+        
+        D2["<b>NODE 2: PRINCETON KDD-GEO PROTOCOL</b><br/>• Chống AI Search Penalty & Content Decay<br/>• Bắt buộc 2 bảng thông số thực chứng + Schema TechArticle"]
+        
+        D3["<b>NODE 3: DUAL-LAYER GUARDRAIL & PII REDACTION</b><br/>• Chống Prompt Injection & Cạm bẫy thương lượng giá<br/>• Policy Enforcement + Tự động ẩn danh hóa SĐT/MST"]
+        
+        D4["<b>NODE 4: SLA ESCALATION MATRIX</b><br/>• Chống nghẽn độ trễ duyệt của nhân sự (Reviewer Latency)<br/>• 3 phút nhắc nhở -> 7 phút leo thang cấp quản lý"]
+        
+        D5["<b>NODE 5: EVENT-DRIVEN WEBHOOK & MATERIALIZED VIEW</b><br/>• Chống nghẽn API Rate Limit bên thứ ba (MISA/CRM)<br/>• Dashboard Snapshot tức thì dưới 0.5s trên Mobile"]
+
+        D1 --> D2 --> D3 --> D4 --> D5
+    end
+```
+
+#### Bảng Đối Chiếu Rủi Ro Phản Biện & Giải Pháp Kiến Trúc Nâng Cấp:
+
+| Mắt xích vận hành | Rủi ro kỹ thuật phát hiện qua Phản biện & Nghiên cứu | Giải pháp phòng thủ kỹ thuật của TRANG ANH AI | Cơ sở thực chứng & Tiêu chuẩn |
+|---|---|---|---|
+| **Node 1: RAG Data Lake** | **Rủi ro vỡ cấu trúc (Schema Drift):** Bảng giá Excel B2B thường xuyên đổi mẫu, gộp ô lắt léo, thêm ghi chú ngoại lệ viết tay khiến bot map nhầm cột. | **Data Contract & Pydantic Schema Validation:** Mọi file sau khi giải gộp ô (Unmerge) phải pass bộ kiểm tra toàn vẹn so với snapshot cũ. Nếu độ tin cậy < 98%, bot tự kích hoạt cờ `[CẦN DUYỆT THỦ CÔNG]` gửi về Zalo Admin. | BDB Semantic Layer & Deterministic SQL Architecture |
+| **Node 2: Flow Content & GEO** | **Rủi ro AI Search Penalty & Content Decay:** Các công cụ Chat AI (SearchGPT, Perplexity) sẽ phạt nặng bài viết nhồi nhét từ khóa thiếu số liệu thực nghiệm. | **Princeton KDD-GEO Protocol:** Mỗi bài xuất bản bắt buộc tích hợp tối thiểu 2 bảng thông số kỹ thuật thực chứng (trích từ TDS/Quatest Node 1) + Schema JSON-LD `TechArticle` / `DefinedTerm`. | Nghiên cứu KDD 2024: Cite Sources tăng hiển thị +30-40%, Statistics tăng +22-37% |
+| **Node 3: Tiếp Đón 24/7 & CRM** | **Lỗ hổng Prompt Injection & Cạm bẫy giá:** Khách hàng/đối thủ ép bot đưa ra chiết khấu ngầm hoặc khai thác bí mật biên lợi nhuận. | **Dual-Layer Guardrail & PII Redaction:** Tách lớp kiểm duyệt chính sách (Policy Middleware) trước khi xuất văn bản. Mọi đề xuất chiết khấu vượt khung lập tức chuyển sang Sales Giám Đốc; tự động ẩn danh hóa SĐT/MST trước khi đẩy qua LLM. | AWS Multi-Agent Defense-in-Depth Framework & Luật 91/2025/QH15 |
+| **Node 4: Sales & Báo Giá Nhanh** | **Nghẽn thời gian duyệt của Con người (Reviewer Latency):** Nếu nhân sự bận hoặc đi ngoài đường không bấm duyệt sau 10 giây, lợi thế tốc độ bị phá vỡ. | **SLA Escalation Matrix:** Thiết lập mốc cảnh báo: Sau 3 phút chưa duyệt -> Gửi nhắc việc Zalo cấp 1; Sau 7 phút -> Tự động chuyển quyền duyệt cho Trưởng phòng hoặc gửi trước bản Dự thảo Kỹ thuật (Technical Draft). | Human-in-the-loop SLA Management & Luật AI 134/2025/QH15 |
+| **Node 5: Executive Dashboard** | **Nghẽn API Rate Limit & Độ trễ dữ liệu:** Frontend liên tục gọi API các bên thứ ba (MISA, Brevo, Analytics) gây chậm và nghẽn mạng. | **Event-Driven Webhooks + Materialized Views:** Các sự kiện (Lead mới, Báo giá, QR chốt đơn) đẩy qua Webhook về Database trung gian. Dashboard CEO chỉ đọc Snapshot tổng hợp, mở mobile hiển thị tức thì dưới 0.5 giây. | Event-Driven Architecture & Reactive Real-time BI |
 
 ---
 
@@ -321,6 +351,49 @@ sequenceDiagram
 2. **Khử sạch tiếng lóng & chữ viết tắt:** Tự động hiểu *"than hoat tinh gao dua 6-12"* $\rightarrow$ *Mã hàng: THT-GD-0612, Quy cách: Bao 25kg, Đơn giá: 28.000 đ/kg*.
 3. **Báo giá Vector Typst siêu đẹp có VietQR:** File PDF vector sắc nét chuẩn in ấn, tích hợp sẵn mã VietQR động chứa chính xác số tiền và cú pháp thanh toán đơn hàng.
 4. **Tuân thủ Luật AI 134/2025/QH15:** Luôn có con người kiểm tra (Human-in-the-loop) 2–5 giây trước khi gửi.
+
+---
+
+### 7.3. Bộ Quy Chuẩn Kỹ Thuật Phòng Thủ Cho Từng Node (Technical Defense Protocols)
+
+Nhằm chuyển hóa các luận điểm phản biện kiến trúc thành tiêu chuẩn kỹ thuật có thể kiểm toán được, TRANG ANH AI thiết lập 5 giao thức phòng thủ độc quyền:
+
+```text
++---------------------------------------------------------------------------------------------------+
+|               5 GIAO THỨC PHÒNG THỦ KỸ THUẬT CHO DÂY CHUYỀN 5 NODE (DEFENSE PROTOCOLS)            |
++---------------------------------------------------------------------------------------------------+
+| GIAO THỨC 1 (NODE 1): PYDANTIC DATA CONTRACT & SCHEMA DRIFT GUARD                                 |
+| • Chuyển hóa Excel gộp ô thành Canonical Schema: (sku_id, spec_unit, wholesale_price, moq, note).  |
+| • Kiểm tra tính toàn vẹn (Integrity Check) trước khi nạp CSDL. Nếu sai lệch cấu trúc cột:          |
+|   -> Tự động tạo Diff Report và kích hoạt Fallback Alert qua Zalo Admin, ngăn chặn ô nhiễm dữ liệu.|
+|                                                                                                   |
+| GIAO THỨC 2 (NODE 2): PRINCETON KDD-GEO CITATION PROTOCOL                                         |
+| • Ứng dụng thực chứng từ KDD 2024 (Princeton/Georgia Tech): Khử hoàn toàn bẫy nhồi từ khóa cũ.     |
+| • Bắt buộc mỗi bài viết phải chứa:                                                                |
+|   + Tối thiểu 2 bảng thông số kỹ thuật định lượng (BET surface, Iodine, tiêu chuẩn ASTM/TCVN).    |
+|   + Trích dẫn định danh nguồn dữ liệu gốc (+30% đến +40% visibility trên SearchGPT & Perplexity).  |
+|   + Nhúng Schema JSON-LD TechArticle & DefinedTerm chuẩn W3C.                                     |
+|                                                                                                   |
+| GIAO THỨC 3 (NODE 3): DUAL-LAYER GUARDRAIL & PII REDACTION (AWS DEFENSE PATTERN)                  |
+| • Lớp 1 (Policy Boundary): Khóa cứng biên lợi nhuận sàn. Chặn đứng Prompt Injection ép bot giảm   |
+|   giá sâu. Mọi yêu cầu chiết khấu đặc biệt đều tự động chuyển luồng về Giám đốc Bán hàng.         |
+| • Lớp 2 (PII Redaction): Tự động ẩn danh hóa SĐT, Zalo ID, MST khách hàng trước khi gọi API LLM.  |
+|   Đảm bảo tuân thủ tuyệt đối Luật Dữ Liệu 91/2025/QH15.                                           |
+|                                                                                                   |
+| GIAO THỨC 4 (NODE 4): SLA ESCALATION MATRIX (CHỐNG NGHẼN REVIEWER)                                |
+| • Khắc phục điểm nghẽn con người trong mô hình Human-in-the-loop (Luật AI 134/2025/QH15):        |
+|   + Mốc 0 - 3 phút: Sales nhận thông báo 1-chạm "Duyệt & Bắn báo giá VietQR".                     |
+|   + Mốc 3 - 7 phút: Gửi cảnh báo nhắc việc Zalo cấp 1.                                            |
+|   + Sau 7 phút: Tự động leo thang cấp Trưởng phòng HOẶC gửi bản Dự thảo Thông số Kỹ thuật sơ bộ,   |
+|     cam kết khách hàng không bao giờ bị bỏ rơi quá 10 phút.                                       |
+|                                                                                                   |
+| GIAO THỨC 5 (NODE 5): EVENT-DRIVEN WEBHOOK & MATERIALIZED SNAPSHOTS                               |
+| • Loại bỏ hoàn toàn cơ chế Polling API làm chậm hệ thống và dính Rate Limit của MISA/Brevo/Zalo.  |
+| • Kiến trúc Webhook Event Stream đẩy dữ liệu vào Data Lakehouse nội bộ.                           |
+| • Dashboard Mobile của CEO chỉ đọc Snapshot tổng hợp (Materialized View), đảm bảo thời gian tải    |
+|   màn hình luôn dưới 0.5 giây ngay cả khi mạng di động 4G yếu.                                    |
++---------------------------------------------------------------------------------------------------+
+```
 
 ---
 

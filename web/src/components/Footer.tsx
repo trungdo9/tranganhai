@@ -32,12 +32,12 @@ export default function Footer() {
               Hệ Điều Hành AI B2B
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li><a href="#giai-phap" className="hover:text-white transition-colors">Bộ Não Tri Thức Số (Zero-Hallucination)</a></li>
-              <li><a href="#giai-phap" className="hover:text-white transition-colors">Hiện Diện Trên AI Search (GEO)</a></li>
-              <li><a href="#giai-phap" className="hover:text-white transition-colors">Trợ Lý Dự Toán BOQ & Báo Giá VietQR</a></li>
-              <li><a href="#giai-phap" className="hover:text-white transition-colors">Tư Vấn Khách Hàng 24/7 Đa Kênh</a></li>
-              <li><a href="#giai-phap" className="hover:text-white transition-colors">Báo Cáo Quản Trị 1 Trang Cho CEO</a></li>
-              <li><a href="#quy-trinh" className="hover:text-white transition-colors">Lộ Trình 4 Tuần Done-With-You</a></li>
+              <li><a href="#engine" className="hover:text-white transition-colors">Node 1 · Master RAG Lake (Core)</a></li>
+              <li><a href="#engine" className="hover:text-white transition-colors">Node 2 · Flow Content &amp; GEO (M1, M2)</a></li>
+              <li><a href="#engine" className="hover:text-white transition-colors">Node 3 · Tiếp Nhận 24/7 &amp; CRM (M3, M5)</a></li>
+              <li><a href="#demo" className="hover:text-white transition-colors">Node 4 · Zalo Copilot Báo Giá 8s (M4)</a></li>
+              <li><a href="#engine" className="hover:text-white transition-colors">Node 5 · Báo Cáo Quản Trị 1 Trang (M0)</a></li>
+              <li><a href="#roadmap" className="hover:text-white transition-colors">Lộ Trình 4 Tuần Co-Architecture</a></li>
             </ul>
           </div>
 

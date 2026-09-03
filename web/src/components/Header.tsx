@@ -1,10 +1,33 @@
 "use client";
 
-import React from "react";
-import { ShieldCheck, ArrowRight, PhoneCall, Sparkles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, PhoneCall } from "lucide-react";
 import Logo from "./Logo";
 
 export default function Header() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (totalHeight > 0) {
+        setScrollProgress((window.scrollY / totalHeight) * 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { id: "leak", label: "Điểm nghẽn", href: "#leak" },
+    { id: "engine", label: "Cỗ máy 5 Node", href: "#engine" },
+    { id: "demo", label: "Workflow báo giá", href: "#demo" },
+    { id: "roadmap", label: "Lộ trình 4 tuần", href: "#roadmap" },
+    { id: "pricing", label: "Đầu tư", href: "#pricing" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
@@ -14,22 +37,17 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
-          <a href="#thuc-trang" className="text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors">
-            Thực Trạng
-          </a>
-          <a href="#giai-phap" className="text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors">
-            Dây Chuyền 5 Node
-          </a>
-          <a href="#use-cases" className="text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors">
-            Ứng Dụng Ngành
-          </a>
-          <a href="#quy-trinh" className="text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors">
-            Lộ Trình 4 Tuần
-          </a>
-          <a href="#bang-gia" className="text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors">
-            Bảng Giá Retainer
-          </a>
+        <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              className="inline-flex items-center gap-1.5 text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+              <span>{link.label}</span>
+            </a>
+          ))}
         </nav>
 
         {/* Action Buttons */}
@@ -54,6 +72,14 @@ export default function Header() {
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
+      </div>
+
+      {/* Subtle Scroll Progress Bar */}
+      <div className="h-[2px] w-full bg-transparent">
+        <div
+          className="h-full bg-gradient-to-r from-[#4F46E5] to-[#0D9488] transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
       </div>
     </header>
   );

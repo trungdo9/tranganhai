@@ -1,119 +1,114 @@
 "use client";
 
 import React from "react";
-import { Clock, Users, Database, ArrowDownRight, TrendingDown, AlertCircle } from "lucide-react";
+import { TimerOff, Files, MessagesSquare, TrendingUp, CheckCheck, AlertCircle } from "lucide-react";
 
 export default function PainPointsSection() {
-  const pains = [
+  const leaks = [
     {
-      icon: Database,
-      badge: "ĐỨT GÃY DỮ LIỆU",
-      stat: "Mất 3–6 Tháng",
-      title: "1. Tri Thức Bị 'Bắt Cóc' Bởi Cá Nhân",
-      desc: "Bảng giá, quy trình lưu máy cá nhân. Người cũ nghỉ việc → Mất 3–6 tháng đào tạo lại từ đầu.",
+      icon: TimerOff,
+      title: "Báo giá chậm 1–3 ngày",
+      problem: "Sales phải dò bảng giá Excel gộp ô, hỏi lại kỹ thuật, rồi chờ giám đốc duyệt qua Zalo.",
+      cost: "68% người mua chọn đơn vị phản hồi đầu tiên",
+      standard: "Zalo Copilot (M4) sinh PDF báo giá kèm VietQR trong 8 giây, giá lấy từ động cơ SQL xác định — cấm AI tính nhẩm.",
+      gain: "Báo giá 8 giây · phê duyệt 10 giây",
     },
     {
-      icon: Clock,
-      badge: "MẤT ĐƠN VÀO ĐỐI THỦ",
-      stat: "68% Khách Rời Đi",
-      title: "2. Mất Khách Vì Phản Hồi Chậm Trễ",
-      desc: "68% người mua B2B chọn bên báo giá đầu tiên. Nhân viên lục tìm file cả giờ → Nhường đơn cho đối thủ.",
+      icon: Files,
+      title: "Tri thức nằm trong đầu người",
+      problem: "MSDS, catalogue, lịch sử dự án rải rác trong ổ đĩa cá nhân và trí nhớ của hai ba nhân sự lâu năm.",
+      cost: "Một người nghỉ việc = một phần vận hành dừng lại",
+      standard: "Master RAG Lake (Node 1) chuẩn hóa một lần: unmerge Excel, OCR đa thể thức, chunking cha–con, truy vết nguồn từng câu trả lời.",
+      gain: "Sở hữu vĩnh viễn dữ liệu sạch",
     },
     {
-      icon: Users,
-      badge: "THIẾU KIỂM SOÁT",
-      stat: "Trễ Quyết Định",
-      title: "3. Ban Lãnh Đạo Điều Hành Bằng Cảm Tính",
-      desc: "Chờ báo cáo thủ công cuối tháng. Thiếu số liệu thời gian thực → Quyết định kinh doanh luôn trễ nhịp.",
+      icon: MessagesSquare,
+      title: "Lead nguội ngoài giờ",
+      problem: "Inbox Fanpage và Zalo OA chỉ có người trực giờ hành chính; hỏi giá lúc 21h thì sáng mai mới có câu trả lời.",
+      cost: "Chi phí quảng cáo trả cho lead không ai nhận",
+      standard: "Agent trực 24/7 (M3), chấm điểm lead (M5) và đồng bộ thẳng vào MISA AMIS / Brevo / Sheets — không nhập tay lần hai.",
+      gain: "Phản hồi trong 2 phút, 24/7",
+    },
+    {
+      icon: TrendingUp,
+      title: "Điều hành bằng cảm giác",
+      problem: "Báo cáo tổng hợp thủ công cuối tháng, số liệu đã cũ 30 ngày khi tới bàn Ban Giám Đốc.",
+      cost: "48,8% doanh nghiệp dừng vì vận hành không theo được tăng trưởng",
+      standard: "Báo Cáo Quản Trị 1 Trang (M0) realtime, tự nêu tên khâu đang trễ và mô phỏng what-if trước khi quyết.",
+      gain: "Tiết kiệm ≥30 giờ công/tháng",
     },
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-[#1E293B] text-white">
+    <section id="leak" className="py-16 sm:py-24 bg-white border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Title */}
+        {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/10 px-3.5 py-1 text-xs font-semibold text-rose-300 border border-rose-500/20 uppercase tracking-wider">
-            <AlertCircle className="h-3.5 w-3.5 text-rose-400" />
-            <span>3 ĐIỂM NGHẼN VẬN HÀNH B2B</span>
-          </div>
-          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-            Ba "Lỗ Rò Rỉ Vận Hành" Âm Thầm Bào Mòn Lợi Nhuận
+          <span className="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200/80">
+            ĐIỂM NGHẼN VẬN HÀNH
+          </span>
+          <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E293B] tracking-tight">
+            Không Phải Thiếu Người. Là Quy Trình Đang Rò Rỉ Doanh Thu.
           </h2>
-          <p className="mt-3 text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
-            Những điểm nghẽn thực tế khiến doanh nghiệp SME thất thoát doanh thu mỗi ngày.
+          <p className="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+            48,8% doanh nghiệp buộc phải dừng hoạt động vì vận hành không chịu nổi tăng trưởng. Với SME kỹ thuật B2B, rò rỉ nằm đúng ở bốn chỗ dưới đây.
+          </p>
+          <p className="mt-2 text-xs font-mono text-slate-400">
+            Nguồn: Báo cáo Bộ KH&ĐT + GIZ, 2025
           </p>
         </div>
 
-        {/* 3 Pain Cards - Clean Dark Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
-          {pains.map((p, idx) => {
-            const Icon = p.icon;
+        {/* 4 Cards Grid - 2x2 Clean Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {leaks.map((leak, idx) => {
+            const Icon = leak.icon;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-700/80 bg-slate-800/60 p-6 text-left flex flex-col justify-between hover:border-slate-600 transition-all shadow-xs"
+                className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-xs hover:border-slate-300 transition-all text-left"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/15 text-rose-400">
-                      <Icon className="h-4 w-4" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                  
+                  {/* Left: Hiện Trạng (Problem & Cost) */}
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <span className="inline-flex items-center gap-1.5 font-mono text-xs tracking-wider uppercase text-rose-600 font-semibold">
+                        <Icon className="h-3.5 w-3.5" />
+                        <span>Hiện trạng</span>
+                      </span>
+                      <h3 className="mt-2.5 text-lg font-bold text-[#1E293B] tracking-tight">
+                        {leak.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
+                        {leak.problem}
+                      </p>
                     </div>
-                    <span className="rounded-md bg-rose-500/10 px-2.5 py-1 text-xs font-semibold text-rose-300 border border-rose-500/20">
-                      {p.stat}
-                    </span>
+                    <p className="mt-4 text-xs font-mono font-semibold text-rose-600 bg-rose-50/70 p-2 rounded-lg border border-rose-100">
+                      ⚠️ {leak.cost}
+                    </p>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2 leading-snug">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                    {p.desc}
-                  </p>
+
+                  {/* Right: Chuẩn Trang Anh (Standard & Gain) */}
+                  <div className="rounded-xl border border-teal-100 bg-[#F8FAFC] p-4 flex flex-col justify-between h-full">
+                    <div>
+                      <span className="inline-flex items-center gap-1.5 font-mono text-xs tracking-wider uppercase text-[#0D9488] font-semibold">
+                        <CheckCheck className="h-3.5 w-3.5" />
+                        <span>Chuẩn Trang Anh</span>
+                      </span>
+                      <p className="mt-2 text-sm text-slate-700 leading-relaxed font-medium">
+                        {leak.standard}
+                      </p>
+                    </div>
+                    <p className="mt-4 text-xs font-mono font-semibold text-[#0D9488] bg-teal-50 p-2 rounded-lg border border-teal-200/80">
+                      ⚡ {leak.gain}
+                    </p>
+                  </div>
+
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* VISUAL COST COMPARISON BAR CHART - CLEAN STYLING */}
-        <div className="max-w-3xl mx-auto rounded-2xl border border-slate-700/80 bg-slate-800/80 p-6 sm:p-8 text-left shadow-md">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <span className="text-xs font-semibold uppercase tracking-wider text-indigo-300">
-              📊 SO SÁNH CHI PHÍ VẬN HÀNH HÀNG THÁNG
-            </span>
-            <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-300 border border-emerald-500/25">
-              TIẾT KIỆM ĐẾN 58% CHI PHÍ
-            </span>
-          </div>
-
-          <div className="space-y-5">
-            {/* In-House Bar */}
-            <div>
-              <div className="flex justify-between text-xs sm:text-sm font-semibold mb-1.5">
-                <span className="text-slate-300">Nuôi 3 Nhân Sự In-House (Sales Admin + Kỹ Thuật + Content):</span>
-                <span className="text-rose-400 font-mono text-base font-bold">58.500.000 đ/tháng</span>
-              </div>
-              <div className="h-3.5 w-full rounded-full bg-slate-700/80 overflow-hidden">
-                <div className="h-full rounded-full bg-rose-500 w-full" />
-              </div>
-            </div>
-
-            {/* Trang Anh Bar */}
-            <div>
-              <div className="flex justify-between text-xs sm:text-sm font-semibold mb-1.5">
-                <span className="text-emerald-300">Hệ Thống Vận Hành Trang Anh AI (Gói Tăng Trưởng):</span>
-                <span className="text-emerald-400 font-mono text-base font-black">24.000.000 đ/tháng</span>
-              </div>
-              <div className="h-3.5 w-full rounded-full bg-slate-700/80 overflow-hidden">
-                <div className="h-full rounded-full bg-[#0D9488] w-[41%]" />
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-slate-700/80 text-center text-xs text-slate-400 font-normal">
-            💡 Tiết kiệm ngay <strong className="text-white font-semibold">34.500.000 đ/tháng</strong> (tương đương 414 triệu/năm) — Tự chủ cỗ máy trên hạ tầng Enterprise chính chủ.
-          </div>
         </div>
 
       </div>

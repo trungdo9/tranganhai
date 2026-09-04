@@ -1,0 +1,103 @@
+:root{
+  /* --- Base ramp: Deep Slate (60%) --- */
+  --slate-50:#F8FAFC;  /* Soft Mist White */
+  --slate-100:#F1F5F9;
+  --slate-200:#E2E8F0; /* Subtle Slate Border */
+  --slate-300:#CBD5E1;
+  --slate-400:#94A3B8;
+  --slate-500:#64748B;
+  --slate-600:#475569;
+  --slate-700:#334155;
+  --slate-800:#1E293B; /* Deep Slate Charcoal — brand base */
+  --slate-900:#0F172A;
+  --white:#FFFFFF;
+
+  /* --- Brand ramp: Brand AI Blue / Soft Iris (30%) --- */
+  --iris-50:#EEF2FF;
+  --iris-100:#E0E7FF;
+  --iris-200:#C7D2FE;
+  --iris-300:#A5B4FC;
+  --iris-400:#818CF8;
+  --iris-500:#6366F1;
+  --iris-600:#4F46E5; /* Brand AI Blue */
+  --iris-700:#4338CA;
+  --iris-800:#3730A3;
+
+  /* --- Accent ramp: Sage Teal (10%) --- */
+  --teal-50:#F0FDFA;
+  --teal-100:#CCFBF1;
+  --teal-200:#99F6E4;
+  --teal-300:#5EEAD4;
+  --teal-400:#2DD4BF;
+  --teal-500:#14B8A6;
+  --teal-600:#0D9488; /* Sage Teal — CTA */
+  --teal-700:#0F766E;
+  --teal-800:#115E59;
+
+  /* --- Notice ramp: Warm Amber --- */
+  --amber-50:#FFFBEB;
+  --amber-100:#FEF3C7;
+  --amber-300:#FCD34D;
+  --amber-500:#F59E0B; /* Warm Amber */
+  --amber-600:#D97706;
+  --amber-700:#B45309;
+
+  /* --- Risk ramp (pain points, legal risk) --- */
+  --rose-50:#FFF1F2;
+  --rose-200:#FECDD3;
+  --rose-500:#E11D48;
+  --rose-600:#BE123C;
+
+  /* --- Semantic: text --- */
+  --text-strong:var(--slate-800);
+  --text-body:var(--slate-600);
+  --text-muted:var(--slate-500);
+  --text-faint:var(--slate-400);
+  --text-brand:var(--iris-600);
+  --text-accent:var(--teal-700);
+  --text-on-dark:var(--slate-50);
+  --text-on-dark-muted:#94A3B8;
+  --text-on-brand:var(--white);
+  --text-link:var(--iris-600);
+  --text-link-hover:var(--iris-700);
+
+  /* --- Semantic: surfaces --- */
+  --surface-page:var(--slate-50);
+  --surface-card:var(--white);
+  --surface-sunken:var(--slate-100);
+  --surface-dark:var(--slate-800);
+  --surface-darker:var(--slate-900);
+  --surface-brand-soft:var(--iris-50);
+  --surface-accent-soft:var(--teal-50);
+  --surface-notice-soft:var(--amber-50);
+  --surface-risk-soft:var(--rose-50);
+  --surface-brand:var(--iris-600);
+  --surface-accent:var(--teal-600);
+
+  /* --- Semantic: borders --- */
+  --border-subtle:var(--slate-200);
+  --border-strong:var(--slate-300);
+  --border-brand:var(--iris-200);
+  --border-accent:var(--teal-200);
+  --border-on-dark:rgba(226,232,240,.14);
+
+  /* --- Semantic: state --- */
+  --state-focus-ring:rgba(79,70,229,.32);
+  --state-accent-ring:rgba(13,148,136,.30);
+  --state-hover-tint:rgba(30,41,59,.04);
+  --state-press-tint:rgba(30,41,59,.08);
+
+  /* --- Brand gradients (from the logo mark: iris -> teal, 35deg) --- */
+  --gradient-brand:linear-gradient(135deg,var(--iris-700) 0%,var(--iris-600) 45%,var(--teal-600) 100%);
+  --gradient-brand-soft:linear-gradient(135deg,var(--iris-50) 0%,var(--teal-50) 100%);
+  --gradient-dark:linear-gradient(160deg,#1E293B 0%,#16233A 55%,#0F172A 100%); /* @kind color */
+  --gradient-protect-bottom:linear-gradient(to top,rgba(15,23,42,.92) 0%,rgba(15,23,42,0) 100%); /* @kind color */
+
+  /* --- Data-viz sequence (dashboard charts, funnel) --- */
+  --viz-1:var(--iris-600);
+  --viz-2:var(--teal-600);
+  --viz-3:var(--iris-400);
+  --viz-4:var(--amber-500);
+  --viz-5:var(--slate-400);
+  --viz-grid:var(--slate-200);
+}

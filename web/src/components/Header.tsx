@@ -1,86 +1,91 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import React, { useState } from "react";
 import Logo from "./Logo";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState("hero");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (totalHeight > 0) {
-        setScrollProgress((window.scrollY / totalHeight) * 100);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { id: "leak", label: "Điểm nghẽn", href: "#leak" },
-    { id: "engine", label: "Cỗ máy 5 Node", href: "#engine" },
-    { id: "demo", label: "Workflow báo giá", href: "#demo" },
-    { id: "roadmap", label: "Lộ trình 4 tuần", href: "#roadmap" },
-    { id: "pricing", label: "Đầu tư", href: "#pricing" },
+    { label: "Thực trạng", href: "#thuc-trang" },
+    { label: "Điểm nghẽn", href: "#diem-nghen" },
+    { label: "5 Node", href: "#day-chuyen" },
+    { label: "Đối tượng", href: "#doi-tuong" },
+    { label: "Ứng dụng", href: "#ung-dung" },
+    { label: "Lộ trình", href: "#lo-trinh" },
+    { label: "Hợp tác", href: "#mo-hinh" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md transition-all">
+      <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-4 sm:px-8 lg:px-10">
         {/* Brand Logo */}
-        <a href="#" className="hover:opacity-95 transition-opacity flex items-center">
-          <Logo size="md" />
+        <a href="#" className="flex items-center hover:opacity-90 transition-opacity">
+          <Logo size={32} />
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7 overflow-x-auto no-scrollbar py-1">
           {navLinks.map((link) => (
             <a
-              key={link.id}
+              key={link.href}
               href={link.href}
-              className="inline-flex items-center gap-1.5 text-xs lg:text-sm font-medium text-slate-600 hover:text-[#4F46E5] transition-colors"
+              className="text-[13.5px] font-medium text-slate-700 hover:text-indigo-600 transition-colors whitespace-nowrap"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
-              <span>{link.label}</span>
+              {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Action Buttons */}
+        {/* CTA Button & Mobile Trigger */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:0912345678"
-            className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100/80 hover:bg-slate-200/80 px-3.5 py-2 rounded-lg transition-colors border border-slate-200/70"
+            href="#dang-ky"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0D9488] px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-xs hover:bg-[#0f766e] transition-all active:scale-[0.98]"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]"></span>
-            </span>
-            <PhoneCall className="h-3.5 w-3.5 text-[#0D9488]" />
-            <span className="font-mono">0912 345 678</span>
+            <span>Đăng ký Audit</span>
+            <ArrowRight className="h-3.5 w-3.5 hidden sm:inline" />
           </a>
 
-          <a
-            href="#dang-ky"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0D9488] px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#0f766e] active:scale-95"
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+            aria-label="Toggle Navigation Menu"
           >
-            <span>Khám Sức Khỏe Vận Hành</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Subtle Scroll Progress Bar */}
-      <div className="h-[2px] w-full bg-transparent">
-        <div
-          className="h-full bg-gradient-to-r from-[#4F46E5] to-[#0D9488] transition-all duration-150"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-b border-slate-200 bg-white px-6 py-4 shadow-lg animate-in slide-in-from-top-2">
+          <nav className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 text-sm font-semibold text-slate-800 hover:text-indigo-600 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="pt-2 border-t border-slate-100">
+              <a
+                href="#dang-ky"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-center rounded-lg bg-[#0D9488] py-2.5 text-sm font-semibold text-white"
+              >
+                Đăng ký Khám Sức Khỏe Vận Hành
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

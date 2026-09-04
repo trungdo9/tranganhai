@@ -1,98 +1,94 @@
 "use client";
 
 import React from "react";
-import { Database, Settings, Zap, GraduationCap, ArrowRight, UserCheck } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 
 export default function WorkflowSection() {
   const steps = [
     {
       period: "Tuần 1",
-      icon: Database,
-      title: "Khám sức khỏe vận hành",
-      body: "Bóc tách luồng hiện tại, đo thời gian từng công đoạn, chốt phạm vi module theo điểm nghẽn thật.",
-      clientTask: "Ban Giám Đốc: 2 giờ làm việc + quyền truy cập dữ liệu gốc.",
+      title: "Khảo sát & chuẩn hóa dữ liệu",
+      body: "Tiếp nhận bảng giá Excel, catalogue, tài liệu kỹ thuật; gỡ gộp ô và số hóa thành bộ não tri thức sạch.",
+      note: "DN cần: bàn giao tài liệu + cử 1 đầu mối đối soát",
     },
     {
       period: "Tuần 2",
-      icon: Settings,
-      title: "Dựng Master RAG Lake",
-      body: "Chuẩn hóa catalogue và bảng giá, cài động cơ SQL, dựng hạ tầng trên tài khoản Enterprise chính chủ.",
-      clientTask: "Ban Giám Đốc: Xác nhận khung giá và quy tắc chiết khấu.",
+      title: "Cài đặt trên tài khoản chính chủ",
+      body: "Thiết lập cỗ máy trên workspace Enterprise riêng; cài giọng văn thương hiệu, luồng xuất bản và Chatbot 24/7.",
+      note: "Trang Anh thiết lập 100% hạ tầng bảo mật",
     },
     {
       period: "Tuần 3",
-      icon: Zap,
-      title: "Bật Agent trên dữ liệu thật",
-      body: "Node 3 và Node 4 chạy song song với quy trình cũ; sales dùng thật, đối chiếu từng báo giá.",
-      clientTask: "Hai nhân sự sales tham gia 3 buổi vận hành thử.",
+      title: "Căn chỉnh luồng vận hành thực tế",
+      body: "Kiểm thử hỏi đáp kỹ thuật, lập dự toán và báo giá; kết nối dữ liệu về Báo Cáo Quản Trị 1 Trang.",
+      note: "Hai bên cùng rà soát kịch bản thực tế",
     },
     {
       period: "Tuần 4",
-      icon: GraduationCap,
-      title: "Chuyển giao & tự chủ",
-      body: "Bàn giao tài khoản, SOP và Báo Cáo Quản Trị 1 Trang. Ngày 75 rà soát lại toàn hệ.",
-      clientTask: "Ban Giám Đốc: Chữ ký phê duyệt SOP và nghiệm thu.",
+      title: "Đào tạo nhân sự & bàn giao SOP",
+      body: "Hai buổi đào tạo thực chiến: nhân viên duyệt việc trong 10 giây, Ban Giám Đốc khai thác số liệu báo cáo.",
+      note: "Bàn giao: DN làm chủ 100% hệ thống, ký nghiệm thu",
     },
   ];
 
   return (
-    <section id="roadmap" className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-slate-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="lo-trinh" className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-8 lg:px-10 text-center">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#4F46E5] bg-indigo-50 px-3.5 py-1 rounded-full border border-indigo-200/80">
-            DONE-WITH-YOU
+        {/* Section Heading */}
+        <div className="max-w-3xl mx-auto mb-8 sm:mb-10">
+          <span className="text-xs font-bold uppercase tracking-[0.11em] text-indigo-600 bg-indigo-50 px-3.5 py-1 rounded-full border border-indigo-100">
+            LỘ TRÌNH DONE-WITH-YOU
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E293B] tracking-tight">
-            4 Tuần Co-Architecture. Trang Anh AI Gánh 90% Khối Lượng Kỹ Thuật.
+          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Lộ Trình Triển Khai AI Agent Trong 4 Tuần
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-            Ban Giám Đốc chỉ tham gia đúng những điểm mà không ai ngoài doanh nghiệp có thể quyết: dữ liệu gốc, khung giá, và chữ ký phê duyệt.
-          </p>
         </div>
 
-        {/* 4 Step Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={idx}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between text-left relative overflow-hidden"
-              >
-                {/* Top Badge */}
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs font-bold text-[#4F46E5] bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-100">
-                      {step.period}
-                    </span>
-                    <div className="h-8 w-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                  </div>
+        {/* Handover Meeting Image Banner */}
+        <div className="relative h-[200px] sm:h-[260px] max-w-4xl mx-auto rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs mb-10">
+          <Image
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+            alt="Buổi đào tạo & bàn giao hệ thống tuần 4"
+            fill
+            sizes="(max-width: 1024px) 100vw, 896px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-5">
+            <span className="text-xs font-semibold text-white bg-slate-900/60 px-3 py-1 rounded-md backdrop-blur-xs">
+              Buổi đào tạo thực chiến &amp; bàn giao quyền làm chủ cỗ máy tại Tuần 4
+            </span>
+          </div>
+        </div>
 
-                  <h3 className="text-base font-bold text-[#1E293B] tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {step.body}
-                  </p>
-                </div>
+        {/* 4 Steps Timeline */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs flex flex-col justify-between hover:border-indigo-200 transition-colors"
+            >
+              <div>
+                <span className="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#1E293B] text-white mb-3">
+                  {step.period}
+                </span>
 
-                {/* Client Task Box */}
-                <div className="mt-6 pt-4 border-t border-slate-100 bg-slate-50/80 p-3 rounded-xl border">
-                  <div className="flex items-center gap-1.5 text-[11px] font-mono text-amber-700 font-semibold mb-1">
-                    <UserCheck className="h-3.5 w-3.5" />
-                    <span>Việc của Doanh Nghiệp:</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-snug">
-                    {step.clientTask}
-                  </p>
-                </div>
+                <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
+                  {step.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-4">
+                  {step.body}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="pt-3 border-t border-slate-100 flex items-start gap-1.5 text-[11px] font-semibold text-slate-700">
+                <CheckCircle2 className="h-3.5 w-3.5 text-teal-600 shrink-0 mt-0.5" />
+                <span>{step.note}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

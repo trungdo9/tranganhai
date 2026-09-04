@@ -1,18 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* --- Base ramp: Deep Slate (60%) --- */
+  --slate-50: #F8FAFC;  /* Soft Mist White */
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0; /* Subtle Slate Border */
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B; /* Deep Slate Charcoal — brand base */
+  --slate-900: #0F172A;
+  --white: #FFFFFF;
+
+  /* --- Brand ramp: Brand AI Blue / Soft Iris (30%) --- */
+  --iris-50: #EEF2FF;
+  --iris-100: #E0E7FF;
+  --iris-200: #C7D2FE;
+  --iris-300: #A5B4FC;
+  --iris-400: #818CF8;
+  --iris-500: #6366F1;
+  --iris-600: #4F46E5; /* Brand AI Blue */
+  --iris-700: #4338CA;
+  --iris-800: #3730A3;
+
+  /* --- Accent ramp: Sage Teal (10%) --- */
+  --teal-50: #F0FDFA;
+  --teal-100: #CCFBF1;
+  --teal-200: #99F6E4;
+  --teal-300: #5EEAD4;
+  --teal-400: #2DD4BF;
+  --teal-500: #14B8A6;
+  --teal-600: #0D9488; /* Sage Teal — CTA */
+  --teal-700: #0F766E;
+  --teal-800: #115E59;
+
+  /* --- Notice ramp: Warm Amber --- */
+  --amber-50: #FFFBEB;
+  --amber-100: #FEF3C7;
+  --amber-300: #FCD34D;
+  --amber-500: #F59E0B; /* Warm Amber */
+  --amber-600: #D97706;
+  --amber-700: #B45309;
+
+  /* --- Risk ramp (pain points, legal risk) --- */
+  --rose-50: #FFF1F2;
+  --rose-200: #FECDD3;
+  --rose-500: #E11D48;
+  --rose-600: #BE123C;
+
+  /* --- Semantic: text --- */
+  --text-strong: var(--slate-800);
+  --text-body: var(--slate-600);
+  --text-muted: var(--slate-500);
+  --text-faint: var(--slate-400);
+  --text-brand: var(--iris-600);
+  --text-accent: var(--teal-700);
+  --text-on-dark: var(--slate-50);
+  --text-on-dark-muted: #94A3B8;
+
+  /* --- Semantic: surfaces --- */
+  --surface-page: var(--slate-50);
+  --surface-card: var(--white);
+  --surface-sunken: var(--slate-100);
+  --surface-dark: var(--slate-800);
+  --surface-darker: var(--slate-900);
+  --surface-brand-soft: var(--iris-50);
+  --surface-accent-soft: var(--teal-50);
+
+  /* --- Semantic: borders --- */
+  --border-subtle: var(--slate-200);
+  --border-brand: var(--iris-200);
+  --border-accent: var(--teal-200);
+  --border-on-dark: rgba(226, 232, 240, 0.14);
+
+  /* --- Typography --- */
+  --font-display: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* --- Shadows --- */
+  --shadow-xs: 0 1px 2px rgba(30, 41, 59, 0.06);
+  --shadow-sm: 0 1px 3px rgba(30, 41, 59, 0.07), 0 1px 2px rgba(30, 41, 59, 0.04);
+  --shadow-md: 0 4px 12px rgba(30, 41, 59, 0.07), 0 1px 3px rgba(30, 41, 59, 0.05);
+  --shadow-lg: 0 12px 28px rgba(30, 41, 59, 0.09), 0 2px 6px rgba(30, 41, 59, 0.05);
+  --shadow-xl: 0 28px 60px rgba(30, 41, 59, 0.13), 0 6px 14px rgba(30, 41, 59, 0.06);
+  --shadow-brand: 0 10px 24px rgba(79, 70, 229, 0.18);
+  --shadow-accent: 0 10px 24px rgba(13, 148, 136, 0.20);
+
+  /* --- Glass --- */
+  --glass-light: rgba(255, 255, 255, 0.82);
+  --glass-dark: rgba(15, 23, 42, 0.62);
+  --blur-glass: blur(14px) saturate(140%);
+}
+
 @layer base {
-  :root {
-    --background: 248 250 252;
-    --foreground: 30 41 59;
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    color: rgb(30, 41, 59);
-    background-color: #F8FAFC;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    scroll-behavior: smooth;
+    color: var(--text-body);
+    background-color: var(--surface-page);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--text-strong);
+    letter-spacing: -0.022em;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
   }
 }
 
@@ -29,4 +136,43 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
+}
+
+/* Design System Animations */
+@keyframes ta-flow-dot {
+  0% { left: 8%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 92%; opacity: 0; }
+}
+
+@keyframes ta-hero-sheen {
+  0%, 100% { transform: translateX(0) rotate(14deg); opacity: 0.4; }
+  50% { transform: translateX(120%) rotate(14deg); opacity: 0.9; }
+}
+
+@keyframes ta-glow-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 30px) scale(1.08); }
+}
+
+@keyframes ta-glow-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -30px) scale(1.06); }
+}
+
+.animate-flow-dot {
+  animation: ta-flow-dot 5.2s linear infinite;
+}
+
+.animate-hero-sheen {
+  animation: ta-hero-sheen 14s ease-in-out infinite;
+}
+
+.animate-glow-a {
+  animation: ta-glow-a 22s ease-in-out infinite;
+}
+
+.animate-glow-b {
+  animation: ta-glow-b 26s ease-in-out infinite;
 }

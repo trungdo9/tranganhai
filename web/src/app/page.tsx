@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
 import PainPointsSection from "@/components/PainPointsSection";
-import CoreValueSection from "@/components/CoreValueSection";
-import ZaloQuoteWorkflow from "@/components/ZaloQuoteWorkflow";
+import TargetAudienceSection from "@/components/TargetAudienceSection";
+import IndustrialShowcaseSection from "@/components/IndustrialShowcaseSection";
+import FiveNodeEngineSection from "@/components/FiveNodeEngineSection";
 import IndustryUseCases from "@/components/IndustryUseCases";
 import WorkflowSection from "@/components/WorkflowSection";
 import PricingSection from "@/components/PricingSection";
@@ -14,35 +16,41 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC]">
-      {/* Sticky Navigation Bar with Progress Indicator */}
+      {/* 1. Sticky Navigation Bar */}
       <Header />
 
       <main className="flex-1">
-        {/* Section 1: Hero Section (2-Column: Value Proposition & Executive BI Dashboard Card) */}
+        {/* Section 1: Hero Section với Bảng Điều Khiển Vận Hành M0 Realtime */}
         <HeroSection />
 
-        {/* Section 2: Điểm Nghẽn Vận Hành (#leak) - 4 Rò Rỉ Doanh Thu Đối Chiếu Hiện Trạng vs Chuẩn Trang Anh */}
+        {/* Section 2: Thực Trạng Thị Trường & Bảng Đối Chiếu 4 Bất Cập AI Tự Phát */}
+        <StatsSection />
+
+        {/* Section 3: Ba Lỗ Rò Rỉ Vận Hành Đang Bào Mòn Biên Lợi Nhuận */}
         <PainPointsSection />
 
-        {/* Section 3: Cỗ Máy Vòng Kín 5 Node (#engine) - Interactive Stepper với Agent/Người, Input/Output SLA & Modules */}
-        <CoreValueSection />
+        {/* Section 4: Đối Tượng Phù Hợp & Nhóm Chưa Phù Hợp */}
+        <TargetAudienceSection />
 
-        {/* Section 4: Workflow Tiêu Biểu M4 (#demo) - Một Dòng Tin Trên Zalo, 8 Giây Sau Có Báo Giá PDF & VietQR */}
-        <ZaloQuoteWorkflow />
+        {/* Section 5: Bằng Chứng Trực Quan / Hình Ảnh Hiện Trường Công Nghiệp */}
+        <IndustrialShowcaseSection />
 
-        {/* Section 5: May Đo Thực Chiến Theo Ngành B2B (Hóa chất/Xử lý nước, Van M&E, Đa Website) */}
+        {/* Section 6: Dây Chuyền 5 Node Vận Hành Khép Kín (Chế độ Luồng ngang & Xếp chồng) */}
+        <FiveNodeEngineSection />
+
+        {/* Section 7: Ứng Dụng Thực Tế May Đo Theo Từng Ngành Kỹ Thuật */}
         <IndustryUseCases />
 
-        {/* Section 6: Lộ Trình 4 Tuần Co-Architecture (#roadmap) - Trang Anh Gánh 90% Kỹ Thuật, Ban Giám Đốc Quyết 3 Điểm */}
+        {/* Section 8: Lộ Trình 4 Tuần Done-With-You Bàn Giao Tự Chủ */}
         <WorkflowSection />
 
-        {/* Section 7: Đầu Tư Vận Hành (#pricing) - Ba Mức Retainer, Ưu Đãi 0-Setup Miễn 20-35Tr */}
+        {/* Section 9: Mô Hình Hợp Tác, 3 Gói Retainer & The Ultimate 0-Setup Offer */}
         <PricingSection />
 
-        {/* Section 8: Minh Bạch & Pháp Lý (#faq) - Những Câu Ban Giám Đốc Hỏi Trước Khi Ký */}
+        {/* Section 10: Minh Bạch Pháp Lý & Câu Hỏi Thường Gặp (FAQ) */}
         <LegalFaqSection />
 
-        {/* Section 9: Khám Sức Khỏe Vận Hành (#dang-ky) - 2 Giờ Làm Việc Trên Dữ Liệu Thật Của Doanh Nghiệp */}
+        {/* Section 11: Đăng Ký Khám Sức Khỏe Vận Hành & Live Demo 45 Phút */}
         <LeadFormSection />
       </main>
 

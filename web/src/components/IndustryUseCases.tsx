@@ -1,130 +1,149 @@
 "use client";
 
 import React, { useState } from "react";
-import { Droplet, Wrench, Globe2, CheckCircle2, ArrowRight, Zap, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Droplet, Wrench, Globe2 } from "lucide-react";
 
 export default function IndustryUseCases() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState<"chem" | "valve" | "multi">("chem");
 
-  const tabs = [
-    {
-      id: 0,
-      name: "Hóa Chất & Xử Lý Nước",
-      icon: Droplet,
-      title: "Ngành Hóa Chất, Môi Trường & Vật Liệu Lọc",
-      speedBefore: "Mất 4–6 Giờ",
-      speedAfter: "Tức thì (Real-time)",
-      points: [
-        "Hiện diện AI Search: ChatGPT trích dẫn bài viết website làm câu trả lời chuẩn.",
-        "Tra cứu TDS & tính bồn lọc: Nắm trọn tiêu chuẩn Quatest, tính thể tích bồn lọc trong 2 phút.",
-        "Báo giá VietQR tức thì: Xuất file PDF Vector theo quy cách bao/phuy kèm mã QR trong vài giây.",
-      ],
-    },
-    {
-      id: 1,
-      name: "Van & Phụ Kiện Cơ Điện M&E",
-      icon: Wrench,
-      title: "Ngành Van Công Nghiệp, Đường Ống & Thiết Bị Cơ Điện",
-      speedBefore: "Mất 1–2 Ngày",
-      speedAfter: "2 Phút (BOQ Chuẩn)",
-      points: [
-        "Hiện diện chuyên ngành: Đứng đầu khi kỹ sư tìm kiếm tiêu chuẩn mặt bích DIN/BS, van inox 316.",
-        "Lập BOQ vật tư 2 phút: Tự động bóc tách danh mục công trình và áp đúng giá sỉ.",
-        "Hỗ trợ hồ sơ thầu: Bóc tách yêu cầu kỹ thuật HSMT, rút ngắn 70% thời gian làm hồ sơ.",
-      ],
-    },
-    {
-      id: 2,
-      name: "Doanh Nghiệp Đa Website Vệ Tinh",
-      icon: Globe2,
-      title: "Chủ Doanh Nghiệp Sở Hữu Mạng Lưới Từ 1 Đến 3+ Website",
-      speedBefore: "Tốn 35tr/tháng nuôi team",
-      speedAfter: "1 Trung Tâm Duy Nhất",
-      points: [
-        "1 Kho tri thức — Đa website: Tự động phân luồng bài viết độc bản cho 1–3+ web vệ tinh.",
-        "16–24 Bài E-E-A-T/tháng: Cung cấp nội dung chuyên gia, nuôi dưỡng khách hàng B2B.",
-        "Tiết kiệm 80% chi phí: Thay thế việc thuê nhiều agency hay phòng marketing cồng kềnh.",
-      ],
-    },
+  const tabItems = [
+    { id: "chem", label: "Hóa chất & Xử lý nước", icon: Droplet },
+    { id: "valve", label: "Van & Cơ điện M&E", icon: Wrench },
+    { id: "multi", label: "Đa website vệ tinh", icon: Globe2 },
   ];
 
+  const cases = {
+    chem: {
+      label: "Hóa chất, vật liệu lọc & xử lý nước",
+      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
+      rows: [
+        {
+          label: "Thu hút",
+          body: 'Khách hỏi ChatGPT "So sánh than hoạt tính gáo dừa và than đá trong xử lý nước cấp?" — AI trích dẫn bài phân tích trên website của bạn.',
+        },
+        {
+          label: "Bán hàng",
+          body: "Khách gửi ảnh tem bao bì; trợ lý đối chiếu hồ sơ Quatest, chỉ số Iodine, tính thể tích bồn lọc và xuất báo giá kèm VietQR.",
+        },
+        {
+          label: "Quản trị",
+          body: "Ban Giám Đốc theo dõi nhu cầu tìm kiếm của các nhà máy công nghiệp theo từng khu vực.",
+        },
+      ],
+    },
+    valve: {
+      label: "Van, thiết bị công nghiệp & Cơ điện M&E",
+      image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=900&q=80",
+      rows: [
+        {
+          label: "Thu hút",
+          body: "Xuất hiện đầu tiên khi kỹ sư tra cứu mặt bích DIN, van điều khiển khí nén, thông số chịu áp PN16.",
+        },
+        {
+          label: "Bán hàng",
+          body: "Nhận danh mục dự án hàng chục mã vật tư: tự bóc tách quy cách, kiểm tra tồn kho, lập Bảng dự toán BOQ hoàn chỉnh.",
+        },
+        {
+          label: "Quản trị",
+          body: "Nắm tỷ lệ chuyển đổi từ báo giá dự thầu đến khi ký hợp đồng.",
+        },
+      ],
+    },
+    multi: {
+      label: "Doanh nghiệp vận hành nhiều website vệ tinh",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
+      rows: [
+        {
+          label: "Bài toán",
+          body: "Muốn mở rộng độ phủ bằng 2 – 3 website vệ tinh nhưng thiếu nhân sự viết bài và lo nội dung trùng lặp.",
+        },
+        {
+          label: "Giải pháp",
+          body: "Mô hình Một Trung Tâm — Đa Chi Nhánh: tri thức tập trung, hệ thống tự biên tập nội dung độc bản cho từng site.",
+        },
+        {
+          label: "Kết quả",
+          body: "Giảm đáng kể chi phí duy trì đội ngũ nội dung nội bộ.",
+        },
+      ],
+    },
+  };
+
+  const currentCase = cases[activeTab];
+
   return (
-    <section id="use-cases" className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="ung-dung" className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-8 lg:px-10 text-center">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#0D9488] bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
-            ỨNG DỤNG THỰC CHIẾN THEO NGÀNH
+        {/* Section Heading */}
+        <div className="max-w-3xl mx-auto mb-10">
+          <span className="text-xs font-bold uppercase tracking-[0.11em] text-teal-700 bg-teal-50 px-3.5 py-1 rounded-full border border-teal-100">
+            ỨNG DỤNG THỰC TẾ THEO NGÀNH
           </span>
-          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E293B] tracking-tight">
-            Kiến Trúc May Đo Cho Từng Ngành B2B
+          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Ứng Dụng AI Agent Theo Từng Ngành Kỹ Thuật &amp; Công Nghiệp
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-            Giải quyết đặc thù bảng giá, tài liệu kỹ thuật và hành vi tìm kiếm riêng biệt của từng lĩnh vực.
-          </p>
         </div>
 
-        {/* Clean Minimalist Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10">
-          {tabs.map((tab) => {
+        {/* Tab Buttons */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {tabItems.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 rounded-xl px-4 sm:px-5 py-3 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                type="button"
+                onClick={() => setActiveTab(tab.id as "chem" | "valve" | "multi")}
+                className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#1E293B] text-white shadow-sm"
-                    : "bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
+                    ? "bg-[#1E293B] text-white shadow-xs"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
                 }`}
               >
-                <Icon className={`h-4 w-4 ${isActive ? "text-[#0D9488]" : "text-slate-500"}`} />
-                <span>{tab.name}</span>
+                <Icon className={`h-4 w-4 ${isActive ? "text-teal-400" : "text-slate-500"}`} />
+                <span>{tab.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Tab Content Box - Clean Card */}
-        <div className="rounded-3xl border border-slate-200/90 bg-[#F8FAFC] p-6 sm:p-10 text-left max-w-4xl mx-auto shadow-xs">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-slate-200/80 pb-4">
-            <h3 className="text-lg sm:text-xl font-bold text-[#1E293B]">
-              {tabs[activeTab].title}
-            </h3>
+        {/* Tab Content Card */}
+        <div className="rounded-2xl border border-slate-200/90 bg-[#F8FAFC] p-6 sm:p-8 text-left shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Speed Comparison Badge */}
-            <div className="flex items-center gap-2 text-xs font-semibold">
-              <span className="rounded-lg bg-rose-50 px-2.5 py-1 text-rose-700 border border-rose-100 line-through">
-                {tabs[activeTab].speedBefore}
-              </span>
-              <span className="text-slate-400">→</span>
-              <span className="rounded-lg bg-emerald-50 px-2.5 py-1 text-emerald-800 border border-emerald-200 flex items-center gap-1 font-bold">
-                <Zap className="h-3 w-3 text-[#0D9488]" /> {tabs[activeTab].speedAfter}
-              </span>
+            {/* Left: Responsive Industry Image */}
+            <div className="lg:col-span-4 relative h-[240px] sm:h-[280px] rounded-xl overflow-hidden border border-slate-200/80 shadow-xs">
+              <Image
+                src={currentCase.image}
+                alt={currentCase.label}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+              />
             </div>
-          </div>
 
-          <div className="space-y-4">
-            {tabs[activeTab].points.map((pt, pIdx) => (
-              <div key={pIdx} className="flex items-start gap-3">
-                <CheckCircle2 className="h-4 w-4 text-[#0D9488] shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
-                  {pt}
-                </span>
+            {/* Right: 3 Tiered Case Rows */}
+            <div className="lg:col-span-8 space-y-5">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug pb-2 border-b border-slate-200/70">
+                {currentCase.label}
+              </h3>
+
+              <div className="space-y-4">
+                {currentCase.rows.map((row, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700">
+                      {row.label}
+                    </span>
+                    <p className="text-xs sm:text-sm leading-relaxed text-slate-700 font-normal">
+                      {row.body}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="mt-8 pt-4 border-t border-slate-200/80 flex justify-end">
-            <a
-              href="#dang-ky"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0D9488] hover:text-[#0f766e] transition-colors"
-            >
-              <span>Nhận buổi khảo sát & demo cho ngành của bạn</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </a>
           </div>
         </div>
 

@@ -1,214 +1,173 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, X, Gift, ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
+import { Gift, Check, ArrowRight, Sparkles } from "lucide-react";
 
 export default function PricingSection() {
-  const [isQuarterly, setIsQuarterly] = useState(true);
+  const [showPricing, setShowPricing] = useState(false);
 
-  const plans = [
+  const tiers = [
     {
+      tier: "Gói 1 — Foundation",
       name: "Nền tảng",
-      tier: "GÓI 1 — FOUNDATION",
-      priceMonthly: "12.500.000",
-      priceQuarterly: "37.500.000",
-      setupFee: "20.000.000 đ",
-      equivalentNote: "Tương đương 12.500.000 đ / tháng",
+      price: showPricing ? "12.500.000 đ/tháng" : "Báo giá theo quy mô",
+      setupNote: showPricing ? "Miễn phí 20M Setup khi trả theo quý" : "Khảo sát sau buổi Audit",
+      cta: "Nhận phạm vi chi tiết",
       featured: false,
-      cta: "Chọn gói Nền tảng",
       features: [
-        { label: "Node 1 · Master RAG Lake (Core tri thức)", included: true },
-        { label: "Node 3 · Agent 24/7 + Đồng bộ CRM (M3, M5)", included: true },
-        { label: "Báo Cáo Quản Trị 1 Trang (M0)", included: true },
-        { label: "Node 4 · Zalo Copilot báo giá 8 giây (M4)", included: false },
-        { label: "Node 2 · Flow Content & GEO đa site (M1, M2)", included: false },
+        "01 website chính",
+        "8 – 12 bài E-E-A-T / tháng",
+        "Master RAG Lake cập nhật hàng tháng",
+        "LiveChat website cơ bản",
+        "Báo cáo tóm tắt hàng tháng",
+        "SLA hỗ trợ 48 giờ làm việc",
       ],
     },
     {
+      tier: "Gói 2 — Growth",
       name: "Tăng trưởng",
-      tier: "GÓI 2 — GROWTH",
-      ribbon: "ĐƯỢC 85% DOANH NGHIỆP LỰA CHỌN",
-      priceMonthly: "24.000.000",
-      priceQuarterly: "72.000.000",
-      setupFee: "25.000.000 đ",
-      equivalentNote: "Tương đương 24.000.000 đ / tháng",
+      price: showPricing ? "24.000.000 đ/tháng" : "Báo giá theo quy mô",
+      setupNote: showPricing ? "Miễn phí 25M Setup khi trả theo quý" : "Khảo sát sau buổi Audit",
+      cta: "Gói chủ lực — nhận phạm vi",
       featured: true,
-      cta: "Chọn gói Tăng trưởng",
+      badge: "GÓI CHỦ LỰC (85% DN LỰA CHỌN)",
       features: [
-        { label: "Toàn bộ quyền lợi gói Nền tảng", included: true },
-        { label: "Node 4 · Zalo Copilot báo giá 8 giây (M4)", included: true },
-        { label: "Node 2 · E-E-A-T + GEO, 1-3 satellite site (M1, M2)", included: true },
-        { label: "BOQ estimator bóc tách khối lượng (M6)", included: true },
-        { label: "Node 4 · Tender copilot hồ sơ thầu (M7)", included: false },
+        "1 – 3 website vệ tinh",
+        "16 – 24 bài E-E-A-T đa site / tháng",
+        "Master RAG Lake real-time đa kênh",
+        "LiveChat Web + Fanpage + Zalo OA",
+        "Báo Cáo Quản Trị 1 Trang real-time",
+        "Zalo Copilot báo giá PDF 8 giây",
+        "SLA 24 giờ + họp QBR mỗi quý",
       ],
     },
     {
-      name: "Doanh nghiệp",
-      tier: "GÓI 3 — ENTERPRISE",
-      priceMonthly: "41.500.000",
-      priceQuarterly: "124.500.000",
-      setupFee: "35.000.000 đ",
-      equivalentNote: "Tương đương 41.500.000 đ / tháng",
+      tier: "Gói 3 — Enterprise",
+      name: "Toàn diện",
+      price: showPricing ? "41.500.000 đ/tháng" : "Báo giá theo quy mô",
+      setupNote: showPricing ? "Miễn phí 35M Setup khi trả theo quý" : "Khảo sát sau buổi Audit",
+      cta: "Nhận phạm vi chi tiết",
       featured: false,
-      cta: "Đặt buổi tư vấn kiến trúc",
       features: [
-        { label: "Toàn bộ 5 Node · 8 module hoàn chỉnh", included: true },
-        { label: "Tender copilot (M7) + 3+ satellite site", included: true },
-        { label: "Mô phỏng what-if & phát hiện điểm nghẽn nâng cao", included: true },
-        { label: "Kiến trúc viên riêng, rà soát ngày 75 (QBR)", included: true },
-        { label: "Ưu tiên hỗ trợ khẩn cấp trong 2 giờ", included: true },
+        "3 – 5+ website vệ tinh",
+        "30+ bài E-E-A-T + tài liệu kỹ thuật",
+        "Master Lake + Hybrid Semantic Search",
+        "CSKH đa kênh + tự phân loại Deal",
+        "Dashboard + mô phỏng What-If",
+        "Báo giá 8s + chiết khấu đa tầng",
+        "BOQ thủy lực & HSĐXKT trong 30 phút",
+        "Hỗ trợ ưu tiên 4 giờ + cố vấn 1-1",
       ],
     },
   ];
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-white border-b border-slate-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="mo-hinh" className="py-16 sm:py-24 bg-gradient-to-br from-[#1E293B] via-[#16233A] to-[#0F172A] text-white">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-8 lg:px-10 text-center">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#0D9488] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80">
-            ĐẦU TƯ VẬN HÀNH
+        <div className="max-w-3xl mx-auto mb-6">
+          <span className="text-xs font-bold uppercase tracking-[0.11em] text-indigo-300 bg-white/5 px-3.5 py-1 rounded-full border border-white/15">
+            MÔ HÌNH HỢP TÁC
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E293B] tracking-tight">
-            Ba Mức Retainer. Một Ưu Đãi 0-Setup.
+          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Ba Mức Phạm Vi Triển Khai — Chi Phí Báo Riêng Theo Quy Mô
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-            Hợp đồng 6 tháng, trả trước theo quý — Trang Anh AI miễn toàn bộ phí kiến trúc 20–35 triệu. Không cam kết thứ hạng Google rủi ro ngoại cảnh; chỉ cam kết những gì hệ thống kiểm soát được.
+          <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+            Sprint kiến trúc 4 tuần, sau đó đồng hành vận hành theo tháng. Phạm vi công việc rõ ràng ngay từ đầu; mức đầu tư được báo riêng sau buổi khám sức khỏe vận hành.
           </p>
         </div>
 
-        {/* 0-Setup Offer Badge */}
+        {/* Pricing Mode Toggle */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-1.5 text-xs font-semibold text-amber-800 border border-amber-200/80 shadow-2xs">
-            <Gift className="h-4 w-4 text-amber-600" />
+          <button
+            type="button"
+            onClick={() => setShowPricing(!showPricing)}
+            className="text-xs font-semibold text-slate-400 hover:text-white underline underline-offset-4 cursor-pointer transition-colors"
+          >
+            {showPricing ? "← Xem chế độ Báo giá theo quy mô" : "Hiển thị khung Retainer tham khảo →"}
+          </button>
+        </div>
+
+        {/* Ultimate 0-Setup Offer Banner */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-semibold shadow-xs">
+            <Gift className="h-4 w-4 text-amber-400 shrink-0" />
             <span>
-              {isQuarterly
-                ? "Ưu đãi 0-Setup: Trả trước theo quý, hợp đồng 6 tháng — miễn toàn bộ phí kiến trúc 20–35 triệu."
-                : "Trả trước theo quý để nhận ưu đãi miễn 100% phí thiết lập ban đầu (20–35 triệu)."}
+              Ultimate 0-Setup Offer — miễn phí kiến trúc khi cam kết 6 tháng, thu trước theo quý · giới hạn nhóm doanh nghiệp tiên phong
             </span>
           </div>
         </div>
 
-        {/* Billing Cycle Toggle */}
-        <div className="flex items-center justify-center gap-3 mb-12">
-          <span className={`text-xs sm:text-sm font-semibold ${!isQuarterly ? "text-[#1E293B]" : "text-slate-500"}`}>
-            Thanh toán theo tháng
-          </span>
-          <button
-            type="button"
-            onClick={() => setIsQuarterly(!isQuarterly)}
-            className="relative inline-flex h-6 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-[#4F46E5] transition-colors duration-200 ease-in-out focus:outline-hidden"
-          >
-            <span
-              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                isQuarterly ? "translate-x-6" : "translate-x-0"
+        {/* 3 Scope Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left items-stretch">
+          {tiers.map((t, idx) => (
+            <div
+              key={idx}
+              className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all relative overflow-hidden ${
+                t.featured
+                  ? "bg-white text-slate-900 shadow-2xl ring-2 ring-indigo-500"
+                  : "bg-white/[0.05] text-white border border-white/10 hover:border-white/20"
               }`}
-            />
-          </button>
-          <span className={`text-xs sm:text-sm font-semibold flex items-center gap-1.5 ${isQuarterly ? "text-[#4F46E5]" : "text-slate-500"}`}>
-            <span>Theo Quý (Tiết kiệm Setup)</span>
-            <span className="text-[10px] uppercase font-bold text-white bg-rose-500 px-1.5 py-0.5 rounded-full">Hot</span>
-          </span>
-        </div>
+            >
+              {/* Featured Ribbon */}
+              {t.featured && (
+                <div className="absolute top-0 inset-x-0 bg-gradient-to-r from-indigo-600 via-indigo-500 to-teal-600 text-white text-[10.5px] font-bold text-center py-1 tracking-wider uppercase">
+                  {t.badge}
+                </div>
+              )}
 
-        {/* 3 Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-          {plans.map((plan, idx) => {
-            const price = isQuarterly ? plan.priceQuarterly : plan.priceMonthly;
-            const unit = isQuarterly ? "đ / quý" : "đ / tháng";
+              <div className={t.featured ? "pt-3" : ""}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    {t.tier}
+                  </span>
+                </div>
 
-            return (
-              <div
-                key={idx}
-                className={`relative rounded-3xl p-7 sm:p-8 flex flex-col justify-between text-left transition-all ${
-                  plan.featured
-                    ? "bg-[#1E293B] text-white shadow-2xl ring-2 ring-[#4F46E5] lg:-translate-y-2"
-                    : "bg-white text-slate-800 border border-slate-200 shadow-sm"
+                <h3 className={`text-xl font-bold mb-3 ${t.featured ? "text-slate-900" : "text-white"}`}>
+                  {t.name}
+                </h3>
+
+                <div className="pb-4 mb-5 border-b border-slate-200/40">
+                  <div className={`font-mono text-2xl font-black ${t.featured ? "text-indigo-600" : "text-teal-400"}`}>
+                    {t.price}
+                  </div>
+                  <div className="text-[11px] text-slate-400 mt-1 font-normal">
+                    {t.setupNote}
+                  </div>
+                </div>
+
+                <ul className="space-y-2.5 text-xs sm:text-sm mb-6">
+                  {t.features.map((f, fIdx) => (
+                    <li key={fIdx} className="flex items-start gap-2">
+                      <Check className={`h-4 w-4 shrink-0 mt-0.5 ${t.featured ? "text-[#0D9488]" : "text-teal-400"}`} />
+                      <span className={t.featured ? "text-slate-700" : "text-slate-300"}>
+                        {f}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href="#dang-ky"
+                className={`w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 text-xs sm:text-sm font-semibold transition-all text-center ${
+                  t.featured
+                    ? "bg-[#0D9488] hover:bg-[#0f766e] text-white shadow-md shadow-teal-900/20"
+                    : "bg-white/10 hover:bg-white/15 text-white border border-white/20"
                 }`}
               >
-                {/* Featured Ribbon */}
-                {plan.featured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#4F46E5] to-[#0D9488] px-4 py-1 text-[11px] font-bold tracking-wider text-white uppercase shadow-sm">
-                    {plan.ribbon}
-                  </div>
-                )}
-
-                <div>
-                  {/* Tier Subtitle */}
-                  <span className={`font-mono text-xs uppercase tracking-widest font-semibold ${plan.featured ? "text-indigo-300" : "text-indigo-600"}`}>
-                    {plan.tier}
-                  </span>
-
-                  {/* Plan Name */}
-                  <h3 className={`mt-2 text-2xl font-extrabold ${plan.featured ? "text-white" : "text-[#1E293B]"}`}>
-                    {plan.name}
-                  </h3>
-
-                  {/* Price */}
-                  <div className="mt-5 flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight">
-                      {price}
-                    </span>
-                    <span className={`text-xs font-mono ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>
-                      {unit}
-                    </span>
-                  </div>
-
-                  {/* Setup Fee Note */}
-                  <div className="mt-3">
-                    {isQuarterly ? (
-                      <p className="text-xs font-semibold text-emerald-400 font-mono">
-                        Phí kiến trúc {plan.setupFee} → <span className="underline">MIỄN PHÍ</span>
-                      </p>
-                    ) : (
-                      <p className={`text-xs font-mono ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
-                        Phí kiến trúc ban đầu: {plan.setupFee}
-                      </p>
-                    )}
-                    {isQuarterly && (
-                      <p className={`text-[11px] mt-0.5 ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
-                        {plan.equivalentNote}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Features List */}
-                  <ul className="mt-8 space-y-3.5 border-t pt-6 border-slate-200/20 text-xs sm:text-sm">
-                    {plan.features.map((f, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2.5">
-                        {f.included ? (
-                          <Check className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                        ) : (
-                          <X className="h-4 w-4 text-slate-500 shrink-0 mt-0.5 opacity-40" />
-                        )}
-                        <span className={f.included ? (plan.featured ? "text-slate-200 font-medium" : "text-slate-700") : "text-slate-400 line-through"}>
-                          {f.label}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* CTA Button */}
-                <div className="mt-8 pt-6 border-t border-slate-200/20">
-                  <a
-                    href="#dang-ky"
-                    className={`w-full inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all shadow-xs ${
-                      plan.featured
-                        ? "bg-[#0D9488] text-white hover:bg-[#0f766e]"
-                        : "bg-[#1E293B] text-white hover:bg-slate-800"
-                    }`}
-                  >
-                    <span>{plan.cta}</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
-
-              </div>
-            );
-          })}
+                <span>{t.cta}</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          ))}
         </div>
+
+        {/* QBR Day 75 Guarantee Note */}
+        <p className="mt-10 max-w-3xl mx-auto text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+          🛡️ Buổi rà soát QBR vào ngày thứ 75: nếu hệ thống không đạt các tiêu chuẩn vận hành hai bên đã thống nhất, doanh nghiệp được hoàn chi phí dịch vụ của tháng tiếp theo và giữ toàn bộ dữ liệu đã làm sạch.
+        </p>
 
       </div>
     </section>

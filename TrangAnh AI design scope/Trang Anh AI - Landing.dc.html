@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Triển khai AI Agent cho doanh nghiệp B2B kỹ thuật | Trang Anh AI</title>
+  <meta name="description" content="Trang Anh AI triển khai hệ thống AI Agent vận hành cho doanh nghiệp B2B kỹ thuật Việt Nam: số hóa bảng giá và tài liệu kỹ thuật, chatbot tư vấn 24/7, báo giá tự động kèm VietQR, báo cáo quản trị một trang. Bàn giao trong 4 tuần, trên hạ tầng chính chủ.">
+  <meta property="og:title" content="Triển khai AI Agent cho doanh nghiệp B2B kỹ thuật | Trang Anh AI">
+  <meta property="og:description" content="Hệ thống AI Agent vận hành khép kín 5 Node: dữ liệu sạch, hiện diện trên AI Search, tiếp đón 24/7, báo giá nhanh và báo cáo quản trị một trang.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tranganhai.com/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Trang Anh AI","alternateName":"Trang Anh Systems Vietnam","url":"https://tranganhai.com","email":"contact@tranganhai.com","slogan":"Trang bị quy trình. Tinh anh vận hành.","description":"Đơn vị triển khai hệ thống AI Agent vận hành và căn chỉnh luồng công việc cho doanh nghiệp B2B kỹ thuật tại Việt Nam.","areaServed":"VN"},{"@type":"Service","serviceType":"Triển khai AI Agent vận hành doanh nghiệp","provider":{"@type":"Organization","name":"Trang Anh AI"},"areaServed":"VN","audience":{"@type":"BusinessAudience","name":"Doanh nghiệp B2B kỹ thuật 5-50 nhân sự"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI Agent khác chatbot thông thường ở điểm nào?","acceptedAnswer":{"@type":"Answer","text":"Chatbot trả lời theo kịch bản có sẵn. AI Agent đọc dữ liệu gốc của doanh nghiệp, thực hiện chuỗi công việc nhiều bước như tra thông số, lập dự toán, xuất báo giá và ghi dữ liệu vào CRM, rồi chuyển cho nhân viên duyệt."}},{"@type":"Question","name":"Chi phí triển khai AI Agent cho doanh nghiệp vừa và nhỏ được tính thế nào?","acceptedAnswer":{"@type":"Answer","text":"Chi phí gồm một sprint kiến trúc 4 tuần và phí đồng hành vận hành theo tháng, báo riêng theo quy mô dữ liệu, số website và số kênh bán hàng sau buổi khám sức khỏe vận hành."}},{"@type":"Question","name":"Dữ liệu nội bộ có bị rò rỉ khi triển khai AI Agent không?","acceptedAnswer":{"@type":"Answer","text":"Hệ thống được cài trên tài khoản Enterprise chính chủ của doanh nghiệp, dữ liệu không dùng để huấn luyện AI chung và tuân thủ Luật Dữ liệu 91/2025/QH15."}}]}]}</script>
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/tokens/base.css">
+  <link rel="stylesheet" href="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/styles.css">
+  <script src="_ds/test-design-system-40b42542-f6d7-4dbb-aa41-5eac887d28a9/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--surface-page); }
+    section[id] { scroll-margin-top: 80px; }
+    a { color: var(--iris-600); text-decoration: none; }
+    a:hover { color: var(--iris-700); text-decoration: underline; text-underline-offset: 3px; }
+    @keyframes ta-flow-dot { 0% { left: 8%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: 92%; opacity: 0; } }
+    @keyframes ta-loop-dash { to { background-position-x: -24px; } }
+    @keyframes ta-hero-sheen { 0%, 100% { transform: translateX(0) rotate(14deg); opacity: .5; } 50% { transform: translateX(120%) rotate(14deg); opacity: 1; } }
+    @keyframes ta-glow-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-40px, 30px) scale(1.08); } }
+    @keyframes ta-glow-b { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, -30px) scale(1.06); } }
+    @media (prefers-reduced-motion: reduce) { [data-flow-anim] { animation: none !important; } }
+  </style>
+</helmet>
+
+<div style="background: var(--surface-page); color: var(--text-body); font-family: var(--font-body);">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: var(--glass-light); backdrop-filter: var(--blur-glass); -webkit-backdrop-filter: var(--blur-glass); border-bottom: 1px solid var(--border-subtle);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; height: var(--topbar-h); display: flex; align-items: center; justify-content: space-between; gap: var(--space-6);">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Logo" size="32" src="assets/logo-icon.jpg" hint-size="150px,32px"></x-import>
+      <nav style="display: flex; gap: var(--space-3); flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none;">
+        <a href="#thuc-trang" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Thực trạng</a>
+        <a href="#diem-nghen" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Điểm nghẽn</a>
+        <a href="#day-chuyen" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">5 Node</a>
+        <a href="#doi-tuong" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Đối tượng</a>
+        <a href="#ung-dung" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Ứng dụng</a>
+        <a href="#lo-trinh" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Lộ trình</a>
+        <a href="#mo-hinh" style="font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); text-decoration: none; white-space: nowrap;">Hợp tác</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: var(--space-3); flex: 0 0 auto;">
+        <a href="#dang-ky" style="text-decoration: none;"><x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Button" size="sm" hint-size="150px,32px">Đăng ký Audit</x-import></a>
+      </div>
+    </div>
+  </header>
+
+  <section style="position: relative; background: var(--gradient-dark); padding-top: var(--space-20); padding-bottom: var(--space-24); overflow: hidden;">
+    <span style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 72px 72px; -webkit-mask-image: radial-gradient(120% 90% at 70% 10%, #000 0%, transparent 72%); mask-image: radial-gradient(120% 90% at 70% 10%, #000 0%, transparent 72%);"></span>
+    <span style="position: absolute; inset: 0; overflow: hidden;"><span data-flow-anim="sheen" style="position: absolute; top: -20%; left: -30%; width: 60%; height: 140%; transform: rotate(14deg); background: linear-gradient(90deg, transparent, rgba(129,140,248,.10), transparent); animation: ta-hero-sheen 14s ease-in-out infinite;"></span></span>
+    <span data-flow-anim="glow" style="position: absolute; top: -180px; right: -120px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(79,70,229,.34) 0%, rgba(79,70,229,0) 65%); animation: ta-glow-a 22s ease-in-out infinite;"></span>
+    <span data-flow-anim="glow" style="position: absolute; bottom: -220px; left: -140px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(13,148,136,.24) 0%, rgba(13,148,136,0) 68%); animation: ta-glow-b 26s ease-in-out infinite;"></span>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: var(--gutter-lg); align-items: start;">
+      <div style="display: grid; gap: var(--space-6); justify-items: start;">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Badge" tone="onDark" caps="{{ true }}" hint-size="280px,26px">Đồng hành kiến trúc &amp; chuyển giao</x-import>
+        <h1 style="font-family: var(--font-display); font-size: var(--text-5xl); font-weight: var(--weight-black); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: var(--text-on-dark); margin: 0; text-wrap: pretty;">Xóa Bỏ Điểm Nghẽn Vận Hành.<br><span style="background: linear-gradient(100deg, var(--iris-300), var(--teal-300)); -webkit-background-clip: text; background-clip: text; color: transparent;">Tự Chủ Cỗ Máy Doanh Nghiệp.</span></h1>
+        <p style="font-size: var(--type-lead-size); line-height: var(--leading-relaxed); color: var(--text-on-dark-muted); max-width: 480px; margin: 0; text-wrap: pretty;">Triển khai AI Agent vận hành cho doanh nghiệp B2B kỹ thuật — bàn giao trong 4 tuần, trên hạ tầng chính chủ.</p>
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <a href="#dang-ky" style="text-decoration: none;"><x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Button" size="lg" hint-size="300px,52px">{{ ctaLabel }}</x-import></a>
+          <a href="#day-chuyen" style="text-decoration: none;"><x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Button" size="lg" variant="onDark" hint-size="180px,52px">Xem dây chuyền 5 Node</x-import></a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); font-size: var(--text-xs); color: var(--text-on-dark-muted);">
+          <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(255,255,255,.05); border: 1px solid var(--border-on-dark);"><span style="color: var(--teal-300); display: flex;"><x-import component="Icon" from="./icons.jsx" name="lock" size="13" hint-size="13px,13px"></x-import></span>Hạ tầng chính chủ</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(255,255,255,.05); border: 1px solid var(--border-on-dark);"><span style="color: var(--teal-300); display: flex;"><x-import component="Icon" from="./icons.jsx" name="shield-check" size="13" hint-size="13px,13px"></x-import></span>Luật 91/2025/QH15</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(255,255,255,.05); border: 1px solid var(--border-on-dark);"><span style="color: var(--teal-300); display: flex;"><x-import component="Icon" from="./icons.jsx" name="key-round" size="13" hint-size="13px,13px"></x-import></span>Sở hữu dữ liệu &amp; quy trình</span>
+        </div>
+      </div>
+
+      <div style="background: var(--surface-card); border-radius: var(--radius-panel); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-xl); overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: var(--space-3); padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: var(--surface-sunken);">
+          <span style="display: flex; gap: 5px;"><span style="width: 9px; height: 9px; border-radius: 99px; background: #E2E8F0;"></span><span style="width: 9px; height: 9px; border-radius: 99px; background: #CBD5E1;"></span><span style="width: 9px; height: 9px; border-radius: 99px; background: #94A3B8;"></span></span>
+          <span style="font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted);">Báo Cáo Quản Trị 1 Trang · M0</span>
+          <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-2xs); color: var(--teal-700); font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 99px; background: var(--teal-600);"></span>Realtime</span>
+        </div>
+        <div style="display: grid; gap: var(--space-4); padding: var(--space-5);">
+          <div style="display: grid; gap: var(--space-2);">
+            <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Tầng 1 · Master RAG Lake</span>
+            <div style="display: flex; align-items: center; gap: var(--space-3); padding: 10px 12px; background: var(--surface-page); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);"><span style="color: var(--teal-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="file-spreadsheet" size="16" hint-size="16px,16px"></x-import></span><span style="font-size: var(--text-sm); color: var(--text-strong); font-weight: 500;">Bảng giá 2026 — Hóa chất.xlsx</span><span style="margin-left: auto; font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted);">Đã gỡ gộp ô</span></div>
+            <div style="display: flex; align-items: center; gap: var(--space-3); padding: 10px 12px; background: var(--surface-page); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);"><span style="color: var(--teal-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="file-text" size="16" hint-size="16px,16px"></x-import></span><span style="font-size: var(--text-sm); color: var(--text-strong); font-weight: 500;">TDS than hoạt tính gáo dừa.pdf</span><span style="margin-left: auto; font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted);">Đã OCR</span></div>
+            <div style="display: flex; align-items: center; gap: var(--space-3); padding: 10px 12px; background: var(--surface-page); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);"><span style="color: var(--iris-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="book-marked" size="16" hint-size="16px,16px"></x-import></span><span style="font-size: var(--text-sm); color: var(--text-strong); font-weight: 500;">QCVN 01-1:2018/BYT</span><span style="margin-left: auto; font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted);">Đã gán nhãn</span></div>
+          </div>
+          <div style="display: grid; gap: var(--space-2);">
+            <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Tầng 2 · Khối tác nghiệp</span>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+              <div style="display: grid; gap: 6px; justify-items: center; padding: 12px 8px; border-radius: var(--radius-md); background: var(--surface-brand-soft); border: 1px solid var(--border-brand);"><span style="color: var(--iris-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="search" size="17" hint-size="17px,17px"></x-import></span><span style="font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700); text-align: center;">AI Search</span></div>
+              <div style="display: grid; gap: 6px; justify-items: center; padding: 12px 8px; border-radius: var(--radius-md); background: var(--surface-brand-soft); border: 1px solid var(--border-brand);"><span style="color: var(--iris-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="messages-square" size="17" hint-size="17px,17px"></x-import></span><span style="font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700); text-align: center;">LiveChat 24/7</span></div>
+              <div style="display: grid; gap: 6px; justify-items: center; padding: 12px 8px; border-radius: var(--radius-md); background: var(--surface-brand-soft); border: 1px solid var(--border-brand);"><span style="color: var(--iris-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="calculator" size="17" hint-size="17px,17px"></x-import></span><span style="font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700); text-align: center;">Dự toán BOQ</span></div>
+              <div style="display: grid; gap: 6px; justify-items: center; padding: 12px 8px; border-radius: var(--radius-md); background: var(--surface-accent-soft); border: 1px solid var(--border-accent);"><span style="color: var(--teal-700); display: flex;"><x-import component="Icon" from="./icons.jsx" name="file-check-2" size="17" hint-size="17px,17px"></x-import></span><span style="font-size: var(--text-2xs); font-weight: 600; color: var(--teal-700); text-align: center;">Duyệt 10s</span></div>
+            </div>
+          </div>
+          <div style="display: grid; gap: var(--space-2);">
+            <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Tầng 3 · Báo Cáo Quản Trị 1 Trang</span>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 14px 16px; background: var(--surface-page); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <span style="font-size: var(--text-sm); font-weight: 600; color: var(--text-strong);">Traffic</span>
+              <span style="color: var(--iris-400); display: flex;"><x-import component="Icon" from="./icons.jsx" name="arrow-right" size="15" hint-size="15px,15px"></x-import></span>
+              <span style="font-size: var(--text-sm); font-weight: 600; color: var(--text-strong);">Lead</span>
+              <span style="color: var(--iris-400); display: flex;"><x-import component="Icon" from="./icons.jsx" name="arrow-right" size="15" hint-size="15px,15px"></x-import></span>
+              <span style="font-size: var(--text-sm); font-weight: 600; color: var(--text-strong);">Báo giá</span>
+              <span style="color: var(--iris-400); display: flex;"><x-import component="Icon" from="./icons.jsx" name="arrow-right" size="15" hint-size="15px,15px"></x-import></span>
+              <span style="font-size: var(--text-sm); font-weight: 600; color: var(--teal-700);">Doanh thu</span>
+              <span style="margin-left: auto; font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted);">Số liệu thật của doanh nghiệp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="thuc-trang" style="padding-top: var(--section-y); padding-bottom: var(--section-y);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" align="center" eyebrow="Thực trạng thị trường" title="48,8% Doanh Nghiệp Ứng Dụng Công Nghệ Buộc Phải Dừng Lại" lead="Doanh nghiệp B2B không thiếu công cụ AI. Thứ đang thiếu là nền tảng dữ liệu chuẩn xác và một quy trình vận hành gắn kết." source="Nguồn: Báo cáo Thường niên Chuyển Đổi Số — Bộ Kế Hoạch &amp; Đầu Tư phối hợp cùng GIZ (n≈1.300)" hint-size="100%,190px"></x-import>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-12);">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,140px">
+          <div style="font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 700; color: var(--iris-600); letter-spacing: var(--tracking-tight);">18%</div>
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin: var(--space-2) 0 0;">doanh nghiệp đã tiếp cận AI, chỉ 1% đạt độ trưởng thành vận hành</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,140px">
+          <div style="font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 700; color: var(--iris-600); letter-spacing: var(--tracking-tight);">76%</div>
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin: var(--space-2) 0 0;">không tự tin vào năng lực tự triển khai nội bộ</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,140px">
+          <div style="font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 700; color: var(--iris-600); letter-spacing: var(--tracking-tight);">2,2%</div>
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin: var(--space-2) 0 0;">làm chủ được dữ liệu để ra quyết định</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,140px">
+          <div style="font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 700; color: var(--iris-600); letter-spacing: var(--tracking-tight);">41%</div>
+          <p style="font-size: var(--text-sm); line-height: 1.6; margin: var(--space-2) 0 0;">quản lý Việt Nam khó chứng minh ROI từ AI</p>
+        </x-import>
+      </div>
+
+      <div style="margin-top: var(--space-10); background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--surface-sunken); border-bottom: 1px solid var(--border-subtle);">
+          <span style="padding: 14px 20px; font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">4 bất cập của AI tự phát</span>
+          <span style="padding: 14px 20px; font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--teal-700); border-left: 1px solid var(--border-subtle);">Chuẩn mực của Trang Anh AI</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border-subtle);">
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="alert-triangle" size="15" hint-size="15px,15px"></x-import></span><span>AI tự bịa thông số &amp; tính nhẩm sai đơn giá chiết khấu.</span></span>
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65; border-left: 1px solid var(--border-subtle); background: var(--surface-page);"><span style="color: var(--teal-600); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="check-circle-2" size="15" hint-size="15px,15px"></x-import></span><span>Cấm AI tính nhẩm: mọi phép tính giá khóa chặt vào CSDL gốc.</span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border-subtle);">
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="alert-triangle" size="15" hint-size="15px,15px"></x-import></span><span>Tàng hình trước ChatGPT, Gemini, Perplexity khi khách tra cứu.</span></span>
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65; border-left: 1px solid var(--border-subtle); background: var(--surface-page);"><span style="color: var(--teal-600); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="check-circle-2" size="15" hint-size="15px,15px"></x-import></span><span>Bài viết chuyên gia sinh từ dữ liệu công ty, tối ưu để Chat AI trích dẫn.</span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border-subtle);">
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="alert-triangle" size="15" hint-size="15px,15px"></x-import></span><span>Nhân viên dán bảng giá mật lên AI công cộng — rủi ro pháp lý.</span></span>
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65; border-left: 1px solid var(--border-subtle); background: var(--surface-page);"><span style="color: var(--teal-600); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="check-circle-2" size="15" hint-size="15px,15px"></x-import></span><span>Hạ tầng Enterprise độc lập: dữ liệu không rời doanh nghiệp.</span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="alert-triangle" size="15" hint-size="15px,15px"></x-import></span><span>Mua nhiều phần mềm nhưng nhân viên vẫn quay về Zalo và Excel.</span></span>
+          <span style="display: flex; gap: 10px; padding: 18px 20px; font-size: var(--text-sm); line-height: 1.65; border-left: 1px solid var(--border-subtle); background: var(--surface-page);"><span style="color: var(--teal-600); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="check-circle-2" size="15" hint-size="15px,15px"></x-import></span><span>Nhúng vào quy trình có sẵn: hệ thống chuẩn bị sẵn bản nháp, nhân viên kiểm tra rồi bấm duyệt.</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="diem-nghen" style="background: var(--gradient-dark); padding-top: var(--section-y); padding-bottom: var(--section-y);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" on-dark="{{ true }}" align="center" eyebrow="3 điểm nghẽn vận hành B2B" title='Ba "Lỗ Rò Rỉ Vận Hành" Đang Bào Mòn Biên Lợi Nhuận' hint-size="100%,140px"></x-import>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-12);">
+        <div style="padding: var(--card-pad-lg); border-radius: var(--radius-card); background: rgba(255,255,255,.04); border: 1px solid var(--border-on-dark);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: rgba(225,29,72,.14); color: #FDA4AF;"><x-import component="Icon" from="./icons.jsx" name="user-x" size="19" hint-size="19px,19px"></x-import></span>
+            <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-on-dark-muted);">01</span>
+          </div>
+          <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--text-on-dark); margin: var(--space-4) 0 0; line-height: 1.35;">Tri thức bị "bắt cóc" bởi cá nhân</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.7; color: var(--text-on-dark-muted); margin: var(--space-3) 0 0;">Bảng giá nằm trên máy cá nhân, quy trình nằm trong đầu người cũ. Một nhân sự kỳ cựu nghỉ việc: mất 3–6 tháng để tuyển và đào tạo lại.</p>
+        </div>
+        <div style="padding: var(--card-pad-lg); border-radius: var(--radius-card); background: rgba(255,255,255,.04); border: 1px solid var(--border-on-dark);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: rgba(225,29,72,.14); color: #FDA4AF;"><x-import component="Icon" from="./icons.jsx" name="timer-off" size="19" hint-size="19px,19px"></x-import></span>
+            <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-on-dark-muted);">02</span>
+          </div>
+          <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--text-on-dark); margin: var(--space-4) 0 0; line-height: 1.35;">Mất khách vì phản hồi chậm trễ</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.7; color: var(--text-on-dark-muted); margin: var(--space-3) 0 0;">Khách hỏi dự toán, nhân viên mất hàng giờ lục file cũ. 68% người mua B2B chọn đơn vị phản hồi chuyên nghiệp đầu tiên.</p>
+        </div>
+        <div style="padding: var(--card-pad-lg); border-radius: var(--radius-card); background: rgba(255,255,255,.04); border: 1px solid var(--border-on-dark);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: rgba(225,29,72,.14); color: #FDA4AF;"><x-import component="Icon" from="./icons.jsx" name="gauge" size="19" hint-size="19px,19px"></x-import></span>
+            <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-on-dark-muted);">03</span>
+          </div>
+          <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--text-on-dark); margin: var(--space-4) 0 0; line-height: 1.35;">Ban Giám Đốc điều hành bằng cảm tính</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.7; color: var(--text-on-dark-muted); margin: var(--space-3) 0 0;">Hiệu quả từng kênh phải chờ báo cáo tổng hợp thủ công cuối tháng. Thiếu số liệu tức thì khiến quyết định luôn trễ nhịp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="doi-tuong" style="padding-top: var(--section-y); padding-bottom: var(--section-y-tight);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" align="center" eyebrow="Đối tượng phù hợp" title="Doanh Nghiệp Nào Nên Triển Khai AI Agent Vận Hành?" lead="Giải pháp AI Agent này dành cho doanh nghiệp B2B kỹ thuật tại Việt Nam, quy mô 5 – 50 nhân sự, bán hàng dựa trên thông số kỹ thuật và báo giá theo yêu cầu." hint-size="100%,170px"></x-import>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-10);">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,200px">
+          <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: var(--surface-brand-soft); color: var(--iris-600);"><x-import component="Icon" from="./icons.jsx" name="factory" size="19" hint-size="19px,19px"></x-import></span>
+          <h3 style="font-size: var(--text-md); font-weight: 600; margin: var(--space-4) 0 0; line-height: 1.35;">Ngành kỹ thuật &amp; công nghiệp</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.65; margin: var(--space-2) 0 0; color: var(--text-muted);">Hóa chất, xử lý nước, vật liệu lọc, van &amp; cơ điện M&amp;E, vật tư công nghiệp, bao bì, gia công cơ khí.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,200px">
+          <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: var(--surface-brand-soft); color: var(--iris-600);"><x-import component="Icon" from="./icons.jsx" name="file-spreadsheet" size="19" hint-size="19px,19px"></x-import></span>
+          <h3 style="font-size: var(--text-md); font-weight: 600; margin: var(--space-4) 0 0; line-height: 1.35;">Danh mục hàng phức tạp</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.65; margin: var(--space-2) 0 0; color: var(--text-muted);">Bảng giá nhiều tầng chiết khấu, catalogue và TDS nằm rải rác trên Excel, Zalo, ổ cứng cá nhân.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,200px">
+          <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: var(--surface-brand-soft); color: var(--iris-600);"><x-import component="Icon" from="./icons.jsx" name="users" size="19" hint-size="19px,19px"></x-import></span>
+          <h3 style="font-size: var(--text-md); font-weight: 600; margin: var(--space-4) 0 0; line-height: 1.35;">Đội ngũ 5 – 50 nhân sự</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.65; margin: var(--space-2) 0 0; color: var(--text-muted);">Chưa có phòng IT hay phòng marketing riêng, mỗi người kiêm nhiều việc, không muốn tuyển thêm đầu người.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="sm" hint-size="100%,200px">
+          <span style="width: 40px; height: 40px; border-radius: var(--radius-md); display: grid; place-items: center; background: var(--surface-accent-soft); color: var(--teal-700);"><x-import component="Icon" from="./icons.jsx" name="file-check-2" size="19" hint-size="19px,19px"></x-import></span>
+          <h3 style="font-size: var(--text-md); font-weight: 600; margin: var(--space-4) 0 0; line-height: 1.35;">Bán hàng bằng báo giá</h3>
+          <p style="font-size: var(--text-sm); line-height: 1.65; margin: var(--space-2) 0 0; color: var(--text-muted);">Mỗi đơn hàng cần dự toán, bóc tách quy cách hoặc hồ sơ thầu — tốc độ phản hồi quyết định việc thắng đơn.</p>
+        </x-import>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-6); padding: var(--card-pad-lg); background: var(--surface-sunken); border: 1px solid var(--border-subtle); border-radius: var(--radius-card);">
+        <div style="display: grid; gap: var(--space-2); align-content: start;">
+          <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Chưa phù hợp nếu</span>
+          <span style="display: flex; gap: 10px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="x-circle" size="15" hint-size="15px,15px"></x-import></span>Doanh nghiệp bán lẻ đơn giá cố định, không cần dự toán theo yêu cầu.</span>
+        </div>
+        <div style="display: grid; gap: var(--space-2); align-content: start;">
+          <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">&nbsp;</span>
+          <span style="display: flex; gap: 10px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="x-circle" size="15" hint-size="15px,15px"></x-import></span>Chưa sẵn sàng bàn giao tài liệu gốc và cử một đầu mối đối soát dữ liệu.</span>
+        </div>
+        <div style="display: grid; gap: var(--space-2); align-content: start;">
+          <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">&nbsp;</span>
+          <span style="display: flex; gap: 10px; font-size: var(--text-sm); line-height: 1.65;"><span style="color: var(--rose-500); flex: 0 0 auto; margin-top: 2px;"><x-import component="Icon" from="./icons.jsx" name="x-circle" size="15" hint-size="15px,15px"></x-import></span>Cần cam kết thứ hạng Google — Trang Anh AI không nhận cam kết phụ thuộc yếu tố ngoại cảnh.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: var(--space-12); padding-bottom: var(--space-4);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-4);">
+        <div style="position: relative; height: 300px; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <image-slot id="ta-plant" shape="rect" src="https://commons.wikimedia.org/wiki/Special:FilePath/Padmapukur%20Water%20Treatment%20Plant%20in%20Howrah%2005.jpg?width=1400" credit="Ảnh tạm: Wikimedia Commons (CC BY-SA)" placeholder="Ảnh nhà máy / hệ thống xử lý nước của khách hàng"></image-slot>
+        </div>
+        <div style="position: relative; height: 300px; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <image-slot id="ta-warehouse" shape="rect" src="https://commons.wikimedia.org/wiki/Special:FilePath/Three%20gate%20valves.jpg?width=1000" credit="Ảnh tạm: Wikimedia Commons (CC BY-SA)" placeholder="Ảnh kho van, vật tư công nghiệp"></image-slot>
+        </div>
+        <div style="position: relative; height: 300px; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <image-slot id="ta-boardroom" shape="rect" src="https://commons.wikimedia.org/wiki/Special:FilePath/Water%20distribution%20pipeline%20near%20Gandipet%20lake.jpg?width=1000" credit="Ảnh tạm: Wikimedia Commons (CC BY-SA)" placeholder="Ảnh tuyến ống / hiện trường thi công"></image-slot>
+        </div>
+      </div>
+      <p style="margin: var(--space-3) 0 0; font-size: var(--text-xs); color: var(--text-muted);">Ảnh minh họa tạm từ kho ảnh mở — kéo thả ảnh thực tế tại doanh nghiệp của bạn vào từng khung để thay thế.</p>
+    </div>
+  </section>
+
+  <section id="day-chuyen" style="padding-top: var(--section-y-tight); padding-bottom: var(--section-y);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" align="center" eyebrow="Dây chuyền vận hành khép kín" title="Tự Động Hóa Quy Trình Bán Hàng Bằng Dây Chuyền 5 Node" lead="Một cỗ máy duy nhất, năm mắt xích khép kín — dữ liệu sạch nuôi nội dung, nội dung nuôi lead, lead nuôi báo giá, báo giá nuôi báo cáo." hint-size="100%,170px"></x-import>
+
+      <div style="display: flex; justify-content: center; margin-top: var(--space-8);">
+        <div style="display: inline-flex; gap: 4px; padding: 4px; background: var(--surface-sunken); border: 1px solid var(--border-subtle); border-radius: var(--radius-pill);">
+          <button type="button" onClick="{{ setFlow }}" style="{{ tabFlowStyle }}">Bố cục A · Luồng ngang 5 node</button>
+          <button type="button" onClick="{{ setStack }}" style="{{ tabStackStyle }}">Bố cục B · Thẻ node xếp chồng</button>
+        </div>
+      </div>
+
+      <sc-if value="{{ isFlow }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top: var(--space-10);">
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); align-items: stretch;">
+            <sc-for list="{{ nodes }}" as="node" hint-placeholder-count="5">
+              <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.NodeCard" dc-props="{{ node }}" hint-size="100%,230px"></x-import>
+            </sc-for>
+          </div>
+          <div style="position: relative; height: 132px; margin-top: var(--space-2);">
+            <span style="position: absolute; left: 10%; right: 10%; top: 22px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--iris-500), var(--teal-500));"></span>
+            <span data-flow-anim="dot" style="position: absolute; top: 18px; width: 10px; height: 10px; margin-left: -5px; border-radius: 999px; background: var(--teal-500); box-shadow: 0 0 0 4px rgba(13,148,136,.18); animation: ta-flow-dot 5.2s linear infinite;"></span>
+            <span style="position: absolute; left: 20%; top: 36px; transform: translateX(-50%); white-space: nowrap; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-card); border: 1px solid var(--border-brand); font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700);">Nuôi nội dung chuyên môn</span>
+            <span style="position: absolute; left: 40%; top: 36px; transform: translateX(-50%); white-space: nowrap; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-card); border: 1px solid var(--border-brand); font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700);">Kéo khách tiềm năng</span>
+            <span style="position: absolute; left: 60%; top: 36px; transform: translateX(-50%); white-space: nowrap; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-card); border: 1px solid var(--border-brand); font-size: var(--text-2xs); font-weight: 600; color: var(--iris-700);">Chuyển Lead &amp; ngữ cảnh</span>
+            <span style="position: absolute; left: 80%; top: 36px; transform: translateX(-50%); white-space: nowrap; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-card); border: 1px solid var(--border-accent); font-size: var(--text-2xs); font-weight: 600; color: var(--teal-700);">Ghi nhận kết quả chốt đơn</span>
+            <span data-flow-anim="loop" style="position: absolute; left: 10%; right: 10%; top: 74px; height: 44px; border: 0 solid var(--teal-500); border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; opacity: .55;"></span>
+            <span style="position: absolute; left: 50%; top: 104px; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: var(--radius-pill); background: var(--surface-accent-soft); border: 1px solid var(--border-accent); font-size: var(--text-2xs); font-weight: 600; color: var(--teal-700); white-space: nowrap;"><x-import component="Icon" from="./icons.jsx" name="rotate-ccw" size="13" hint-size="13px,13px"></x-import>Vòng lặp khép kín — Node 5 tối ưu ngược chính sách giá &amp; danh mục tại Node 1</span>
+          </div>
+          <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" surface="sunken" elevation="none" pad="lg" hint-size="100%,150px">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8);">
+              <div style="display: grid; gap: var(--space-2);">
+                <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Dữ liệu vào</span>
+                <span style="font-size: var(--text-base); color: var(--text-strong); font-weight: 500; line-height: 1.5;">{{ activeIn }}</span>
+              </div>
+              <div style="display: grid; gap: var(--space-2);">
+                <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Bộ máy xử lý</span>
+                <span style="font-size: var(--text-base); color: var(--text-strong); font-weight: 500; line-height: 1.5;">{{ activeEngine }}</span>
+              </div>
+              <div style="display: grid; gap: var(--space-2);">
+                <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-accent);">Kết quả bàn giao</span>
+                <span style="font-size: var(--text-base); color: var(--text-strong); font-weight: 500; line-height: 1.5;">{{ activeOut }}</span>
+              </div>
+            </div>
+          </x-import>
+          <p style="text-align: center; margin: var(--space-5) 0 0; font-size: var(--text-xs); color: var(--text-muted);">Bấm vào từng node để xem dữ liệu vào, bộ máy xử lý và kết quả bàn giao. Node 5 phản hồi ngược về Node 1 để tối ưu chính sách giá.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStack }}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; gap: var(--space-2); margin-top: var(--space-10);">
+          <sc-for list="{{ stackNodes }}" as="row" hint-placeholder-count="5">
+            <div style="display: grid; grid-template-columns: 320px 1fr; gap: var(--space-8); align-items: start; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); padding: var(--card-pad-lg);">
+              <div style="display: grid; gap: var(--space-3); justify-items: start;">
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <span style="width: 34px; height: 34px; border-radius: var(--radius-sm); display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600; background: var(--gradient-brand); color: #fff;">{{ row.code }}</span>
+                  <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">{{ row.role }}</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 600; line-height: 1.3; color: var(--text-strong); margin: 0;">{{ row.name }}</h3>
+                <p style="font-size: var(--text-sm); line-height: 1.65; color: var(--text-muted); margin: 0;">{{ row.summary }}</p>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <sc-for list="{{ row.modules }}" as="m" hint-placeholder-count="2">
+                    <span style="padding: 3px 10px; border-radius: var(--radius-pill); font-family: var(--font-mono); font-size: var(--text-2xs); font-weight: 500; background: var(--surface-brand-soft); color: var(--iris-700); border: 1px solid var(--border-brand);">{{ m }}</span>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); border-left: 1px solid var(--border-subtle); padding-left: var(--space-8);">
+                <sc-for list="{{ row.cols }}" as="col" hint-placeholder-count="3">
+                  <div style="display: grid; gap: var(--space-2); align-content: start;">
+                    <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-accent);">{{ col.label }}</span>
+                    <span style="font-size: var(--text-sm); line-height: 1.7; color: var(--text-body);">{{ col.value }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 0 var(--card-pad-lg);">
+              <span style="width: 34px; display: flex; justify-content: center; color: var(--iris-500);"><x-import component="Icon" from="./icons.jsx" name="arrow-down" size="16" hint-size="16px,16px"></x-import></span>
+              <span style="font-size: var(--text-xs); font-weight: 600; color: var(--iris-700);">{{ row.link }}</span>
+              <span style="flex: 1 1 auto; height: 1px; background: linear-gradient(90deg, var(--border-brand), transparent);"></span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="ung-dung" style="padding-top: var(--section-y-tight); padding-bottom: var(--section-y-tight);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" eyebrow="Ứng dụng thực tế theo ngành" title="Ứng Dụng AI Agent Theo Từng Ngành Kỹ Thuật &amp; Công Nghiệp" hint-size="100%,120px"></x-import>
+      <div style="margin-top: var(--space-8); display: grid; gap: var(--space-6); justify-items: start;">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Tabs" default-value="chem" on-change="{{ setTab }}" items="{{ tabItems }}" hint-size="520px,40px"></x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="md" pad="lg" style="width: 100%;" hint-size="100%,240px">
+          <div style="display: grid; grid-template-columns: 300px 1fr; gap: var(--space-8); align-items: start;">
+            <div style="position: relative; height: 260px; border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--border-subtle);">
+              <image-slot id="ta-industry" shape="rect" src="https://commons.wikimedia.org/wiki/Special:FilePath/Aeration%20tank%20activated%20sludge%20process%20STP%20Bengaluru%20India.jpg?width=900" credit="Ảnh tạm: Wikimedia Commons (CC BY-SA)" placeholder="Ảnh hiện trường ngành đang chọn"></image-slot>
+            </div>
+            <div>
+              <h3 style="font-size: var(--text-lg); font-weight: 600; margin: 0;">{{ caseLabel }}</h3>
+              <div style="display: grid; gap: var(--space-6); margin-top: var(--space-5);">
+                <sc-for list="{{ caseRows }}" as="row" hint-placeholder-count="3">
+                  <div style="display: grid; gap: var(--space-2); align-content: start;">
+                    <span style="font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-accent);">{{ row.label }}</span>
+                    <p style="font-size: var(--text-sm); line-height: 1.7; margin: 0;">{{ row.body }}</p>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="lo-trinh" style="padding-top: var(--section-y-tight); padding-bottom: var(--section-y-tight);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" eyebrow="Lộ trình Done-With-You" title="Lộ Trình Triển Khai AI Agent Trong 4 Tuần" hint-size="100%,120px"></x-import>
+      <div style="position: relative; height: 260px; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--border-subtle); margin-top: var(--space-8);">
+        <image-slot id="ta-handover" shape="rect" src="https://commons.wikimedia.org/wiki/Special:FilePath/Work%20Meeting.jpg?width=1600" credit="Ảnh tạm: Wikimedia Commons (CC BY 2.0)" placeholder="Ảnh buổi đào tạo &amp; bàn giao hệ thống tuần 4"></image-slot>
+      </div>
+      <div style="margin-top: var(--space-10);">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.StepTimeline" active-index="0" steps="{{ steps }}" hint-size="100%,260px"></x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="mo-hinh" style="background: var(--gradient-dark); padding-top: var(--section-y); padding-bottom: var(--section-y);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" on-dark="{{ true }}" align="center" eyebrow="Mô hình hợp tác" title="Ba Mức Phạm Vi Triển Khai — Chi Phí Báo Riêng Theo Quy Mô" lead="Sprint kiến trúc 4 tuần, sau đó đồng hành vận hành theo tháng. Phạm vi công việc rõ ràng ngay từ đầu; mức đầu tư được báo riêng sau buổi khám sức khỏe vận hành." hint-size="100%,190px"></x-import>
+      <sc-if value="{{ showOffer }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; justify-content: center; margin-top: var(--space-6);">
+          <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: var(--radius-badge); background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.4); color: var(--amber-300); font-size: var(--text-sm); font-weight: 600;"><x-import component="Icon" from="./icons.jsx" name="gift" size="16" hint-size="16px,16px"></x-import>Ultimate 0-Setup Offer — miễn phí kiến trúc khi cam kết 6 tháng, thu trước theo quý · giới hạn nhóm doanh nghiệp tiên phong</span>
+        </div>
+      </sc-if>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-12); align-items: start;">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.PricingCard" tier="Gói 1 — Foundation" name="Nền tảng" price="{{ priceLabel }}" cta="Nhận phạm vi chi tiết" features="{{ tier1 }}" hint-size="100%,520px"></x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.PricingCard" featured="{{ true }}" tier="Gói 2 — Growth" name="Tăng trưởng" price="{{ priceLabel }}" cta="Gói chủ lực — nhận phạm vi" features="{{ tier2 }}" hint-size="100%,560px"></x-import>
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.PricingCard" tier="Gói 3 — Enterprise" name="Toàn diện" price="{{ priceLabel }}" cta="Nhận phạm vi chi tiết" features="{{ tier3 }}" hint-size="100%,520px"></x-import>
+      </div>
+      <p style="text-align: center; margin: var(--space-8) 0 0; font-size: var(--text-sm); color: var(--text-on-dark-muted);">Buổi rà soát QBR vào ngày thứ 75: nếu hệ thống không đạt các tiêu chuẩn vận hành hai bên đã thống nhất, doanh nghiệp được hoàn chi phí dịch vụ của tháng tiếp theo và giữ toàn bộ dữ liệu đã làm sạch.</p>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top: var(--section-y-tight); padding-bottom: var(--section-y-tight);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--gutter-lg); align-items: start;">
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" eyebrow="Minh bạch pháp lý" title="Câu Hỏi Thường Gặp Khi Triển Khai AI Agent" lead="Luật Dữ Liệu 91/2025/QH15 · Nghị định 356/2025/NĐ-CP · Luật AI 134/2025/QH15 · Cam kết QBR ngày 75." hint-size="100%,200px"></x-import>
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Accordion" items="{{ faq }}" hint-size="100%,320px"></x-import>
+    </div>
+  </section>
+
+  <section id="dang-ky" style="background: var(--gradient-brand-soft); padding-top: var(--section-y-tight); padding-bottom: var(--section-y-tight);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter-lg); align-items: center;">
+      <div style="display: grid; gap: var(--space-5); justify-items: start;">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.SectionHeading" eyebrow="Bước tiếp theo" title="Đăng Ký Khám Sức Khỏe Vận Hành &amp; Live Demo 45 Phút" lead="Nhận báo cáo phân tích điểm nghẽn dữ liệu thực tế tại doanh nghiệp của bạn, và xem cỗ máy bóc tách thông số kỹ thuật ngay trên màn hình." hint-size="100%,220px"></x-import>
+        <div style="display: grid; gap: var(--space-3);">
+          <span style="display: inline-flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--text-body);"><span style="color: var(--teal-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="clock" size="16" hint-size="16px,16px"></x-import></span>Chuyên gia xác nhận lịch trong vòng 2 giờ làm việc</span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--text-body);"><span style="color: var(--teal-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="shield-check" size="16" hint-size="16px,16px"></x-import></span>Dữ liệu được bảo mật theo Luật 91/2025/QH15</span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--text-body);"><span style="color: var(--teal-600); display: flex;"><x-import component="Icon" from="./icons.jsx" name="presentation" size="16" hint-size="16px,16px"></x-import></span>Demo trên dữ liệu thật của doanh nghiệp bạn</span>
+        </div>
+      </div>
+      <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Card" elevation="lg" pad="lg" hint-size="100%,460px">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; gap: var(--space-3); justify-items: center; text-align: center; padding: var(--space-8) 0;">
+            <span style="width: 52px; height: 52px; border-radius: 999px; display: grid; place-items: center; background: var(--surface-accent-soft); color: var(--teal-700);"><x-import component="Icon" from="./icons.jsx" name="check" size="26" hint-size="26px,26px"></x-import></span>
+            <h3 style="font-size: var(--text-lg); font-weight: 600; margin: 0;">Đã nhận thông tin của bạn</h3>
+            <p style="font-size: var(--text-sm); max-width: 340px; margin: 0;">Chuyên gia Trang Anh AI sẽ gọi xác nhận lịch Audit trong vòng 2 giờ làm việc.</p>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Button" variant="ghost" size="sm" on-click="{{ reset }}" hint-size="160px,32px">Gửi thông tin khác</x-import>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display: grid; gap: var(--space-4);">
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Field" label="Họ và tên lãnh đạo / người đại diện" required="{{ true }}" hint-size="100%,70px">
+              <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Input" required="{{ true }}" placeholder="Nguyễn Văn A" hint-size="100%,40px"></x-import>
+            </x-import>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Field" label="Số điện thoại / Zalo kết nối" required="{{ true }}" hint-size="100%,70px">
+              <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Input" required="{{ true }}" placeholder="09xx xxx xxx" hint-size="100%,40px"></x-import>
+            </x-import>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Field" label="Tên doanh nghiệp &amp; ngành nghề" required="{{ true }}" hint-size="100%,70px">
+              <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Input" required="{{ true }}" placeholder="Công ty TNHH Vật tư ABC — hóa chất xử lý nước" hint-size="100%,40px"></x-import>
+            </x-import>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Field" label="Quy mô hiện tại" hint="Số nhân sự / số website" hint-size="100%,80px">
+              <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Select" options="{{ sizeOptions }}" hint-size="100%,40px"></x-import>
+            </x-import>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Checkbox" default-checked="{{ true }}" label="Tôi đồng ý để Trang Anh AI liên hệ tư vấn theo Luật 91/2025/QH15" hint-size="100%,24px"></x-import>
+            <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Button" size="lg" block="{{ true }}" type="submit" hint-size="100%,52px">Gửi thông tin — Nhận báo cáo Audit</x-import>
+            <span style="font-size: var(--text-xs); color: var(--text-muted); text-align: center;">Thông tin của bạn chỉ dùng để liên hệ tư vấn, theo Luật 91/2025/QH15.</span>
+          </form>
+        </sc-if>
+      </x-import>
+    </div>
+  </section>
+
+  <footer style="background: var(--gradient-dark); color: var(--text-on-dark-muted); padding-top: var(--space-16); padding-bottom: var(--space-8);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-10);">
+      <div style="display: grid; gap: var(--space-4); justify-items: start;">
+        <x-import component-from-global-scope="TrangAnhAIDesignSystem_40b425.Logo" size="36" on-dark="{{ true }}" tagline="{{ true }}" src="assets/logo-icon.jpg" hint-size="220px,44px"></x-import>
+        <p style="font-size: var(--text-sm); line-height: 1.7; max-width: 300px; margin: 0;">Đối tác triển khai Hệ thống AI Agent Vận Hành Tự Chủ, kiến trúc dữ liệu RAG và căn chỉnh luồng doanh nghiệp.</p>
+      </div>
+      <div style="display: grid; gap: var(--space-3); align-content: start;">
+        <span style="font-size: var(--text-xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-on-dark);">Giải pháp</span>
+        <span style="font-size: var(--text-sm);">Master RAG Lake</span>
+        <span style="font-size: var(--text-sm);">Hiện diện AI Search (GEO)</span>
+        <span style="font-size: var(--text-sm);">Zalo Copilot báo giá 8s</span>
+        <span style="font-size: var(--text-sm);">Executive BI Dashboard</span>
+      </div>
+      <div style="display: grid; gap: var(--space-3); align-content: start;">
+        <span style="font-size: var(--text-xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-on-dark);">Ngành trọng tâm</span>
+        <span style="font-size: var(--text-sm);">Hóa chất &amp; Xử lý nước</span>
+        <span style="font-size: var(--text-sm);">Van &amp; Cơ điện M&amp;E</span>
+        <span style="font-size: var(--text-sm);">Vật tư công nghiệp</span>
+        <span style="font-size: var(--text-sm);">Doanh nghiệp đa website</span>
+      </div>
+      <div style="display: grid; gap: var(--space-3); align-content: start;">
+        <span style="font-size: var(--text-xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-on-dark);">Tuân thủ</span>
+        <span style="font-size: var(--text-sm);">Luật Dữ liệu 91/2025/QH15</span>
+        <span style="font-size: var(--text-sm);">Nghị định 356/2025/NĐ-CP</span>
+        <span style="font-size: var(--text-sm);">Luật AI 134/2025/QH15</span>
+        <span style="font-size: var(--text-sm);">Human-in-the-loop</span>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: var(--space-12) auto 0; padding: var(--space-6) 40px 0; border-top: 1px solid var(--border-on-dark); display: flex; justify-content: space-between; gap: var(--space-6); font-size: var(--text-xs);">
+      <span>© 2026 TRANG ANH AI VIETNAM (Trang Anh Systems). Bản quyền thuộc đơn vị phát triển.</span>
+      <span style="font-family: var(--font-mono);">tranganhai.com</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;engineLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;flow&quot;,&quot;stack&quot;],&quot;default&quot;:&quot;flow&quot;,&quot;tsType&quot;:&quot;'flow' | 'stack'&quot;,&quot;section&quot;:&quot;Dây chuyền 5 Node&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mô hình hợp tác&quot;},&quot;showOffer&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mô hình hợp tác&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Đăng ký Khám Sức Khỏe Vận Hành&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;CTA&quot;}}">
+const NODE_DATA = [
+  { code: 'N1', name: 'Master RAG Lake', role: 'Gốc rễ tri thức', modules: ['Core'],
+    summary: 'Bộ não tri thức số của doanh nghiệp — sạch, có cấu trúc, không ảo giác.',
+    items: ['Số hóa Excel gộp ô, TDS, catalogue', 'Khử ảo giác bằng Deterministic SQL', 'Cấp tri thức cho toàn bộ cỗ máy'],
+    cols: [['Dữ liệu vào', 'Bảng giá Excel gộp ô, TDS, catalogue, tiêu chuẩn ASTM / QCVN'], ['Bộ máy xử lý', 'OCR multimodal, gỡ gộp ô, vector hóa kép, Deterministic SQL'], ['Kết quả bàn giao', 'Kho tri thức có kiểm chứng — giá lấy từ CSDL gốc, không để AI tính nhẩm']] },
+  { code: 'N2', name: 'Flow Content & GEO', role: 'Kênh thu hút', modules: ['M1', 'M2'],
+    summary: 'Hiện diện ngay trong câu trả lời của ChatGPT, Gemini và Perplexity.',
+    items: ['16 – 24 bài E-E-A-T mỗi tháng', 'Phủ sóng ChatGPT / Gemini / Perplexity', 'Chăm sóc 1 – 3+ web vệ tinh'],
+    cols: [['Dữ liệu vào', 'Tri thức kỹ thuật từ Node 1 và từ khóa ngành'], ['Bộ máy xử lý', '16 – 24 bài E-E-A-T mỗi tháng, phân luồng đa site độc bản'], ['Kết quả bàn giao', 'Khách B2B chất lượng cao vào hệ sinh thái website']] },
+  { code: 'N3', name: 'Tiếp đón 24/7 & CRM', role: 'Bộ lọc & giữ chân', modules: ['M3', 'M5'],
+    summary: 'Không bỏ lỡ khách hỏi lúc nửa đêm hay cuối tuần.',
+    items: ['Chatbot tư vấn kỹ thuật 24/7', 'Thu SĐT/Zalo, chấm điểm Lead', 'Đồng bộ Deal vào MISA AMIS, Brevo'],
+    cols: [['Dữ liệu vào', 'Khách truy cập Website, Fanpage, Zalo OA 24/7'], ['Bộ máy xử lý', 'Bot trả lời thông số từ Node 1, chấm điểm và gắn tag Lead'], ['Kết quả bàn giao', 'Deal tự động vào MISA AMIS / Brevo kèm lịch sử trò chuyện']] },
+  { code: 'N4', name: 'Sales & Báo giá nhanh', role: 'Cỗ máy chốt đơn', modules: ['M4', 'M6', 'M7'],
+    summary: 'Chu kỳ báo giá rút từ vài ngày xuống vài phút.',
+    items: ['Dự toán BOQ vật tư trong 2 phút', 'PDF Typst + VietQR trong 8 giây', 'Nhân viên duyệt 10 giây rồi gửi'],
+    cols: [['Dữ liệu vào', 'Lead từ Node 3 kèm ngữ cảnh, danh mục vật tư của dự án'], ['Bộ máy xử lý', 'Bóc tách quy cách, dự toán BOQ 2 phút, PDF Typst + VietQR 8 giây'], ['Kết quả bàn giao', 'Báo giá gửi đi sau 10 giây kiểm tra của nhân viên']] },
+  { code: 'N5', name: 'Executive BI Dashboard', role: 'Kiểm soát & tối ưu', modules: ['M0'],
+    summary: 'Ban Giám Đốc nhìn toàn cảnh kinh doanh trên một trang.',
+    items: ['Báo cáo 1 trang thời gian thực', 'Traffic → Lead → Báo giá → Doanh thu', 'Tối ưu ngược chính sách giá Node 1'],
+    cols: [['Dữ liệu vào', 'Số liệu thực tế từ bốn node phía trước'], ['Bộ máy xử lý', 'Phát hiện điểm nghẽn, mô phỏng kịch bản What-If'], ['Kết quả bàn giao', 'Báo cáo 1 trang realtime, phản hồi ngược tối ưu giá tại Node 1']] }
+];
+
+const CASES = {
+  chem: { label: 'Hóa chất, vật liệu lọc & xử lý nước', rows: [
+    { label: 'Thu hút', body: 'Khách hỏi ChatGPT "So sánh than hoạt tính gáo dừa và than đá trong xử lý nước cấp?" — AI trích dẫn bài phân tích trên website của bạn.' },
+    { label: 'Bán hàng', body: 'Khách gửi ảnh tem bao bì; trợ lý đối chiếu hồ sơ Quatest, chỉ số Iodine, tính thể tích bồn lọc và xuất báo giá kèm VietQR.' },
+    { label: 'Quản trị', body: 'Ban Giám Đốc theo dõi nhu cầu tìm kiếm của các nhà máy công nghiệp theo từng khu vực.' }] },
+  valve: { label: 'Van, thiết bị công nghiệp & Cơ điện M&E', rows: [
+    { label: 'Thu hút', body: 'Xuất hiện đầu tiên khi kỹ sư tra cứu mặt bích DIN, van điều khiển khí nén, thông số chịu áp PN16.' },
+    { label: 'Bán hàng', body: 'Nhận danh mục dự án hàng chục mã vật tư: tự bóc tách quy cách, kiểm tra tồn kho, lập Bảng dự toán BOQ hoàn chỉnh.' },
+    { label: 'Quản trị', body: 'Nắm tỷ lệ chuyển đổi từ báo giá dự thầu đến khi ký hợp đồng.' }] },
+  multi: { label: 'Doanh nghiệp vận hành nhiều website vệ tinh', rows: [
+    { label: 'Bài toán', body: 'Muốn mở rộng độ phủ bằng 2 – 3 website vệ tinh nhưng thiếu nhân sự viết bài và lo nội dung trùng lặp.' },
+    { label: 'Giải pháp', body: 'Mô hình Một Trung Tâm — Đa Chi Nhánh: tri thức tập trung, hệ thống tự biên tập nội dung độc bản cho từng site.' },
+    { label: 'Kết quả', body: 'Giảm đáng kể chi phí duy trì đội ngũ nội dung nội bộ.' }] }
+};
+
+const LINKS = [
+  'Node 1 → Node 2 · cấp tri thức sạch để viết bài chuyên môn',
+  'Node 2 → Node 3 · kéo khách tiềm năng vào kênh tiếp đón',
+  'Node 3 → Node 4 · chuyển Lead kèm toàn bộ ngữ cảnh trò chuyện',
+  'Node 4 → Node 5 · ghi nhận kết quả chốt đơn vào báo cáo',
+  'Node 5 → Node 1 · vòng lặp khép kín, tối ưu ngược chính sách giá & danh mục'
+];
+
+class Component extends DCLogic {
+  state = { active: 0, tab: 'chem', layout: null, sent: false };
+
+  tabStyle(on) {
+    return {
+      padding: '9px 18px', borderRadius: 'var(--radius-pill)', border: 'none', cursor: 'pointer',
+      fontFamily: 'var(--font-body)', fontSize: 'var(--text-sm)', fontWeight: 600,
+      background: on ? 'var(--surface-card)' : 'transparent',
+      color: on ? 'var(--iris-700)' : 'var(--text-muted)',
+      boxShadow: on ? 'var(--shadow-sm)' : 'none', transition: 'var(--motion-hover)'
+    };
+  }
+
+  renderVals() {
+    const layout = this.state.layout ?? (this.props.engineLayout ?? 'flow');
+    const isFlow = layout === 'flow';
+    const active = NODE_DATA[this.state.active];
+    const c = CASES[this.state.tab] || CASES.chem;
+    return {
+      ctaLabel: this.props.ctaLabel ?? 'Đăng ký Khám Sức Khỏe Vận Hành',
+      priceLabel: (this.props.showPricing ?? false) ? 'Retainer theo tháng' : 'Báo giá theo quy mô',
+      showOffer: this.props.showOffer ?? true,
+      isFlow, isStack: !isFlow,
+      setFlow: () => this.setState({ layout: 'flow' }),
+      setStack: () => this.setState({ layout: 'stack' }),
+      tabFlowStyle: this.tabStyle(isFlow),
+      tabStackStyle: this.tabStyle(!isFlow),
+      nodes: NODE_DATA.map((n, i) => ({
+        index: i + 1, name: n.name, role: n.role, modules: n.modules, items: n.items,
+        active: i === this.state.active, onClick: () => this.setState({ active: i })
+      })),
+      stackNodes: NODE_DATA.map((n, i) => ({
+        code: n.code, name: n.name, role: n.role, summary: n.summary, modules: n.modules,
+        link: LINKS[i], hasLink: !!LINKS[i],
+        cols: n.cols.map(c2 => ({ label: c2[0], value: c2[1] }))
+      })),
+      activeIn: active.cols[0][1], activeEngine: active.cols[1][1], activeOut: active.cols[2][1],
+      tabItems: [{ id: 'chem', label: 'Hóa chất & Xử lý nước' }, { id: 'valve', label: 'Van & Cơ điện M&E' }, { id: 'multi', label: 'Đa website vệ tinh' }],
+      setTab: (t) => this.setState({ tab: t }),
+      caseLabel: c.label, caseRows: c.rows,
+      steps: [
+        { period: 'Tuần 1', title: 'Khảo sát & chuẩn hóa dữ liệu', body: 'Tiếp nhận bảng giá Excel, catalogue, tài liệu kỹ thuật; gỡ gộp ô và số hóa thành bộ não tri thức sạch.', clientTask: 'DN cần: bàn giao tài liệu + cử 1 đầu mối đối soát' },
+        { period: 'Tuần 2', title: 'Cài đặt trên tài khoản chính chủ', body: 'Thiết lập cỗ máy trên workspace Enterprise riêng; cài giọng văn thương hiệu, luồng xuất bản và Chatbot 24/7.' },
+        { period: 'Tuần 3', title: 'Căn chỉnh luồng vận hành thực tế', body: 'Kiểm thử hỏi đáp kỹ thuật, lập dự toán và báo giá; kết nối dữ liệu về Báo Cáo Quản Trị 1 Trang.' },
+        { period: 'Tuần 4', title: 'Đào tạo nhân sự & bàn giao SOP', body: 'Hai buổi đào tạo thực chiến: nhân viên duyệt việc trong 10 giây, Ban Giám Đốc khai thác số liệu báo cáo.', clientTask: 'Bàn giao: DN làm chủ 100% hệ thống, ký nghiệm thu' }
+      ],
+      tier1: ['01 website chính', '8 – 12 bài E-E-A-T / tháng', 'Master RAG Lake cập nhật hàng tháng', 'LiveChat website cơ bản', 'Báo cáo tóm tắt hàng tháng', { label: 'Trợ lý dự toán & báo giá', included: false }, { label: 'Tender & Bidding Copilot', included: false }, 'SLA hỗ trợ 48 giờ làm việc'],
+      tier2: ['1 – 3 website vệ tinh', '16 – 24 bài E-E-A-T đa site / tháng', 'Master RAG Lake real-time đa kênh', 'LiveChat Web + Fanpage + Zalo OA', 'Báo Cáo Quản Trị 1 Trang real-time', 'Zalo Copilot báo giá PDF 8 giây', { label: 'Tender & Bidding Copilot', included: false }, 'SLA 24 giờ + họp QBR mỗi quý'],
+      tier3: ['3 – 5+ website vệ tinh', '30+ bài E-E-A-T + tài liệu kỹ thuật', 'Master Lake + Hybrid Semantic Search', 'CSKH đa kênh + tự phân loại Deal', 'Dashboard + mô phỏng What-If', 'Báo giá 8s + chiết khấu đa tầng', 'BOQ thủy lực & HSĐXKT trong 30 phút', 'Hỗ trợ ưu tiên 4 giờ + cố vấn 1-1'],
+      faq: [
+        { q: 'AI Agent khác chatbot thông thường ở điểm nào?', a: 'Chatbot trả lời theo kịch bản dựng sẵn. AI Agent đọc dữ liệu gốc của doanh nghiệp và thực hiện chuỗi công việc nhiều bước: tra thông số kỹ thuật, lập dự toán, xuất báo giá, ghi dữ liệu vào CRM — rồi chuyển lại cho nhân viên kiểm tra và duyệt.' },
+        { q: 'Chi phí triển khai AI Agent cho doanh nghiệp vừa và nhỏ được tính thế nào?', a: 'Chi phí gồm sprint kiến trúc 4 tuần và phí đồng hành vận hành theo tháng. Mức đầu tư phụ thuộc quy mô dữ liệu, số website và số kênh bán hàng, được báo riêng sau buổi khám sức khỏe vận hành.' },
+        { q: 'Dữ liệu nội bộ và bí mật kinh doanh có bị rò rỉ không?', a: 'Không. Hệ thống được thiết lập hoàn toàn trên tài khoản Enterprise chính chủ của doanh nghiệp. Dữ liệu khách hàng, bảng giá và công thức kỹ thuật được mã hóa theo Luật Dữ Liệu 91/2025/QH15; doanh nghiệp sở hữu vĩnh viễn dữ liệu và quy trình đã chuẩn hóa.' },
+        { q: 'Doanh nghiệp có phải cử người làm nhiều việc kỹ thuật phức tạp không?', a: 'Không. Trang Anh AI đảm nhận phần việc kỹ thuật nặng nhất trong 4 tuần đầu. Nhân sự của bạn cung cấp file mẫu, cử một đầu mối đối soát dữ liệu và tham gia 2 buổi nhận bàn giao ở tuần thứ 4. Vận hành hàng ngày chỉ là kiểm tra bản nháp và bấm duyệt.' },
+        { q: 'Ban Giám Đốc đo lường hiệu quả bằng cách nào?', a: 'Bằng số liệu trên Báo Cáo Quản Trị 1 Trang: khách tiềm năng đến từ công cụ tìm kiếm và Chat AI, số giờ công được giải phóng, và thời gian phản hồi báo giá. Các chỉ số này được chốt cùng doanh nghiệp ngay ở tuần 1 để có mốc so sánh.' },
+        { q: 'Chính sách QBR ngày 75 và hoàn phí thực hiện thế nào?', a: 'Ngày thứ 75 của hợp đồng, hai bên họp đánh giá kết quả. Nếu hệ thống không đạt các tiêu chuẩn vận hành đã thống nhất, Trang Anh AI hoàn chi phí dịch vụ của tháng tiếp theo và doanh nghiệp vẫn giữ toàn bộ cơ sở dữ liệu đã làm sạch.' }
+      ],
+      sizeOptions: ['5 – 15 nhân sự · 1 website', '16 – 30 nhân sự · 1 – 3 website', '31 – 50 nhân sự · 3+ website', 'Trên 50 nhân sự'],
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

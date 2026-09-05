@@ -49,7 +49,7 @@ export default function WorkflowSection() {
         {/* Handover Meeting Image Banner */}
         <div className="relative h-[200px] sm:h-[260px] max-w-4xl mx-auto rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+            src="/images/workflow/handover-meeting.jpg"
             alt="Buổi đào tạo & bàn giao hệ thống tuần 4"
             fill
             sizes="(max-width: 1024px) 100vw, 896px"

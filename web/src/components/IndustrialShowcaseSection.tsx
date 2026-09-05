@@ -6,21 +6,21 @@ import Image from "next/image";
 export default function IndustrialShowcaseSection() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
-      caption: "Hệ thống nhà máy & trạm xử lý nước cấp / nước thải",
-      tag: "Hóa chất & Xử lý nước",
+      src: "/images/showcase/water-treatment.jpg",
+      caption: "Cỗ máy đưa thương hiệu xuất hiện tự động khi người mua B2B tìm kiếm trên ChatGPT & Gemini",
+      tag: "Tiếp thị AI Search (GEO)",
       className: "md:col-span-2 lg:col-span-5",
     },
     {
-      src: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
-      caption: "Kho thiết bị van công nghiệp, phụ kiện đường ống",
-      tag: "Cơ điện M&E",
+      src: "/images/showcase/valves-warehouse.jpg",
+      caption: "Zalo Copilot: Tự động lập dự toán BOQ và xuất báo giá PDF kèm VietQR sau 8 giây",
+      tag: "Cỗ máy chốt đơn M4",
       className: "md:col-span-1 lg:col-span-3",
     },
     {
-      src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-      caption: "Hiện trường thi công lắp đặt tuyến ống công nghiệp",
-      tag: "Hiện trường thi công",
+      src: "/images/showcase/field-engineering.jpg",
+      caption: "Màn hình điều hành 1 trang thời gian thực: Đo lường từ Traffic, Lead, Báo giá đến Doanh thu",
+      tag: "Executive BI Dashboard",
       className: "md:col-span-1 lg:col-span-4",
     },
   ];
@@ -56,7 +56,7 @@ export default function IndustrialShowcaseSection() {
           ))}
         </div>
         <p className="mt-3.5 text-center text-xs text-slate-400 font-normal">
-          Hình ảnh trực quan thực tế — dễ dàng thay thế bằng hình ảnh nhà máy, kho bãi hoặc dự án của chính doanh nghiệp bạn.
+          Hình ảnh thực tế từ hệ thống — dễ dàng tùy biến theo quy trình tiếp thị và bán hàng của chính doanh nghiệp bạn.
         </p>
       </div>
     </section>

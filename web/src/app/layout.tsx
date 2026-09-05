@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo-icon.jpg",
-        width: 1024,
-        height: 1024,
+        url: "/images/brand/og-banner.jpg",
+        width: 1200,
+        height: 630,
         alt: "Trang Anh AI — Trang bị quy trình. Tinh anh vận hành.",
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Triển khai AI Agent cho doanh nghiệp B2B kỹ thuật | Trang Anh AI",
     description:
       "Xóa Bỏ Điểm Nghẽn Vận Hành. Tự Chủ Cỗ Máy Doanh Nghiệp Bằng AI Agent Trên Hạ Tầng Chính Chủ.",
-    images: ["/logo-icon.jpg"],
+    images: ["/images/brand/og-banner.jpg"],
   },
 };
 

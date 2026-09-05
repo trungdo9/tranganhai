@@ -31,19 +31,19 @@ export default function FiveNodeEngineSection() {
   const nodes: NodeItem[] = [
     {
       code: "N1",
-      name: "Master RAG Lake",
-      role: "Gốc rễ tri thức",
+      name: "Master RAG Lake & MCP Server",
+      role: "Trung tâm tri thức & MCP",
       modules: ["Core"],
-      summary: "Bộ não tri thức số của doanh nghiệp — sạch, có cấu trúc, không ảo giác.",
+      summary: "Trung tâm Tri thức AI Doanh nghiệp & Máy chủ MCP. Hệ thống tri thức tự lưu trữ (self-hosted) giúp các nhóm quản lý ngữ cảnh RAG, chính sách truy cập và các kỹ năng AI. Kết nối Claude cùng các mô hình ngôn ngữ lớn (LLM) khác thông qua Model Context Protocol (MCP) để tích hợp tri thức tổ chức một cách tự động và bảo mật.",
       items: [
-        "Số hóa Excel gộp ô, TDS, catalogue",
-        "Khử ảo giác bằng Deterministic SQL",
-        "Cấp tri thức cho toàn bộ cỗ máy",
+        "Hệ thống tri thức tự lưu trữ (self-hosted) bảo mật",
+        "Quản lý ngữ cảnh RAG & phân quyền truy cập",
+        "Máy chủ MCP kết nối Claude & các mô hình LLM",
       ],
       cols: [
-        ["Dữ liệu vào", "Bảng giá Excel gộp ô, TDS, catalogue, tiêu chuẩn ASTM / QCVN"],
-        ["Bộ máy xử lý", "OCR multimodal, gỡ gộp ô, vector hóa kép, Deterministic SQL"],
-        ["Kết quả bàn giao", "Kho tri thức có kiểm chứng — giá lấy từ CSDL gốc, không để AI tính nhẩm"],
+        ["Dữ liệu vào", "Tài liệu kỹ thuật, bảng giá Excel gộp ô, catalogue, tiêu chuẩn ASTM/QCVN & chính sách truy cập"],
+        ["Bộ máy xử lý", "Self-hosted RAG Lake, giao thức Model Context Protocol (MCP), kiểm soát ảo giác bằng Deterministic SQL"],
+        ["Kết quả bàn giao", "Trung tâm tri thức tổ chức bảo mật, cấp ngữ cảnh chuẩn xác cho Claude và các Agent tác nghiệp"],
       ],
       icon: Database,
     },

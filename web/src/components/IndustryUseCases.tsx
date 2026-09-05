@@ -16,7 +16,7 @@ export default function IndustryUseCases() {
   const cases = {
     chem: {
       label: "Hóa chất, vật liệu lọc & xử lý nước",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
+      image: "/images/usecases/chemical-water.jpg",
       rows: [
         {
           label: "Thu hút",
@@ -34,7 +34,7 @@ export default function IndustryUseCases() {
     },
     valve: {
       label: "Van, thiết bị công nghiệp & Cơ điện M&E",
-      image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=900&q=80",
+      image: "/images/usecases/valves-me.jpg",
       rows: [
         {
           label: "Thu hút",
@@ -52,7 +52,7 @@ export default function IndustryUseCases() {
     },
     multi: {
       label: "Doanh nghiệp vận hành nhiều website vệ tinh",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
+      image: "/images/usecases/multisite-analytics.jpg",
       rows: [
         {
           label: "Bài toán",

@@ -4,6 +4,7 @@ import StatsSection from "@/components/StatsSection";
 import PainPointsSection from "@/components/PainPointsSection";
 import TargetAudienceSection from "@/components/TargetAudienceSection";
 import IndustrialShowcaseSection from "@/components/IndustrialShowcaseSection";
+import OmnichannelCopilotSection from "@/components/OmnichannelCopilotSection";
 import FiveNodeEngineSection from "@/components/FiveNodeEngineSection";
 import IndustryUseCases from "@/components/IndustryUseCases";
 import WorkflowSection from "@/components/WorkflowSection";
@@ -35,7 +36,10 @@ export default function HomePage() {
         {/* Section 5: Bằng Chứng Trực Quan / Hình Ảnh Hiện Trường Công Nghiệp */}
         <IndustrialShowcaseSection />
 
-        {/* Section 6: Dây Chuyền 5 Node Vận Hành Khép Kín (Chế độ Luồng ngang & Xếp chồng) */}
+        {/* Section 5B: Nền Tảng Tác Nghiệp Đa Kênh Tự Chủ (Web, Email, Zalo) */}
+        <OmnichannelCopilotSection />
+
+        {/* Section 6: Sơ Đồ Workflow-Graph 5 Node & Dây Chuyền Content Sub-Graph */}
         <FiveNodeEngineSection />
 
         {/* Section 7: Ứng Dụng Thực Tế May Đo Theo Từng Ngành Kỹ Thuật */}

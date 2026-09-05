@@ -37,20 +37,20 @@ export default function HeroSection() {
             {/* Top Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1 text-xs font-semibold tracking-[0.11em] uppercase text-indigo-200 backdrop-blur-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse" />
-              ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO
+              HỆ THỐNG AI AGENT VẬN HÀNH B2B · ĐỒNG HÀNH KIẾN TRÚC & CHUYỂN GIAO
             </div>
 
             {/* Main Title H1 */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight text-white">
               Xóa Bỏ Điểm Nghẽn Vận Hành. <br />
               <span className="bg-gradient-to-r from-[#A5B4FC] via-[#818CF8] to-[#5EEAD4] bg-clip-text text-transparent">
-                Tự Chủ Cỗ Máy Doanh Nghiệp.
+                Tự Chủ Cỗ Máy Báo Giá & Tác Nghiệp B2B.
               </span>
             </h1>
 
             {/* Lead Paragraph */}
             <p className="text-base sm:text-lg leading-relaxed text-slate-300 font-normal max-w-xl">
-              Triển khai AI Agent vận hành cho doanh nghiệp B2B kỹ thuật — bàn giao trong 4 tuần, trên hạ tầng chính chủ.
+              Tự động hóa bóc tách bảng giá kỹ thuật, tiếp đón đa kênh 24/7 và xuất báo giá PDF kèm VietQR trong 8 giây — Bàn giao trọn gói trong 4 tuần, 100% trên hạ tầng chính chủ của doanh nghiệp bạn.
             </p>
 
             {/* Action Buttons */}
@@ -99,7 +99,7 @@ export default function HeroSection() {
                   <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
                   <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
                   <span className="ml-2 font-mono text-[11px] font-semibold text-slate-500">
-                    Báo Cáo Quản Trị 1 Trang · M0
+                    Báo Cáo Quản Trị 1 Trang Realtime
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[11px] font-semibold text-teal-700">
@@ -111,40 +111,40 @@ export default function HeroSection() {
               {/* Mockup Body Content - 3 Tiers */}
               <div className="p-4 sm:p-5 space-y-4">
                 
-                {/* Tầng 1: Master RAG Lake */}
+                {/* Tầng 1: Kho Dữ Liệu & Bảng Giá Gốc */}
                 <div className="space-y-1.5">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    Tầng 1 · Master RAG Lake
+                    Tầng 1 · Kho Dữ Liệu & Bảng Giá Trung Tâm
                   </span>
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-[#F8FAFC] px-3 py-2 text-xs font-medium text-slate-800">
                       <FileSpreadsheet className="h-4 w-4 text-teal-600 shrink-0" />
                       <span className="truncate">Bảng giá 2026 — Hóa chất.xlsx</span>
-                      <span className="ml-auto font-mono text-[10px] text-slate-400 shrink-0">
-                        Đã gỡ gộp ô
+                      <span className="ml-auto font-mono text-[10px] text-emerald-600 shrink-0 font-semibold">
+                        Đã khóa công thức
                       </span>
                     </div>
                     <div className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-[#F8FAFC] px-3 py-2 text-xs font-medium text-slate-800">
                       <FileText className="h-4 w-4 text-teal-600 shrink-0" />
                       <span className="truncate">TDS than hoạt tính gáo dừa.pdf</span>
                       <span className="ml-auto font-mono text-[10px] text-slate-400 shrink-0">
-                        Đã OCR
+                        Đã số hóa
                       </span>
                     </div>
                     <div className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-[#F8FAFC] px-3 py-2 text-xs font-medium text-slate-800">
                       <BookMarked className="h-4 w-4 text-indigo-600 shrink-0" />
-                      <span className="truncate">QCVN 01-1:2018/BYT</span>
+                      <span className="truncate">QCVN 01-1:2018/BYT & Quatest</span>
                       <span className="ml-auto font-mono text-[10px] text-slate-400 shrink-0">
-                        Đã gán nhãn
+                        Đã chuẩn hóa
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Tầng 2: Khối tác nghiệp */}
+                {/* Tầng 2: Trợ Lý Tác Nghiệp Đa Kênh */}
                 <div className="space-y-1.5">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    Tầng 2 · Khối tác nghiệp
+                    Tầng 2 · Trợ Lý Tác Nghiệp Đa Kênh
                   </span>
                   <div className="grid grid-cols-4 gap-2">
                     <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-indigo-100 bg-indigo-50/70 p-2 text-center">
@@ -156,13 +156,13 @@ export default function HeroSection() {
                     <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-indigo-100 bg-indigo-50/70 p-2 text-center">
                       <MessagesSquare className="h-4 w-4 text-indigo-600" />
                       <span className="text-[10px] font-bold text-indigo-700 leading-tight">
-                        LiveChat 24/7
+                        Đa Kênh 24/7
                       </span>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-indigo-100 bg-indigo-50/70 p-2 text-center">
                       <Calculator className="h-4 w-4 text-indigo-600" />
                       <span className="text-[10px] font-bold text-indigo-700 leading-tight">
-                        Dự toán BOQ
+                        Dự toán 2p
                       </span>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-teal-200 bg-teal-50/80 p-2 text-center">

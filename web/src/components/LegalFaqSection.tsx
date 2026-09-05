@@ -16,6 +16,10 @@ export default function LegalFaqSection() {
       a: "Chi phí gồm sprint kiến trúc 4 tuần và phí đồng hành vận hành theo tháng. Mức đầu tư phụ thuộc quy mô dữ liệu, số website và số kênh bán hàng, được báo riêng sau buổi khám sức khỏe vận hành.",
     },
     {
+      q: "Chiết khấu của công ty tôi nhiều tầng phức tạp, giá khách quen khác khách lạ thì AI có tính sai không?",
+      a: "Hoàn toàn không. Hệ thống áp dụng nguyên tắc 'Cấm AI tính nhẩm': Mọi phép tính đơn giá và chiết khấu đều được khóa cứng theo ma trận bảng tính của doanh nghiệp. AI chỉ đảm nhiệm việc đối chiếu quy cách và diễn đạt câu chữ, con số do thuật toán xác định. Đồng thời, toàn bộ báo giá đều trải qua bước kiểm tra 10 giây của nhân sự trước khi bấm gửi.",
+    },
+    {
       q: "Dữ liệu nội bộ và bí mật kinh doanh có bị rò rỉ không?",
       a: "Không. Hệ thống được thiết lập hoàn toàn trên tài khoản Enterprise chính chủ của doanh nghiệp. Dữ liệu khách hàng, bảng giá và công thức kỹ thuật được mã hóa theo Luật Dữ Liệu 91/2025/QH15; doanh nghiệp sở hữu vĩnh viễn dữ liệu và quy trình đã chuẩn hóa.",
     },

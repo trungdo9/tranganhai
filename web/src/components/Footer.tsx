@@ -25,22 +25,22 @@ export default function Footer() {
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <a href="#day-chuyen" className="hover:text-white transition-colors">
-                  Master RAG Lake
+                  Kho Dữ Liệu &amp; Bảng Giá Gốc
                 </a>
               </li>
               <li>
                 <a href="#day-chuyen" className="hover:text-white transition-colors">
-                  Hiện diện AI Search (GEO)
+                  Thu Hút Google &amp; AI Search
+                </a>
+              </li>
+              <li>
+                <a href="#demo" className="hover:text-white transition-colors">
+                  Báo Giá Đa Kênh Tức Thì 8s
                 </a>
               </li>
               <li>
                 <a href="#day-chuyen" className="hover:text-white transition-colors">
-                  Zalo Copilot báo giá 8s
-                </a>
-              </li>
-              <li>
-                <a href="#day-chuyen" className="hover:text-white transition-colors">
-                  Executive BI Dashboard
+                  Báo Cáo Quản Trị Realtime
                 </a>
               </li>
             </ul>

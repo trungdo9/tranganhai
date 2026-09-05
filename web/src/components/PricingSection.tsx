@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Gift, Check, ArrowRight, Sparkles } from "lucide-react";
+import { Gift, Check, ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 
 export default function PricingSection() {
-  const [showPricing, setShowPricing] = useState(false);
+  const [showPricing, setShowPricing] = useState(true);
 
   const tiers = [
     {
@@ -16,10 +16,10 @@ export default function PricingSection() {
       featured: false,
       features: [
         "01 website chính",
-        "8 – 12 bài E-E-A-T / tháng",
-        "Master RAG Lake cập nhật hàng tháng",
-        "LiveChat website cơ bản",
-        "Báo cáo tóm tắt hàng tháng",
+        "8 – 12 bài E-E-A-T đa kênh / tháng",
+        "Kho dữ liệu & bảng giá gốc cập nhật hàng tháng",
+        "LiveChat website & tiếp đón cơ bản",
+        "Báo cáo quản trị tóm tắt hàng tháng",
         "SLA hỗ trợ 48 giờ làm việc",
       ],
     },
@@ -34,10 +34,10 @@ export default function PricingSection() {
       features: [
         "1 – 3 website vệ tinh",
         "16 – 24 bài E-E-A-T đa site / tháng",
-        "Master RAG Lake real-time đa kênh",
-        "LiveChat Web + Fanpage + Zalo OA",
+        "Kho dữ liệu trung tâm real-time đa kênh",
+        "Tiếp đón đa kênh: Web + Fanpage + Zalo OA + Email",
         "Báo Cáo Quản Trị 1 Trang real-time",
-        "Zalo Copilot báo giá PDF 8 giây",
+        "Báo giá đa kênh PDF vector 8s kèm VietQR",
         "SLA 24 giờ + họp QBR mỗi quý",
       ],
     },
@@ -51,12 +51,12 @@ export default function PricingSection() {
       features: [
         "3 – 5+ website vệ tinh",
         "30+ bài E-E-A-T + tài liệu kỹ thuật",
-        "Master Lake + Hybrid Semantic Search",
-        "CSKH đa kênh + tự phân loại Deal",
-        "Dashboard + mô phỏng What-If",
-        "Báo giá 8s + chiết khấu đa tầng",
-        "BOQ thủy lực & HSĐXKT trong 30 phút",
-        "Hỗ trợ ưu tiên 4 giờ + cố vấn 1-1",
+        "Kho dữ liệu trung tâm + tra cứu thông số đa tầng",
+        "CSKH đa kênh + tự phân loại Deal vào CRM",
+        "Dashboard + mô phỏng kịch bản What-If",
+        "Báo giá 8s + chiết khấu đa tầng phức tạp",
+        "Dự toán BOQ & lập hồ sơ kỹ thuật trong 30 phút",
+        "Hỗ trợ ưu tiên 4 giờ + cố vấn chiến lược 1-1",
       ],
     },
   ];
@@ -68,13 +68,13 @@ export default function PricingSection() {
         {/* Section Heading */}
         <div className="max-w-3xl mx-auto mb-6">
           <span className="text-xs font-bold uppercase tracking-[0.11em] text-indigo-300 bg-white/5 px-3.5 py-1 rounded-full border border-white/15">
-            MÔ HÌNH HỢP TÁC
+            MÔ HÌNH HỢP TÁC &amp; CHI PHÍ
           </span>
           <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            Ba Mức Phạm Vi Triển Khai — Chi Phí Báo Riêng Theo Quy Mô
+            Ba Mức Phạm Vi Triển Khai — Minh Bạch Ngân Sách Đầu Tư
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
-            Sprint kiến trúc 4 tuần, sau đó đồng hành vận hành theo tháng. Phạm vi công việc rõ ràng ngay từ đầu; mức đầu tư được báo riêng sau buổi khám sức khỏe vận hành.
+            Sprint kiến trúc 4 tuần, sau đó đồng hành vận hành theo tháng. Phạm vi công việc rõ ràng ngay từ đầu; mức đầu tư chính xác sẽ được xác nhận sau buổi khám sức khỏe vận hành.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function PricingSection() {
             onClick={() => setShowPricing(!showPricing)}
             className="text-xs font-semibold text-slate-400 hover:text-white underline underline-offset-4 cursor-pointer transition-colors"
           >
-            {showPricing ? "← Xem chế độ Báo giá theo quy mô" : "Hiển thị khung Retainer tham khảo →"}
+            {showPricing ? "← Chuyển chế độ: Báo giá theo quy mô" : "Hiển thị khung Retainer tham khảo →"}
           </button>
         </div>
 
@@ -94,7 +94,7 @@ export default function PricingSection() {
           <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-semibold shadow-xs">
             <Gift className="h-4 w-4 text-amber-400 shrink-0" />
             <span>
-              Ultimate 0-Setup Offer — miễn phí kiến trúc khi cam kết 6 tháng, thu trước theo quý · giới hạn nhóm doanh nghiệp tiên phong
+              The Ultimate 0-Setup Offer — Miễn phí 100% phí setup kiến trúc (20M–35M) khi cam kết 6 tháng trả trước theo quý · Dành cho nhóm doanh nghiệp tiên phong
             </span>
           </div>
         </div>
@@ -165,9 +165,12 @@ export default function PricingSection() {
         </div>
 
         {/* QBR Day 75 Guarantee Note */}
-        <p className="mt-10 max-w-3xl mx-auto text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
-          🛡️ Buổi rà soát QBR vào ngày thứ 75: nếu hệ thống không đạt các tiêu chuẩn vận hành hai bên đã thống nhất, doanh nghiệp được hoàn chi phí dịch vụ của tháng tiếp theo và giữ toàn bộ dữ liệu đã làm sạch.
-        </p>
+        <div className="mt-10 max-w-3xl mx-auto rounded-2xl bg-white/[0.04] border border-white/10 p-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal flex items-start gap-3 text-left">
+          <ShieldCheck className="h-5 w-5 text-teal-400 shrink-0 mt-0.5" />
+          <span>
+            <strong>🛡️ Cam kết QBR ngày thứ 75:</strong> Nếu hệ thống không đạt các tiêu chuẩn vận hành hai bên đã thống nhất tại hợp đồng, Trang Anh AI hoàn 100% chi phí dịch vụ của tháng tiếp theo và doanh nghiệp vẫn giữ lại toàn bộ cơ sở dữ liệu đã làm sạch cùng tài liệu quy trình SOP.
+          </span>
+        </div>
 
       </div>
     </section>

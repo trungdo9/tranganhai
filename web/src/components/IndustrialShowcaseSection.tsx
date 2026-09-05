@@ -8,19 +8,19 @@ export default function IndustrialShowcaseSection() {
     {
       src: "/images/showcase/water-treatment.jpg",
       caption: "Cỗ máy đưa thương hiệu xuất hiện tự động khi người mua B2B tìm kiếm trên ChatGPT & Gemini",
-      tag: "Tiếp thị AI Search (GEO)",
+      tag: "Hiện diện AI Search",
       className: "md:col-span-2 lg:col-span-5",
     },
     {
       src: "/images/showcase/valves-warehouse.jpg",
-      caption: "Zalo Copilot: Tự động lập dự toán BOQ và xuất báo giá PDF kèm VietQR sau 8 giây",
-      tag: "Cỗ máy chốt đơn M4",
+      caption: "Tự động lập dự toán BOQ và xuất báo giá đa kênh PDF vector kèm VietQR sau 8 giây",
+      tag: "Báo giá tức thì 8 giây",
       className: "md:col-span-1 lg:col-span-3",
     },
     {
       src: "/images/showcase/field-engineering.jpg",
       caption: "Màn hình điều hành 1 trang thời gian thực: Đo lường từ Traffic, Lead, Báo giá đến Doanh thu",
-      tag: "Executive BI Dashboard",
+      tag: "Báo cáo quản trị 1 trang",
       className: "md:col-span-1 lg:col-span-4",
     },
   ];

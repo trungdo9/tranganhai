@@ -10,11 +10,12 @@ export default function Header() {
   const navLinks = [
     { label: "Thực trạng", href: "#thuc-trang" },
     { label: "Điểm nghẽn", href: "#diem-nghen" },
-    { label: "5 Node", href: "#day-chuyen" },
+    { label: "Demo đa kênh", href: "#demo" },
+    { label: "Sơ đồ Workflow", href: "#day-chuyen" },
     { label: "Đối tượng", href: "#doi-tuong" },
     { label: "Ứng dụng", href: "#ung-dung" },
     { label: "Lộ trình", href: "#lo-trinh" },
-    { label: "Hợp tác", href: "#mo-hinh" },
+    { label: "Chi phí", href: "#mo-hinh" },
   ];
 
   return (

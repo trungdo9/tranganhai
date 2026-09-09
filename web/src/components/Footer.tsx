@@ -43,6 +43,11 @@ export default function Footer() {
                   Báo Cáo Quản Trị Realtime
                 </a>
               </li>
+              <li>
+                <a href="/blog" className="hover:text-white transition-colors">
+                  Blog &amp; Kiến Thức Vận Hành
+                </a>
+              </li>
             </ul>
           </div>
 

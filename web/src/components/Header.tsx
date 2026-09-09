@@ -16,6 +16,7 @@ export default function Header() {
     { label: "Ứng dụng", href: "#ung-dung" },
     { label: "Lộ trình", href: "#lo-trinh" },
     { label: "Chi phí", href: "#mo-hinh" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (

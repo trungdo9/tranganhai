@@ -7,6 +7,7 @@ import IndustrialShowcaseSection from "@/components/IndustrialShowcaseSection";
 import OmnichannelCopilotSection from "@/components/OmnichannelCopilotSection";
 import FiveNodeEngineSection from "@/components/FiveNodeEngineSection";
 import IndustryUseCases from "@/components/IndustryUseCases";
+import AgentDaySection from "@/components/AgentDaySection";
 import BlogTeaserSection from "@/components/BlogTeaserSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import PricingSection from "@/components/PricingSection";
@@ -46,7 +47,10 @@ export default function HomePage() {
         {/* Section 7: Ứng Dụng Thực Tế May Đo Theo Từng Ngành Kỹ Thuật */}
         <IndustryUseCases />
 
-        {/* Section 7B: Nhật Ký Vận Hành & Kiến Thức — kéo bài mới nhất từ articles/ */}
+        {/* Section 7B: Một Ngày Vận Hành Thật Của Đội AI Agent */}
+        <AgentDaySection />
+
+        {/* Section 7C: Nhật Ký Vận Hành & Kiến Thức — kéo bài mới nhất từ articles/ */}
         <BlogTeaserSection />
 
         {/* Section 8: Lộ Trình 4 Tuần Done-With-You Bàn Giao Tự Chủ */}
@@ -64,7 +68,6 @@ export default function HomePage() {
 
       {/* Floating Quick Action Widget */}
       <FloatingLeadWidget />
-
       {/* Corporate Footer */}
       <Footer />
     </div>

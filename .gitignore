@@ -19,3 +19,8 @@ web/out/
 !.agents/.env.example
 
 
+
+# ClauKit regenerates these from git on demand — never commit them.
+# Hand-written plan files and reports are deliberately NOT ignored: they are
+# linked from the PR body, and an ignored report is a 404 in a review.
+plans/**/*.derived.json

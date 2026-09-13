@@ -43,11 +43,18 @@ export default function LeadFormSection() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        // Even if local mock api fails, set submitted for seamless UX
-        setSubmitted(true);
+        // Do NOT fake success on failure. Previously this branch (and the catch below)
+        // called setSubmitted(true) "for seamless UX" — so a broken dispatch showed the
+        // success screen and the lead vanished with nobody the wiser. Surface the failure
+        // so the prospect can retry and the problem is visible.
+        setErrorMsg(
+          "Chưa gửi được yêu cầu tới hệ thống. Vui lòng thử lại sau ít phút.",
+        );
       }
     } catch {
-      setSubmitted(true);
+      setErrorMsg(
+        "Không kết nối được tới hệ thống. Vui lòng kiểm tra kết nối mạng và thử lại.",
+      );
     } finally {
       setLoading(false);
     }

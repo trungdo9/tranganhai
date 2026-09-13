@@ -7,6 +7,7 @@ import IndustrialShowcaseSection from "@/components/IndustrialShowcaseSection";
 import OmnichannelCopilotSection from "@/components/OmnichannelCopilotSection";
 import FiveNodeEngineSection from "@/components/FiveNodeEngineSection";
 import IndustryUseCases from "@/components/IndustryUseCases";
+import BlogTeaserSection from "@/components/BlogTeaserSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import PricingSection from "@/components/PricingSection";
 import LegalFaqSection from "@/components/LegalFaqSection";
@@ -44,6 +45,9 @@ export default function HomePage() {
 
         {/* Section 7: Ứng Dụng Thực Tế May Đo Theo Từng Ngành Kỹ Thuật */}
         <IndustryUseCases />
+
+        {/* Section 7B: Nhật Ký Vận Hành & Kiến Thức — kéo bài mới nhất từ articles/ */}
+        <BlogTeaserSection />
 
         {/* Section 8: Lộ Trình 4 Tuần Done-With-You Bàn Giao Tự Chủ */}
         <WorkflowSection />

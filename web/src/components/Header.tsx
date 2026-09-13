@@ -8,14 +8,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Thực trạng", href: "#thuc-trang" },
-    { label: "Điểm nghẽn", href: "#diem-nghen" },
-    { label: "Demo đa kênh", href: "#demo" },
-    { label: "Sơ đồ Workflow", href: "#day-chuyen" },
-    { label: "Đối tượng", href: "#doi-tuong" },
-    { label: "Ứng dụng", href: "#ung-dung" },
-    { label: "Lộ trình", href: "#lo-trinh" },
-    { label: "Chi phí", href: "#mo-hinh" },
+    { label: "Thực trạng", href: "/#thuc-trang" },
+    { label: "Điểm nghẽn", href: "/#diem-nghen" },
+    { label: "Demo đa kênh", href: "/#demo" },
+    { label: "Sơ đồ Workflow", href: "/#day-chuyen" },
+    { label: "Đối tượng", href: "/#doi-tuong" },
+    { label: "Ứng dụng", href: "/#ung-dung" },
+    { label: "Lộ trình", href: "/#lo-trinh" },
+    { label: "Chi phí", href: "/#mo-hinh" },
     { label: "Blog", href: "/blog" },
   ];
 
@@ -23,7 +23,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md transition-all">
       <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-4 sm:px-8 lg:px-10">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center hover:opacity-90 transition-opacity">
+        <a href="/" className="flex items-center hover:opacity-90 transition-opacity">
           <Logo size={32} />
         </a>
 

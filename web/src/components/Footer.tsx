@@ -80,27 +80,54 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Compliance */}
+          {/* Col 4: Compliance & Legal */}
           <div className="lg:col-span-2 space-y-3">
             <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              TUÂN THỦ
+              PHÁP LÝ &amp; TUÂN THỦ
             </span>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
-              <li>Luật Dữ liệu 91/2025/QH15</li>
-              <li>Nghị định 356/2025/NĐ-CP</li>
-              <li>Luật AI 134/2025/QH15</li>
-              <li>Human-in-the-loop</li>
+              <li>
+                <a href="/dieu-khoan-su-dung" className="hover:text-white transition-colors">
+                  Điều khoản sử dụng
+                </a>
+              </li>
+              <li>
+                <a href="/chinh-sach-quyen-rieng-tu" className="hover:text-white transition-colors">
+                  Chính sách quyền riêng tư
+                </a>
+              </li>
+              <li>
+                <a href="/huong-dan-nguoi-dung-xoa-tai-khoan" className="hover:text-rose-400 transition-colors">
+                  Xóa tài khoản &amp; Dữ liệu
+                </a>
+              </li>
+              <li className="pt-1 text-[11px] text-slate-500">Luật Dữ liệu 91/2025/QH15</li>
+              <li className="text-[11px] text-slate-500">Nghị định 13/2023/NĐ-CP</li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom Copyright */}
+        {/* Bottom Copyright & Legal links */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© 2026 TRANG ANH AI VIETNAM (Trang Anh Systems). Bản quyền thuộc đơn vị phát triển.</p>
-          <a href="https://tranganhai.com" className="font-mono text-slate-400 hover:text-white transition-colors">
-            tranganhai.com
-          </a>
+          <div className="flex items-center gap-3 text-xs">
+            <a href="/dieu-khoan-su-dung" className="hover:text-slate-300 transition-colors">
+              Điều khoản
+            </a>
+            <span>•</span>
+            <a href="/chinh-sach-quyen-rieng-tu" className="hover:text-slate-300 transition-colors">
+              Quyền riêng tư
+            </a>
+            <span>•</span>
+            <a href="/huong-dan-nguoi-dung-xoa-tai-khoan" className="hover:text-slate-300 transition-colors">
+              Xóa dữ liệu
+            </a>
+            <span>•</span>
+            <a href="https://tranganhai.com" className="font-mono text-slate-400 hover:text-white transition-colors">
+              tranganhai.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>

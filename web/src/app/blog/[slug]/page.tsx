@@ -108,7 +108,45 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
                 prose-code:text-indigo-600 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
               "
             >
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  a({ href, children }) {
+                    const raw = typeof href === "string" ? href : "";
+                    // Articles are authored in the repo with relative links to the
+                    // sibling markdown file (`[anchor](slug.md)`) — correct inside
+                    // the repo, but in the rendered page the browser resolves that
+                    // against /blog/<slug> and keeps the .md extension, so every
+                    // internal link 404s. Rewrite them to the real route.
+                    const isInternalArticleLink =
+                      raw.length > 0 &&
+                      !/^[a-z][a-z0-9+.-]*:/i.test(raw) && // not http:, mailto:, …
+                      !raw.startsWith("#") &&
+                      !raw.startsWith("/") &&
+                      /\.md(#.*)?$/i.test(raw);
+
+                    if (isInternalArticleLink) {
+                      const [file, hash] = raw.split("#");
+                      const slug = file.replace(/^\.\//, "").replace(/\.md$/i, "");
+                      return (
+                        <Link href={hash ? `/blog/${slug}#${hash}` : `/blog/${slug}`}>
+                          {children}
+                        </Link>
+                      );
+                    }
+
+                    if (raw.startsWith("#")) {
+                      return <a href={raw}>{children}</a>;
+                    }
+
+                    return (
+                      <a href={raw} target="_blank" rel="noopener noreferrer">
+                        {children}
+                      </a>
+                    );
+                  },
+                }}
+              >
                 {content}
               </ReactMarkdown>
             </div>

@@ -46,7 +46,7 @@
 ```
 [trước khi sửa]  npm run build        → ghi kết quả baseline
 [đã sửa]         npx tsc --noEmit     → 0 lỗi
-                 npm run build        → ✓ Generating static pages (29/29)
+                 npm run build        → ✓ Generating static pages (28/28)
                  grep index.html      → section + 6 h3 + 2 link /blog + 0 .md
                  git commit           → CỤC BỘ (không push)
 [người phụ trách] git push master     → Vercel build → kiểm trên site thật
@@ -131,4 +131,4 @@ done
 
 - phase-06 chạy cổng kit và ghi sổ với commit hash từ bước 5.
 
-**Exit gate:** `cd web && npx tsc --noEmit && npm run build` → exit 0 và dòng `✓ Generating static pages (29/29)`
+**Exit gate:** `cd web && npx tsc --noEmit && npm run build` → exit 0 và dòng `✓ Generating static pages (28/28)`

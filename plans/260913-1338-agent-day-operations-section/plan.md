@@ -48,12 +48,12 @@ Trang chủ hiện có 11 section. Hai section liên quan trực tiếp đã có
 
 | # | Phase | File | Trạng thái |
 |---|---|---|---|
-| 1 | Chốt dữ liệu 6 mốc (7 khung giờ) | `phase-01-data-freeze.md` | pending |
-| 2 | Dựng component section | `phase-02-build-section.md` | pending |
-| 3 | Chèn vào trang chủ | `phase-03-wire-homepage.md` | pending |
-| 4 | SEO · GEO · khả dụng | `phase-04-seo-geo-a11y.md` | pending |
-| 5 | Kiểm định & phát hành | `phase-05-verify-ship.md` | pending |
-| 6 | Ghi sổ & cổng kit | `phase-06-record-gate.md` | pending |
+| 1 | Chốt dữ liệu 6 mốc (7 khung giờ) | `phase-01-data-freeze.md` | done |
+| 2 | Dựng component section | `phase-02-build-section.md` | done |
+| 3 | Chèn vào trang chủ | `phase-03-wire-homepage.md` | done |
+| 4 | SEO · GEO · khả dụng | `phase-04-seo-geo-a11y.md` | done |
+| 5 | Kiểm định & phát hành | `phase-05-verify-ship.md` | done |
+| 6 | Ghi sổ & cổng kit | `phase-06-record-gate.md` | done |
 
 ## 4. Phụ thuộc
 

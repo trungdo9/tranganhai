@@ -1,5 +1,5 @@
 /**
- * Trang Anh AI — Main JavaScript Bundle (Vanilla, Ultra-lightweight < 3KB)
+ * Trang Anh AI — Main JavaScript Bundle (Vanilla, Ultra-lightweight < 2KB)
  * Optimized for Core Web Vitals (FID / INP < 50ms)
  */
 
@@ -57,30 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Fallback IntersectionObserver for .reveal elements
-  if (!('animationTimeline' in document.documentElement.style)) {
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'none';
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-      reveals.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(24px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-    }
-  }
-
-  // 4. Form handling for Audit consultation (#audit)
+  // 3. Form handling for Audit consultation (#audit)
   const auditForm = document.getElementById('audit-form');
   const successAlert = document.getElementById('audit-success');
 
@@ -141,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
           successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         auditForm.reset();
-      }, 600);
+      }, 500);
     });
   }
 });

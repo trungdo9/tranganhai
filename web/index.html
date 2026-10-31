@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang Anh AI – Đội Trợ Lý AI Vận Hành Cho Doanh Nghiệp SME</title>
+  <meta name="description" content="Trang Anh AI đồng hành kiến trúc và chuyển giao hệ thống AI Agent tự động hóa vận hành B2B: Bán hàng 24/7, Marketing, Pháp chế, Quản trị 1 trang. Tiết kiệm 60–80% thời gian tác vụ lặp.">
+  <meta name="keywords" content="Trang Anh AI, AI Agent, AI cho SME, tự động hóa B2B, trợ lý AI doanh nghiệp, giải pháp AI Việt Nam">
+  <link rel="canonical" href="https://tranganhai.vercel.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tranganhai.vercel.app/">
+  <meta property="og:title" content="Trang Anh AI – Đội Trợ Lý AI Vận Hành Cho Doanh Nghiệp SME">
+  <meta property="og:description" content="Trang Anh AI đồng hành kiến trúc và chuyển giao hệ thống AI Agent tự động hóa vận hành B2B: Bán hàng 24/7, Marketing, Pháp chế, Quản trị 1 trang.">
+  <meta property="og:image" content="https://tranganhai.vercel.app/assets/images/og-image.jpg">
+  <meta property="og:locale" content="vi_VN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tranganhai.vercel.app/">
+  <meta name="twitter:title" content="Trang Anh AI – Đội Trợ Lý AI Vận Hành Cho Doanh Nghiệp SME">
+  <meta name="twitter:description" content="Trang Anh AI đồng hành kiến trúc và chuyển giao hệ thống AI Agent tự động hóa vận hành B2B.">
+  <meta name="twitter:image" content="https://tranganhai.vercel.app/assets/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts Preconnect & Preload (Core Web Vitals LCP) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Preload Hero Image (LCP Optimization) -->
+  <link rel="preload" as="image" href="assets/images/hero.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tranganhai.vercel.app/#organization",
+        "name": "Trang Anh AI",
+        "url": "https://tranganhai.vercel.app/",
+        "logo": "https://tranganhai.vercel.app/assets/icons/logo.svg",
+        "description": "Giải pháp xây dựng và chuyển giao đội trợ lý AI Agent cho mọi phòng ban doanh nghiệp vừa và nhỏ (SME).",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+84-908-88xxxx",
+          "contactType": "customer service",
+          "availableLanguage": ["Vietnamese", "English"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tranganhai.vercel.app/#website",
+        "url": "https://tranganhai.vercel.app/",
+        "name": "Trang Anh AI",
+        "publisher": { "@id": "https://tranganhai.vercel.app/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://tranganhai.vercel.app/#service",
+        "name": "Dịch vụ Triển khai AI Agent Vận hành Doanh nghiệp",
+        "provider": { "@id": "https://tranganhai.vercel.app/#organization" },
+        "serviceType": "AI Automation, B2B Operations, AI Readiness Audit",
+        "areaServed": "VN"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Tôi không rành công nghệ, có dùng được không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Được. Dùng được Zalo là đủ — cài đặt chúng tôi làm hết."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dữ liệu của tôi có bị lộ không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tài khoản AI và hệ thống tự động đều đứng tên doanh nghiệp bạn. Bản doanh nghiệp không dùng dữ liệu của bạn để huấn luyện AI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Trợ lý trả lời sai cho khách thì sao?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trợ lý chỉ trả lời trong phạm vi kịch bản và bảng giá bạn đã duyệt; câu ngoài phạm vi được chuyển cho nhân viên. Mọi cuộc hội thoại đều được lưu lại để kiểm tra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AI có thay nhân viên của tôi không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trợ lý làm việc lặp lại; nhân viên tập trung chốt khách và ra quyết định."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Defer Main JS for zero render blocking -->
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0F172A; font-family: 'Be Vietnam Pro', system-ui, sans-serif; overflow-x: hidden">
+
+<!-- NAV -->
+<header class="site-header" role="banner">
+<div class="header-container">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0F172A">
+<svg aria-hidden="true" width="40" height="40" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0866FF"></rect><path d="M12 18H38M20 18V46M28 46L38 18L48 46M32.5 36H43.5" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M53 6L55 12L61 14L55 16L53 22L51 16L45 14L51 12Z" fill="#FFD54A"></path></svg>
+<span style="font-weight: 800; font-size: 21px; letter-spacing: -0.03em">Trang Anh <span style="color: #0866FF">AI</span></span>
+</a>
+<nav class="nav-desktop" aria-label="Điều hướng chính">
+<a href="#phong-ban">Phòng ban</a>
+<a href="#marketing">Marketing</a>
+<a href="#phap-ly">Pháp lý</a>
+<a href="#trien-khai">Triển khai</a>
+<a href="#bang-gia">Bảng giá</a>
+</nav>
+<a href="#audit" class="cta-desktop">Tư vấn miễn phí</a>
+<button type="button" id="menu-toggle" class="nav-toggle" aria-expanded="false" aria-controls="menu-mobile" aria-label="Mở menu điện thoại">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+<nav id="menu-mobile" class="nav-mobile" aria-label="Menu điện thoại">
+<a href="#phong-ban">Phòng ban</a>
+<a href="#marketing">Marketing</a>
+<a href="#phap-ly">Pháp lý</a>
+<a href="#trien-khai">Triển khai</a>
+<a href="#bang-gia">Bảng giá</a>
+<a href="#audit" class="cta-mobile">Tư vấn miễn phí 45 phút</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background: var(--primary); color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div class="rise" style="flex: 1 1 500px; min-width: 0; display: flex; flex-direction: column; gap: 24px; animation: rise .9s ease both">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; color: #0552CC; font-size: 14px; font-weight: 700; padding: 8px 16px; border-radius: 999px"><span class="live" style="width: 8px; height: 8px; border-radius: 4px; background: #22C55E"></span>AI Agent cho mọi phòng ban</span>
+<h1 style="margin: 0; font-size: 62px; line-height: 1.05; font-weight: 800; letter-spacing: -0.035em; color: #FFFFFF">Đội trợ lý AI làm việc 24/7 cho doanh nghiệp bạn.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #FFFFFF; max-width: 520px">Không cần biết công nghệ. Chúng tôi cài đặt — bạn chỉ việc duyệt.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#audit" class="lift" style="background: #FFFFFF; color: #0552CC; text-decoration: none; font-weight: 800; font-size: 17px; padding: 17px 30px; border-radius: 999px">Tư vấn miễn phí</a>
+<a href="#phong-ban" style="border: 2px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px; padding: 15px 28px; border-radius: 999px">Xem case thực tế</a>
+</div>
+</div>
+
+<div style="flex: 1 1 460px; min-width: 0">
+<div class="hero-visual" style="position: relative; padding: 32px 0 32px 32px">
+<picture><source srcset="assets/images/hero.webp" type="image/webp"><img src="assets/images/hero.jpg" alt="Nhân viên văn phòng làm việc cùng trợ lý AI" width="1920" height="1080" fetchpriority="high" style="display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; object-position: 68% center; border-radius: 28px; border: 4px solid #FFFFFF; box-sizing: border-box; box-shadow: 0 30px 60px rgba(2,32,92,0.3)"></picture>
+<div class="float hero-float" style="position: absolute; left: 0; top: 0; background: #FFFFFF; color: #0F172A; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 16px 40px rgba(2,32,92,0.25)">
+<span style="width: 38px; height: 38px; border-radius: 11px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1Z"></path><path d="M17 8a5 5 0 0 1 0 8"></path></svg></span>
+<div style="display: flex; flex-direction: column"><span style="font-size: 12px; font-weight: 700; color: #64748B">MARKETING</span><strong style="font-size: 14px">12 bài viết đã sẵn sàng</strong></div>
+</div>
+<div class="float hero-float" style="position: absolute; right: -8px; top: 40%; background: #FFFFFF; color: #0F172A; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 16px 40px rgba(2,32,92,0.25); animation-delay: -1.7s">
+<span style="width: 38px; height: 38px; border-radius: 11px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6"></path><path d="M8 13h8M8 17h5"></path></svg></span>
+<div style="display: flex; flex-direction: column"><span style="font-size: 12px; font-weight: 700; color: #64748B">PHÁP LÝ</span><strong style="font-size: 14px">Hợp đồng soạn xong từ mẫu</strong></div>
+</div>
+<div class="float hero-float" style="position: absolute; left: 0; bottom: 0; background: #FFFFFF; color: #0F172A; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 16px 40px rgba(2,32,92,0.25); animation-delay: -3.2s">
+<span style="width: 38px; height: 38px; border-radius: 11px; background: #FFEDDF; color: #C2410C; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path></svg></span>
+<div style="display: flex; flex-direction: column"><span style="font-size: 12px; font-weight: 700; color: #64748B">BÁN HÀNG</span><strong style="font-size: 14px">5 khách cần gọi lại hôm nay</strong></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Department cases -->
+<div id="phong-ban" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
+<a href="#marketing" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1Z"></path><path d="M17 8a5 5 0 0 1 0 8"></path></svg></span>
+<strong style="font-size: 16px">Marketing</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Viết bài, chạy quảng cáo mỗi ngày →</span>
+</a>
+<a href="#zalo-demo" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #FFEDDF; color: #C2410C; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path></svg></span>
+<strong style="font-size: 16px">Bán hàng</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Trả lời Zalo 24/7, nhắc gọi lại khách →</span>
+</a>
+<a href="#marketing" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #FFF3DC; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg></span>
+<strong style="font-size: 16px">Thiết kế</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Banner, ảnh theo bộ mẫu thương hiệu →</span>
+</a>
+<a href="#audit" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #E2F1FC; color: #0369A1; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="m10 8-2 2 2 2M14 8l2 2-2 2"></path></svg></span>
+<strong style="font-size: 16px">IT &amp; kỹ thuật</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Dựng website, hỗ trợ kỹ thuật nội bộ →</span>
+</a>
+<a href="#phap-ly" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px; outline: 3px solid #FFD54A">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="width: 40px; height: 40px; border-radius: 12px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6"></path><path d="M8 13h8M8 17h5"></path></svg></span><span style="background: #FFF3C4; color: #7C4A03; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px">NỔI BẬT</span></span>
+<strong style="font-size: 16px">Pháp lý &amp; văn bản</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Tìm hồ sơ, soạn hợp đồng từ mẫu →</span>
+</a>
+<a href="#bang-gia-rieng" class="lift" style="background: #FFFFFF; color: #0F172A; text-decoration: none; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #FCE7F3; color: #BE185D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M16 14.5a5 5 0 0 1 5.5 5"></path></svg></span>
+<strong style="font-size: 16px">Nhân sự &amp; kế toán</strong>
+<span style="font-size: 14px; line-height: 1.45; color: #475569">Lọc hồ sơ, đối chiếu chứng từ →</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section>
+<div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
+<h2 class="reveal" style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Bạn có đang gặp những điều này?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px">
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5Z"></path><path d="m3 13 9 5 9-5"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Mua nhiều app AI nhưng không ăn khớp</strong></div>
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"></path><path d="M12 17h.01"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Biết AI hay, nhưng không biết bắt đầu từ đâu</strong></div>
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #FFF3DC; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Mất 2–3 giờ cho một bài đăng</strong></div>
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #E2F1FC; color: #0369A1; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Khách nhắn tối, sáng mai mới trả lời</strong></div>
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #FCE7F3; color: #BE185D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Hồ sơ, dữ liệu để mỗi nơi một ít</strong></div>
+<div class="reveal" style="background: #FFFFFF; border: 1px solid #EEF0F5; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #FFEDDF; color: #C2410C; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"></path><path d="M12 9v4"></path><path d="M12 16h.01"></path></svg></span><strong style="font-size: 16px; line-height: 1.4">Lo lộ thông tin khách khi dùng AI miễn phí</strong></div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background: #F8FAFC">
+<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px; align-items: center; text-align: center">
+<div class="float" style="width: 150px">
+<svg role="img" aria-label="Linh vật trợ lý AI của Trang Anh AI" width="150" height="165" viewBox="0 0 200 220"><ellipse cx="100" cy="212" rx="48" ry="7" fill="#0F172A" opacity=".12"></ellipse><line x1="100" y1="30" x2="100" y2="14" stroke="#0552CC" stroke-width="5" stroke-linecap="round"></line><circle class="m-glow" cx="100" cy="11" r="8" fill="#FFD54A"></circle><rect x="28" y="60" width="16" height="34" rx="8" fill="#0866FF"></rect><rect x="156" y="60" width="16" height="34" rx="8" fill="#0866FF"></rect><rect x="40" y="28" width="120" height="96" rx="42" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="3"></rect><rect x="56" y="48" width="88" height="58" rx="26" fill="#0F1B33"></rect><g class="m-eyes"><ellipse cx="82" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse><ellipse cx="118" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse></g><path d="M86 92 Q100 101 114 92" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round"></path><rect x="36" y="130" width="20" height="46" rx="10" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="2"></rect><rect class="m-wave" x="146" y="96" width="20" height="46" rx="10" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="2"></rect><rect x="58" y="124" width="84" height="66" rx="24" fill="#0866FF"></rect><rect x="78" y="140" width="44" height="26" rx="9" fill="#FFFFFF"></rect><text x="100" y="158" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-size="14" font-weight="800" fill="#0866FF">AI</text><rect x="72" y="186" width="22" height="20" rx="8" fill="#0F1B33"></rect><rect x="106" y="186" width="22" height="20" rx="8" fill="#0F1B33"></rect></svg>
+</div>
+<h2 class="reveal" style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">AI Agent hoạt động thế nào?</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; width: 100%">
+<div class="reveal lift" style="flex: 1 1 240px; background: #F0F6FF; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #FFFFFF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span>
+<strong style="font-size: 19px">1. Giao việc bằng lời</strong>
+<span style="font-size: 15px; color: #475569">"Viết 5 bài cho đợt khuyến mãi"</span>
+</div>
+<div class="flow" aria-hidden="true" style="flex: 0 0 48px; height: 3px"></div>
+<div class="reveal lift" style="flex: 1 1 240px; background: #EAF7F4; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #FFFFFF; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"></path><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7Z"></path></svg></span>
+<strong style="font-size: 19px">2. Trợ lý tự làm</strong>
+<span style="font-size: 15px; color: #475569">Đúng giọng văn, đúng thông tin của bạn</span>
+</div>
+<div class="flow" aria-hidden="true" style="flex: 0 0 48px; height: 3px"></div>
+<div class="reveal lift" style="flex: 1 1 240px; background: #FFF5E6; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #FFFFFF; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<strong style="font-size: 19px">3. Bạn duyệt</strong>
+<span style="font-size: 15px; color: #475569">10 phút thay vì cả buổi</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ZALO DEMO -->
+<section id="zalo-demo" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div class="reveal" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div class="float" style="width: 110px">
+<svg role="img" aria-label="Linh vật trợ lý AI đang vẫy tay" width="110" height="121" viewBox="0 0 200 220"><ellipse cx="100" cy="212" rx="48" ry="7" fill="#0F172A" opacity=".12"></ellipse><line x1="100" y1="30" x2="100" y2="14" stroke="#0552CC" stroke-width="5" stroke-linecap="round"></line><circle class="m-glow" cx="100" cy="11" r="8" fill="#FFD54A"></circle><rect x="28" y="60" width="16" height="34" rx="8" fill="#0866FF"></rect><rect x="156" y="60" width="16" height="34" rx="8" fill="#0866FF"></rect><rect x="40" y="28" width="120" height="96" rx="42" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="3"></rect><rect x="56" y="48" width="88" height="58" rx="26" fill="#0F1B33"></rect><g class="m-eyes"><ellipse cx="82" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse><ellipse cx="118" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse></g><path d="M86 92 Q100 101 114 92" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round"></path><rect x="36" y="130" width="20" height="46" rx="10" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="2"></rect><rect class="m-wave" x="146" y="96" width="20" height="46" rx="10" fill="#FFFFFF" stroke="#D6E4FF" stroke-width="2"></rect><rect x="58" y="124" width="84" height="66" rx="24" fill="#0866FF"></rect><rect x="78" y="140" width="44" height="26" rx="9" fill="#FFFFFF"></rect><text x="100" y="158" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-size="14" font-weight="800" fill="#0866FF">AI</text><rect x="72" y="186" width="22" height="20" rx="8" fill="#0F1B33"></rect><rect x="106" y="186" width="22" height="20" rx="8" fill="#0F1B33"></rect></svg>
+</div>
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; color: #0F766E">LÀM VIỆC CẢ KHI BẠN NGỦ</span>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">22:41 — khách hỏi giá. Trợ lý trả lời ngay.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #475569">Trợ lý chỉ trả lời theo kịch bản và bảng giá bạn đã duyệt. Câu nào ngoài phạm vi sẽ chuyển ngay cho nhân viên.</p>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
+<div class="reveal" style="width: 320px; max-width: 100%; background: #FFFFFF; border: 8px solid #0F1B33; border-radius: 36px; overflow: hidden; box-shadow: 0 30px 60px rgba(15,23,42,0.15)">
+<div style="background: #0068FF; color: #FFFFFF; padding: 14px 18px; display: flex; align-items: center; gap: 10px">
+<span style="width: 34px; height: 34px; border-radius: 17px; background: #FFFFFF; color: #0068FF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px">Shop</span>
+<div style="display: flex; flex-direction: column"><strong style="font-size: 15px">Mỹ phẩm Hạ Vy</strong><span style="font-size: 12px; display: flex; align-items: center; gap: 6px"><span class="live" style="width: 7px; height: 7px; border-radius: 4px; background: #22C55E"></span>Trợ lý AI đang trực</span></div>
+</div>
+<div style="background: #EEF2F8; padding: 16px 14px; height: 360px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.45">
+<span style="align-self: center; font-size: 12px; color: #64748B">22:41</span>
+<div class="m1" style="align-self: flex-start; max-width: 82%; background: #FFFFFF; padding: 10px 12px; border-radius: 14px 14px 14px 4px">Kem chống nắng da dầu còn không shop?</div>
+<div class="m2" style="align-self: flex-end; max-width: 86%; background: #D6E6FF; padding: 10px 12px; border-radius: 14px 14px 4px 14px">Dạ còn ạ! Giá [GIÁ], đơn đầu được giảm 10%. Em giữ hàng cho chị nhé?</div>
+<div class="m3" style="align-self: flex-start; max-width: 82%; background: #FFFFFF; padding: 10px 12px; border-radius: 14px 14px 14px 4px">Ok giữ 2 hộp nha</div>
+<div class="m4" style="align-self: flex-end; max-width: 86%; background: #D6E6FF; padding: 10px 12px; border-radius: 14px 14px 4px 14px">Đã giữ 2 hộp. Sáng mai nhân viên gọi xác nhận địa chỉ ạ!</div>
+<div class="typing" aria-hidden="true" style="margin-top: auto; align-self: flex-end; background: #D6E6FF; padding: 10px 14px; border-radius: 14px; display: flex; gap: 4px"><span style="width: 7px; height: 7px; border-radius: 4px; background: #0552CC"></span><span style="width: 7px; height: 7px; border-radius: 4px; background: #0552CC; animation-delay: .2s"></span><span style="width: 7px; height: 7px; border-radius: 4px; background: #0552CC; animation-delay: .4s"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MARKETING TEAM + WORKFLOW -->
+<section id="marketing" style="background: #F0F6FF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; color: #0F766E">VÍ DỤ: PHÒNG MARKETING</span>
+<h2 style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Cả phòng marketing gói gọn trong 6 trợ lý.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px">
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý Viết bài</strong><span style="font-size: 14px; color: #475569">Bài Facebook, blog, kịch bản video</span></div></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý SEO</strong><span style="font-size: 14px; color: #475569">Giúp website dễ được tìm thấy trên Google</span></div></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #FFF3DC; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý Thiết kế</strong><span style="font-size: 14px; color: #475569">Banner, ảnh theo bộ mẫu thương hiệu</span></div></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #FFEDDF; color: #C2410C; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1Z"></path><path d="M17 8a5 5 0 0 1 0 8"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý Quảng cáo</strong><span style="font-size: 14px; color: #475569">Theo dõi Ads mỗi ngày, đỡ phí tiền</span></div></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #E2F1FC; color: #0369A1; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý Zalo &amp; Fanpage</strong><span style="font-size: 14px; color: #475569">Trả lời khách 24/7, ghi lại khách tiềm năng</span></div></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: center"><span style="width: 50px; height: 50px; flex: 0 0 50px; border-radius: 14px; background: #FCE7F3; color: #BE185D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path><path d="m10 13-2 2 2 2M14 13l2 2-2 2"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 17px">Trợ lý Làm web</strong><span style="font-size: 14px; color: #475569">Trang khuyến mãi mới trong vài ngày</span></div></div>
+</div>
+<div class="reveal" style="background: #FFFFFF; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<strong style="font-size: 18px">Quy trình chạy mỗi ngày</strong>
+<div style="height: 6px; background: #E2E8F0; border-radius: 3px; overflow: hidden"><div class="bar" style="height: 100%; background: var(--primary); border-radius: 3px"></div></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 800; color: #0552CC">01</span><strong style="font-size: 15px">Tìm hiểu khách</strong></div>
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; animation-delay: 1s"><span style="font-size: 12px; font-weight: 800; color: #0552CC">02</span><strong style="font-size: 15px">Lên kế hoạch</strong><span style="font-size: 12px; font-weight: 700; color: #0F766E">✓ Bạn duyệt</span></div>
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; animation-delay: 2s"><span style="font-size: 12px; font-weight: 800; color: #0552CC">03</span><strong style="font-size: 15px">Viết &amp; thiết kế</strong></div>
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; animation-delay: 3s"><span style="font-size: 12px; font-weight: 800; color: #0552CC">04</span><strong style="font-size: 15px">Đăng bài</strong><span style="font-size: 12px; font-weight: 700; color: #0F766E">✓ Bạn duyệt</span></div>
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; animation-delay: 4s"><span style="font-size: 12px; font-weight: 800; color: #0552CC">05</span><strong style="font-size: 15px">Chạy quảng cáo</strong></div>
+<div class="step" style="border: 2px solid #E2E8F0; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; animation-delay: 5s"><span style="font-size: 12px; font-weight: 800; color: #0552CC">06</span><strong style="font-size: 15px">Chăm khách &amp; báo cáo</strong></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LEGAL CASE -->
+<section id="phap-ly" style="background: #0F1B33; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div class="reveal" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="align-self: flex-start; background: #FFD54A; color: #3B2A00; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; padding: 6px 12px; border-radius: 999px">CASE NỔI BẬT</span>
+<h2 style="margin: 0; font-size: 42px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: #FFFFFF">Văn phòng luật &amp; công chứng: tìm hồ sơ trong vài giây.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5DEEE">Trợ lý sắp xếp, tìm kiếm, soạn thảo — luật sư và công chứng viên kiểm tra, ký.</p>
+</div>
+<div class="reveal" style="flex: 1 1 440px; min-width: 0; background: #FFFFFF; color: #0F172A; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 24px 60px rgba(0,0,0,0.35)">
+<div style="display: flex; align-items: center; gap: 10px; background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 12px; padding: 12px 14px; min-width: 0">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+<span style="flex: 1; min-width: 0; overflow: hidden"><span class="typed" style="display: block; width: 100%; overflow: hidden; white-space: nowrap; border-right: 2px solid #0552CC; font-size: 15px">HĐ chuyển nhượng đất ông Trần Văn B, 2024</span></span>
+</div>
+<div class="res" style="display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #E2E8F0; border-radius: 12px"><span style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 14px">HĐ chuyển nhượng QSDĐ — Trần Văn B</strong><span style="font-size: 12px; color: #64748B">Đã công chứng · 03/2024</span></div></div>
+<div class="res" style="display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #E2E8F0; border-radius: 12px; animation-delay: .3s"><span style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 14px">Giấy chứng nhận QSDĐ (bản sao)</strong><span style="font-size: 12px; color: #64748B">Hồ sơ kèm theo</span></div></div>
+<div class="res" style="display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #FDE68A; background: #FFFBEB; border-radius: 12px; animation-delay: .6s"><span style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #FEF3C7; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 14px">Nhắc: HĐ thuê kèm theo hết hạn sau 30 ngày</strong><span style="font-size: 12px; color: #7C4A03">Đã soạn sẵn tin báo khách</span></div></div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Tự phân loại hồ sơ</strong></div>
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Tìm bằng câu hỏi thường</strong></div>
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Soạn hợp đồng từ mẫu</strong></div>
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"></path><path d="m9 12 2 2 4-4"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Rà soát điều khoản</strong></div>
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Nhắc hạn tự động</strong></div>
+<div class="reveal lift" style="background: #17284A; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 11px; background: #24406F; color: #9CC2FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span><strong style="font-size: 15px; color: #FFFFFF">Tiếp nhận khách qua Zalo</strong></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<figure style="flex: 1 1 420px; min-width: 0; margin: 0; position: relative; border-radius: 22px; overflow: hidden">
+<picture><source srcset="assets/images/feature.webp" type="image/webp"><img src="assets/images/feature.jpg" alt="Trợ lý AI xử lý dữ liệu và hồ sơ" width="1200" height="600" loading="lazy" style="display: block; width: 100%; height: 100%; min-height: 240px; aspect-ratio: 16 / 9; object-fit: cover"></picture>
+<figcaption style="position: absolute; left: 16px; bottom: 16px; background: rgba(15,27,51,0.88); color: #FFFFFF; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 10px">Trợ lý AI đọc và sắp xếp hàng nghìn hồ sơ</figcaption>
+</figure>
+<div class="reveal" style="flex: 1 1 380px; min-width: 0; border: 1px solid #3B5687; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 14px; justify-content: center">
+<div style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFD54A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"></path><path d="m9 12 2 2 4-4"></path></svg><strong style="font-size: 19px">Con người quyết định cuối cùng</strong></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D5DEEE">Mọi văn bản được kiểm tra trước khi dùng. Hồ sơ lưu riêng, có phân quyền, có thể đặt trên máy chủ của văn phòng.</p>
+<a href="#audit" style="align-self: flex-start; background: #FFFFFF; color: #0552CC; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 24px; border-radius: 999px">Tư vấn cho văn phòng tôi</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUST / SOCIAL PROOF (templates) -->
+<section id="bang-chung" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 28px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; color: #0F766E">BẰNG CHỨNG THỰC TẾ</span>
+<h2 style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Kết quả nói thay lời hứa.</h2>
+</div>
+<span style="background: #FFF3C4; color: #7C4A03; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px">[MẪU — thay bằng số liệu và lời khách thật]</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<div class="reveal" style="background: #F0F6FF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: #0552CC">[X] giờ</span><span style="font-size: 15px; color: #475569">tiết kiệm mỗi tuần cho đội marketing</span></div>
+<div class="reveal" style="background: #EAF7F4; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: #0F766E">[X]%</span><span style="font-size: 15px; color: #475569">tin nhắn khách được trả lời tự động</span></div>
+<div class="reveal" style="background: #FFF5E6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: #B45309">[X] phút</span><span style="font-size: 15px; color: #475569">thời gian tìm một hồ sơ, thay vì [Y] phút</span></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<a href="[LINK VIDEO DEMO]" class="reveal lift" aria-label="Xem video demo 60 giây" style="flex: 1.3 1 460px; min-width: 0; aspect-ratio: 16 / 9; border-radius: 22px; background: #0F1B33; color: #FFFFFF; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<span class="play" style="width: 76px; height: 76px; border-radius: 38px; background: #FFFFFF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"></path></svg></span>
+<strong style="font-size: 18px">Xem trợ lý AI làm việc — 60 giây</strong>
+<span style="font-size: 14px; color: #D5DEEE">[VIDEO DEMO — quay màn hình thật]</span>
+</a>
+<div class="reveal" style="flex: 1 1 340px; min-width: 0; border: 1px solid #E2E8F0; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; background: #E7F0FF; color: #0552CC; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px">CASE THỬ NGHIỆM · [NGÀNH]</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">[Tên doanh nghiệp]</h3>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; font-size: 14px; align-items: center">
+<span style="color: #64748B; font-weight: 600">Chỉ số</span><span style="color: #64748B; font-weight: 600">Trước</span><span style="color: #0552CC; font-weight: 700">Sau</span>
+<span style="color: #334155">Thời gian làm 1 bài</span><span>[..]</span><strong style="color: #0552CC">[..]</strong>
+<span style="color: #334155">Tin nhắn ngoài giờ được trả lời</span><span>[..]</span><strong style="color: #0552CC">[..]</strong>
+<span style="color: #334155">Khách mới mỗi tháng</span><span>[..]</span><strong style="color: #0552CC">[..]</strong>
+</div>
+<a href="[LINK CASE]" style="margin-top: auto; font-weight: 700; font-size: 15px; text-decoration: none">Đọc case đầy đủ →</a>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<figure class="reveal" style="margin: 0; background: #F8FAFC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#B9D3FF"><path d="M4 18h5l2-6V6H5v6h3Zm10 0h5l2-6V6h-6v6h3Z"></path></svg>
+<blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #1E293B">[Trích lời khách hàng thật — nêu kết quả cụ thể sau khi dùng trợ lý viết bài]</blockquote>
+<figcaption style="display: flex; gap: 12px; align-items: center"><span style="width: 44px; height: 44px; border-radius: 22px; background: #D6E4FF; color: #0552CC; display: flex; align-items: center; justify-content: center; font-weight: 800">[A]</span><span style="display: flex; flex-direction: column"><strong style="font-size: 15px">[Tên khách hàng]</strong><span style="font-size: 13px; color: #64748B">[Chức vụ] · [Shop / ngành bán lẻ]</span></span></figcaption>
+</figure>
+<figure class="reveal" style="margin: 0; background: #F8FAFC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#B9D3FF"><path d="M4 18h5l2-6V6H5v6h3Zm10 0h5l2-6V6h-6v6h3Z"></path></svg>
+<blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #1E293B">[Trích lời khách hàng thật — nêu việc trợ lý Zalo giúp gì ngoài giờ làm việc]</blockquote>
+<figcaption style="display: flex; gap: 12px; align-items: center"><span style="width: 44px; height: 44px; border-radius: 22px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center; font-weight: 800">[B]</span><span style="display: flex; flex-direction: column"><strong style="font-size: 15px">[Tên khách hàng]</strong><span style="font-size: 13px; color: #64748B">[Chức vụ] · [Công ty / ngành dịch vụ]</span></span></figcaption>
+</figure>
+<figure class="reveal" style="margin: 0; background: #F8FAFC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#B9D3FF"><path d="M4 18h5l2-6V6H5v6h3Zm10 0h5l2-6V6h-6v6h3Z"></path></svg>
+<blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #1E293B">[Trích lời khách hàng thật — nêu thời gian tìm và soạn hồ sơ giảm bao nhiêu]</blockquote>
+<figcaption style="display: flex; gap: 12px; align-items: center"><span style="width: 44px; height: 44px; border-radius: 22px; background: #FFF3DC; color: #B45309; display: flex; align-items: center; justify-content: center; font-weight: 800">[C]</span><span style="display: flex; flex-direction: column"><strong style="font-size: 15px">[Tên khách hàng]</strong><span style="font-size: 13px; color: #64748B">[Chức vụ] · [Văn phòng luật / công chứng]</span></span></figcaption>
+</figure>
+</div>
+
+<div class="reveal" style="background: #0F1B33; color: #FFFFFF; border-radius: 22px; padding: 26px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; gap: 16px; align-items: center; flex: 1 1 420px; min-width: 0">
+<span style="width: 64px; height: 64px; flex: 0 0 64px; border-radius: 32px; background: #24406F; border: 2px dashed #9CC2FF; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">[ẢNH]</span>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><strong style="font-size: 17px">[TÊN NGƯỜI SÁNG LẬP] — Sáng lập Trang Anh AI</strong><span style="font-size: 14px; line-height: 1.5; color: #D5DEEE">[X năm kinh nghiệm phần mềm &amp; AI · đã triển khai cho …]</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 320px; min-width: 0">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #9CC2FF">NỀN TẢNG CHÚNG TÔI TÍCH HỢP</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #17284A; border: 1px solid #3B5687; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">ChatGPT</span><span style="background: #17284A; border: 1px solid #3B5687; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Claude</span><span style="background: #17284A; border: 1px solid #3B5687; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Zalo OA</span><span style="background: #17284A; border: 1px solid #3B5687; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Facebook</span><span style="background: #17284A; border: 1px solid #3B5687; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Google</span></div>
+</div>
+</div>
+</section>
+
+<!-- INDUSTRIES MARQUEE -->
+<section id="nganh" style="padding: 88px 0; display: flex; flex-direction: column; gap: 32px">
+<div class="reveal" style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<h2 style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; max-width: 680px">Ngành nào có khách hàng, ngành đó dùng được.</h2>
+<a href="#audit" style="font-weight: 700; font-size: 16px; text-decoration: none">Ngành của bạn chưa có? Hỏi ngay →</a>
+</div>
+<a href="#audit" class="track" aria-label="Các ngành áp dụng — bấm để đặt lịch tư vấn cho ngành của bạn" style="overflow: hidden; display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #0F172A">
+<div class="marquee" style="display: flex; gap: 14px; width: max-content">
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Shop online &amp; bán lẻ</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FFF5E6; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #B45309"></span>Nhà hàng, cà phê</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FCE7F3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #BE185D"></span>Spa, thẩm mỹ</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Bất động sản</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Luật &amp; công chứng</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FFEDDF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #C2410C"></span>Phòng khám, nha khoa</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #E2F1FC; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0369A1"></span>Giáo dục</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Shop online &amp; bán lẻ</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FFF5E6; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #B45309"></span>Nhà hàng, cà phê</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FCE7F3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #BE185D"></span>Spa, thẩm mỹ</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Bất động sản</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Luật &amp; công chứng</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FFEDDF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #C2410C"></span>Phòng khám, nha khoa</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #E2F1FC; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0369A1"></span>Giáo dục</span>
+</div>
+<div class="marquee-rev" style="display: flex; gap: 14px; width: max-content">
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Du lịch, khách sạn</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FFF5E6; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #B45309"></span>Nội thất, xây dựng</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #E2F1FC; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0369A1"></span>Điện lạnh, sửa chữa</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Ô tô, xe máy</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FCE7F3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #BE185D"></span>Sản xuất, phân phối</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #FFEDDF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #C2410C"></span>Kế toán, tư vấn</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Gym, thú cưng, sự kiện…</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Du lịch, khách sạn</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FFF5E6; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #B45309"></span>Nội thất, xây dựng</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #E2F1FC; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0369A1"></span>Điện lạnh, sửa chữa</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #F0F6FF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0866FF"></span>Ô tô, xe máy</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FCE7F3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #BE185D"></span>Sản xuất, phân phối</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #FFEDDF; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #C2410C"></span>Kế toán, tư vấn</span>
+<span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; background: #EAF7F4; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600"><span style="width: 10px; height: 10px; border-radius: 5px; background: #0F766E"></span>Gym, thú cưng, sự kiện…</span>
+</div>
+</a>
+</section>
+
+<!-- WHO IS IT FOR -->
+<section style="background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<h2 class="reveal" style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Phù hợp với ai?</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 2 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 22px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><strong style="font-size: 17px">Chủ doanh nghiệp 5–50 người</strong><span style="font-size: 14px; color: #475569">Muốn làm nhiều hơn mà không tuyển thêm</span></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 22px; background: #FCE7F3; color: #BE185D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6Z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></span><strong style="font-size: 17px">Chủ shop, hộ kinh doanh</strong><span style="font-size: 14px; color: #475569">Nhiều tin nhắn, cần đăng bài đều</span></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 22px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path></svg></span><strong style="font-size: 17px">Trưởng phòng ban</strong><span style="font-size: 14px; color: #475569">Chỉ tiêu cao, đội nhỏ, việc lặp lại nhiều</span></div>
+<div class="reveal lift" style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 22px; background: #FFF3DC; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6"></path></svg></span><strong style="font-size: 17px">Văn phòng nhiều giấy tờ</strong><span style="font-size: 14px; color: #475569">Luật, công chứng, kế toán, hành chính</span></div>
+</div>
+<div class="reveal" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<strong style="font-size: 17px">Chưa phù hợp nếu…</strong>
+<span style="display: flex; gap: 10px; font-size: 15px; color: #334155"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M18 6 6 18M6 6l12 12"></path></svg>Muốn AI tự làm 100%, không ai kiểm tra</span>
+<span style="display: flex; gap: 10px; font-size: 15px; color: #334155"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M18 6 6 18M6 6l12 12"></path></svg>Chưa rõ sản phẩm bán cho ai</span>
+<span style="display: flex; gap: 10px; font-size: 15px; color: #334155"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M18 6 6 18M6 6l12 12"></path></svg>Không ai có 15 phút/ngày để duyệt</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section id="trien-khai" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Triển khai 1–3 tháng, tùy độ phức tạp.</h2>
+<p style="margin: 0; font-size: 17px; color: #475569">Thời gian cụ thể được chốt sau buổi khảo sát đầu tiên.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div class="reveal lift" style="border: 1px solid #E2E8F0; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 44px; font-weight: 800; color: #0F766E; letter-spacing: -0.03em">~1 tháng</span><strong style="font-size: 18px">Đơn giản</strong><span style="font-size: 15px; color: #475569">1–2 trợ lý, 1–2 kênh</span></div>
+<div class="reveal lift" style="border: 2px solid var(--primary); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 44px; font-weight: 800; color: #0552CC; letter-spacing: -0.03em">~2 tháng</span><strong style="font-size: 18px">Vừa</strong><span style="font-size: 15px; color: #475569">3–5 trợ lý, nhiều kênh, có quảng cáo</span></div>
+<div class="reveal lift" style="border: 1px solid #E2E8F0; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 44px; font-weight: 800; color: #C2410C; letter-spacing: -0.03em">~3 tháng</span><strong style="font-size: 18px">Phức tạp</strong><span style="font-size: 15px; color: #475569">Nhiều phòng ban, nối phần mềm sẵn có</span></div>
+</div>
+<div class="reveal" style="background: #F0F6FF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 16px; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">1</span><strong style="font-size: 16px">Khảo sát, tài khoản &amp; Zalo OA</strong></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 16px; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">2</span><strong style="font-size: 16px">Dạy việc cho trợ lý</strong></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 16px; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">3</span><strong style="font-size: 16px">Chạy thử việc thật</strong></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 16px; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">4</span><strong style="font-size: 16px">Hướng dẫn &amp; bàn giao</strong></div>
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section style="background: #F8FAFC">
+<div id="bang-gia" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Bảng giá rõ ràng, trả theo tháng.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">Chỉ gồm 2 khoản: khởi tạo một lần và vận hành hàng tháng.</p>
+</div>
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px">
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #D6E4FF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: flex-start"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #E7F0FF; color: #0552CC; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9Z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">1. Phí khởi tạo</strong><span style="font-size: 14px; line-height: 1.5; color: #475569">Một lần: cài đặt, dạy việc cho trợ lý, kết nối kênh</span></div></div>
+<span aria-hidden="true" style="align-self: center; font-size: 26px; font-weight: 800; color: #94A3B8">+</span>
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #D6E4FF; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: flex-start"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #E3F6F2; color: #0F766E; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg></span><div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">2. Phí vận hành</strong><span style="font-size: 14px; line-height: 1.5; color: #475569">Hàng tháng: giám sát, cập nhật, tối ưu, hỗ trợ</span></div></div>
+<div style="flex: 1 1 280px; min-width: 0; background: #FFFBEB; border: 1px dashed #F5C26B; border-radius: 18px; padding: 20px; display: flex; gap: 14px; align-items: flex-start"><span style="width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: #FEF3C7; color: #B45309; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4M12 16h.01"></path></svg></span><div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Chi phí AI token / API</strong><span style="font-size: 14px; line-height: 1.5; color: #7C4A03">Tùy nhu cầu và độ phức tạp — báo giá cụ thể sau khảo sát</span></div></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; align-items: stretch">
+
+<div class="reveal lift" style="background: #FFFFFF; border: 1px solid #D6E4FF; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #64748B">GÓI 1 — FOUNDATION</span><h3 style="margin: 0; font-size: 26px; font-weight: 800">Nền tảng</h3></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #0F766E">12.500.000đ<span style="font-size: 16px; font-weight: 500; color: #64748B">/tháng</span></span><span style="font-size: 14px; line-height: 1.5; color: #475569">Phí vận hành · Khởi tạo <strong style="color: #0F172A">20.000.000đ</strong> (một lần) — <strong style="color: #0F766E">miễn phí</strong> khi trả theo quý</span><span style="align-self: flex-start; background: #E3F6F2; color: #0F766E; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px">~1 tháng triển khai</span></div>
+<ul style="margin: 0; padding: 18px 0 0; border-top: 1px solid #EEF0F5; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>2 trợ lý: Viết bài + Zalo</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>2 kênh</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Báo cáo hằng tháng</li>
+</ul>
+<a href="#audit" style="margin-top: auto; border: 1px solid #B9D3FF; color: #0F172A; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 999px; text-align: center">Chọn Nền tảng</a>
+</div>
+
+<div class="reveal lift" style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(8,102,255,0.15)">
+<div style="background: var(--primary); color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-align: center; padding: 10px">GÓI CHỦ LỰC — KHUYÊN DÙNG</div>
+<div style="padding: 30px; display: flex; flex-direction: column; gap: 20px; flex: 1">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #64748B">GÓI 2 — GROWTH</span><h3 style="margin: 0; font-size: 26px; font-weight: 800">Tăng trưởng</h3></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #0552CC">24.000.000đ<span style="font-size: 16px; font-weight: 500; color: #64748B">/tháng</span></span><span style="font-size: 14px; line-height: 1.5; color: #475569">Phí vận hành · Khởi tạo <strong style="color: #0F172A">25.000.000đ</strong> (một lần) — <strong style="color: #0F766E">miễn phí</strong> khi trả theo quý</span><span style="align-self: flex-start; background: #E7F0FF; color: #0552CC; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px">~2 tháng triển khai</span></div>
+<ul style="margin: 0; padding: 18px 0 0; border-top: 1px solid #EEF0F5; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0552CC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>5 trợ lý: thêm SEO, Thiết kế, Quảng cáo</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0552CC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Tối đa 4 kênh, đủ quy trình 6 bước</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0552CC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Báo cáo hằng tuần, họp 2 tuần/lần</li>
+</ul>
+<a href="#audit" style="margin-top: auto; background: var(--primary); color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 999px; text-align: center">Chọn Tăng trưởng</a>
+</div>
+</div>
+
+<div class="reveal lift" style="background: #FFFFFF; border: 1px solid #D6E4FF; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #64748B">GÓI 3 — ENTERPRISE</span><h3 style="margin: 0; font-size: 26px; font-weight: 800">Toàn diện</h3></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #C2410C">41.500.000đ<span style="font-size: 16px; font-weight: 500; color: #64748B">/tháng</span></span><span style="font-size: 14px; line-height: 1.5; color: #475569">Phí vận hành · Khởi tạo <strong style="color: #0F172A">35.000.000đ</strong> (một lần) — <strong style="color: #0F766E">miễn phí</strong> khi trả theo quý</span><span style="align-self: flex-start; background: #FFEDDF; color: #9A3412; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px">~3 tháng triển khai</span></div>
+<ul style="margin: 0; padding: 18px 0 0; border-top: 1px solid #EEF0F5; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Trợ lý cho nhiều phòng ban (sale, pháp lý, nhân sự…)</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Nối với phần mềm công ty đang dùng</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 20px"><path d="M20 6 9 17l-5-5"></path></svg>Đào tạo nhân viên, người phụ trách riêng</li>
+</ul>
+<a href="#audit" style="margin-top: auto; border: 1px solid #B9D3FF; color: #0F172A; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 999px; text-align: center">Liên hệ Toàn diện</a>
+</div>
+
+</div>
+
+<div id="bang-gia-rieng" class="reveal" style="background: #0F1B33; color: #FFFFFF; border-radius: 22px; padding: 30px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; gap: 18px; align-items: flex-start">
+<span style="width: 52px; height: 52px; flex: 0 0 52px; border-radius: 14px; background: #24406F; color: #FFD54A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><path d="M17.5 14v7M14 17.5h7"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #FFD54A">BÁO GIÁ RIÊNG</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800; color: #FFFFFF">Gói theo phòng ban &amp; ngành đặc thù</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #D5DEEE">Cho các phòng ban ngoài marketing, hoặc văn phòng cần lưu hồ sơ trên máy chủ riêng.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="background: #17284A; border: 1px solid #3B5687; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Luật &amp; công chứng</span>
+<span style="background: #17284A; border: 1px solid #3B5687; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Bán hàng &amp; CSKH</span>
+<span style="background: #17284A; border: 1px solid #3B5687; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Nhân sự</span>
+<span style="background: #17284A; border: 1px solid #3B5687; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Kế toán</span>
+<span style="background: #17284A; border: 1px solid #3B5687; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px">IT nội bộ</span>
+</div>
+</div>
+</div>
+<a href="#audit" class="lift" style="background: #FFFFFF; color: #0552CC; text-decoration: none; font-weight: 800; font-size: 16px; padding: 15px 26px; border-radius: 999px">Nhận báo giá riêng</a>
+</div>
+</div>
+</section>
+
+<!-- AUDIT FORM -->
+<section id="audit" style="background: #F0F6FF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div class="reveal" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">Tư vấn miễn phí 45 phút.</h2>
+<div style="display: flex; gap: 12px; align-items: center; font-size: 16px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 10px; background: #FFFFFF; color: #0552CC; display: flex; align-items: center; justify-content: center; font-weight: 800">1</span>Nhận xét kênh và quy trình hiện tại</div>
+<div style="display: flex; gap: 12px; align-items: center; font-size: 16px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 10px; background: #FFFFFF; color: #0552CC; display: flex; align-items: center; justify-content: center; font-weight: 800">2</span>Xem trợ lý làm việc với chính sản phẩm của bạn</div>
+<div style="display: flex; gap: 12px; align-items: center; font-size: 16px"><span style="width: 32px; height: 32px; flex: 0 0 32px; border-radius: 10px; background: #FFFFFF; color: #0552CC; display: flex; align-items: center; justify-content: center; font-weight: 800">3</span>Kế hoạch, thời gian, chi phí gợi ý — không ép mua</div>
+</div>
+<form id="audit-form" class="reveal" style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 20px 50px rgba(15,23,42,0.08)">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-name" style="font-size: 14px; font-weight: 600; color: #334155">Họ tên</label><input id="f-name" type="text" placeholder="Nguyễn Văn A" style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 12px; padding: 12px 14px; font-size: 16px; color: #0F172A; font-family: inherit; min-height: 48px; box-sizing: border-box"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-phone" style="font-size: 14px; font-weight: 600; color: #334155">Số điện thoại / Zalo</label><input id="f-phone" type="tel" placeholder="09xx xxx xxx" style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 12px; padding: 12px 14px; font-size: 16px; color: #0F172A; font-family: inherit; min-height: 48px; box-sizing: border-box"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-dept" style="font-size: 14px; font-weight: 600; color: #334155">Phòng ban muốn giảm tải</label><select id="f-dept" style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 12px; padding: 12px 14px; font-size: 16px; color: #0F172A; font-family: inherit; min-height: 48px; box-sizing: border-box"><option>Marketing</option><option>Bán hàng / CSKH</option><option>Thiết kế</option><option>IT &amp; kỹ thuật</option><option>Pháp lý &amp; văn bản</option><option>Nhân sự &amp; kế toán</option><option>Chưa biết, cần tư vấn</option></select></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><input id="f-consent" type="checkbox" style="width: 20px; height: 20px; margin: 2px 0 0; flex: 0 0 20px; accent-color: #0866FF"><label for="f-consent" style="font-size: 14px; line-height: 1.5; color: #475569">Tôi đồng ý để Trang Anh AI dùng thông tin trên để liên hệ tư vấn, theo <a href="#faq">Chính sách bảo mật</a>.</label></div>
+<button type="button" class="lift" style="background: var(--primary); color: #FFFFFF; border: 0; border-radius: 999px; padding: 16px; font-size: 17px; font-weight: 700; font-family: inherit; cursor: pointer; min-height: 52px">Đặt lịch tư vấn</button>
+<p style="margin: 0; font-size: 13px; color: #64748B; text-align: center">Gọi lại trong 24 giờ làm việc.</p>
+<div id="audit-success" class="form-success-alert" role="alert">
+  <strong>✓ Cảm ơn bạn!</strong> Yêu cầu tư vấn đã được ghi nhận. Chuyên gia của Trang Anh AI sẽ liên hệ qua SĐT/Zalo của bạn trong vòng 2 giờ làm việc để gửi báo cáo phân tích và xác nhận lịch Live Demo.
+</div>
+</form>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="max-width: 860px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 24px">
+<h2 class="reveal" style="margin: 0; font-size: 36px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Câu hỏi thường gặp</h2>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">Tôi không rành công nghệ, có dùng được không?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Được. Dùng được Zalo là đủ — cài đặt chúng tôi làm hết.</p></details>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">Dữ liệu của tôi có bị lộ không?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Tài khoản AI và hệ thống tự động đều đứng tên doanh nghiệp bạn. Bản doanh nghiệp không dùng dữ liệu của bạn để huấn luyện AI.</p></details>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">Trợ lý trả lời sai cho khách thì sao?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Trợ lý chỉ trả lời trong phạm vi kịch bản và bảng giá bạn đã duyệt; câu ngoài phạm vi được chuyển cho nhân viên. Mọi cuộc hội thoại đều được lưu lại để kiểm tra.</p></details>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">AI có thay nhân viên của tôi không?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Trợ lý làm việc lặp lại; nhân viên tập trung chốt khách và ra quyết định.</p></details>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">Giá đã gồm chi phí AI chưa?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Giá gồm phí khởi tạo và phí vận hành hàng tháng. Chi phí AI token/API tùy nhu cầu và độ phức tạp — chúng tôi gửi báo giá cụ thể sau buổi khảo sát. Tiền chạy quảng cáo (nếu có) bạn trả trực tiếp cho Facebook/Google.</p></details>
+<details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer">Có phải ký hợp đồng dài không?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #475569">Trả theo tháng hoặc quý. Điều khoản dừng: [ĐIỀU KHOẢN].</p></details>
+</section>
+
+<!-- FINAL CTA -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 24px 72px">
+<div class="reveal" style="background: var(--primary); color: #FFFFFF; border-radius: 28px; padding: 56px 32px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
+<div class="float" style="width: 130px">
+<svg role="img" aria-label="Linh vật trợ lý AI" width="130" height="143" viewBox="0 0 200 220"><ellipse cx="100" cy="212" rx="48" ry="7" fill="#0F172A" opacity=".2"></ellipse><line x1="100" y1="30" x2="100" y2="14" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"></line><circle class="m-glow" cx="100" cy="11" r="8" fill="#FFD54A"></circle><rect x="28" y="60" width="16" height="34" rx="8" fill="#0F1B33"></rect><rect x="156" y="60" width="16" height="34" rx="8" fill="#0F1B33"></rect><rect x="40" y="28" width="120" height="96" rx="42" fill="#FFFFFF"></rect><rect x="56" y="48" width="88" height="58" rx="26" fill="#0F1B33"></rect><g class="m-eyes"><ellipse cx="82" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse><ellipse cx="118" cy="74" rx="9" ry="10" fill="#5EEAD4"></ellipse></g><path d="M86 92 Q100 101 114 92" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round"></path><rect x="36" y="130" width="20" height="46" rx="10" fill="#FFFFFF"></rect><rect class="m-wave" x="146" y="96" width="20" height="46" rx="10" fill="#FFFFFF"></rect><rect x="58" y="124" width="84" height="66" rx="24" fill="#0F1B33"></rect><rect x="78" y="140" width="44" height="26" rx="9" fill="#FFFFFF"></rect><text x="100" y="158" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-size="14" font-weight="800" fill="#0866FF">AI</text><rect x="72" y="186" width="22" height="20" rx="8" fill="#FFFFFF"></rect><rect x="106" y="186" width="22" height="20" rx="8" fill="#FFFFFF"></rect></svg>
+</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -0.03em; max-width: 720px">Để trợ lý AI làm việc lặp lại. Bạn lo việc lớn.</h2>
+<a href="#audit" class="lift" style="background: #FFFFFF; color: #0552CC; text-decoration: none; font-weight: 800; font-size: 17px; padding: 16px 32px; border-radius: 999px">Tư vấn miễn phí</a>
+</div>
+</section>
+
+<footer style="background: #0F1B33; color: #D5DEEE">
+<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 32px; display: flex; flex-direction: column; gap: 48px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 48px">
+<!-- Brand -->
+<div style="flex: 1.4 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF">
+<svg aria-hidden="true" width="44" height="44" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#FFFFFF"></rect><path d="M12 18H38M20 18V46M28 46L38 18L48 46M32.5 36H43.5" fill="none" stroke="#0866FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M53 6L55 12L61 14L55 16L53 22L51 16L45 14L51 12Z" fill="#F59E0B"></path></svg>
+<span style="font-weight: 800; font-size: 23px; letter-spacing: -0.03em">Trang Anh <span style="color: #FFD54A">AI</span></span>
+</a>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #D5DEEE; max-width: 320px">Đội trợ lý AI cho mọi phòng ban của doanh nghiệp vừa và nhỏ.</p>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #17284A; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px"><span class="live" style="width: 8px; height: 8px; border-radius: 4px; background: #22C55E"></span>Trợ lý đang trực 24/7</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://facebook.com/tranganhai" class="lift" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #3B5687; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 14px; border-radius: 12px; min-height: 44px; box-sizing: border-box">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M15 8h-1.5A2.5 2.5 0 0 0 11 10.5V21M8.5 13h6"></path></svg>Facebook</a>
+<a href="https://zalo.me/" class="lift" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #3B5687; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 14px; border-radius: 12px; min-height: 44px; box-sizing: border-box">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg>Zalo OA</a>
+<a href="https://youtube.com/@tranganhai" class="lift" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #3B5687; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 14px; border-radius: 12px; min-height: 44px; box-sizing: border-box">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="m10 9 5 3-5 3Z"></path></svg>YouTube</a>
+</div>
+</div>
+
+<!-- Phòng ban -->
+<nav aria-label="Phòng ban" style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<strong style="font-size: 14px; letter-spacing: 0.08em; color: #FFFFFF">PHÒNG BAN</strong>
+<a href="#marketing" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Marketing</a>
+<a href="#phong-ban" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Bán hàng &amp; CSKH</a>
+<a href="#phong-ban" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Thiết kế</a>
+<a href="#phong-ban" style="color: #D5DEEE; text-decoration: none; font-size: 15px">IT &amp; kỹ thuật</a>
+<a href="#phap-ly" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Pháp lý &amp; văn bản</a>
+<a href="#phong-ban" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Nhân sự &amp; kế toán</a>
+</nav>
+
+<!-- Khám phá -->
+<nav aria-label="Khám phá" style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<strong style="font-size: 14px; letter-spacing: 0.08em; color: #FFFFFF">KHÁM PHÁ</strong>
+<a href="#nganh" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Ngành nghề</a>
+<a href="#trien-khai" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Thời gian triển khai</a>
+<a href="#bang-gia" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Bảng giá</a>
+<a href="#faq" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Câu hỏi thường gặp</a>
+<a href="#audit" style="color: #D5DEEE; text-decoration: none; font-size: 15px">Tư vấn miễn phí</a>
+</nav>
+
+<!-- Liên hệ -->
+<div style="flex: 1.3 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<strong style="font-size: 14px; letter-spacing: 0.08em; color: #FFFFFF">LIÊN HỆ</strong>
+<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CC2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 18px; margin-top: 2px"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"></path></svg>Hotline / Zalo: 090.888.xxxx (Hotline & Zalo)</span>
+<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CC2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 18px; margin-top: 2px"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>contact@tranganhai.com</span>
+<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CC2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 18px; margin-top: 2px"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Hà Nội & TP. Hồ Chí Minh, Việt Nam</span>
+<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CC2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 18px; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Tư vấn: 8:00 – 18:00 (Thứ 2 – Thứ 7), AI Agent trực 24/7</span>
+<a href="#audit" class="lift" style="align-self: flex-start; margin-top: 4px; background: var(--primary); color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px">Đặt lịch tư vấn</a>
+</div>
+</div>
+
+<div style="border-top: 1px solid #24406F; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; font-size: 14px; color: #B6C3DA">
+<span>© 2026 Trang Anh AI. Công ty Cổ phần Công nghệ Trang Anh AI · MST: MST: 0109xxxxxx</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="#faq" style="color: #B6C3DA; text-decoration: none">Chính sách bảo mật</a>
+<a href="#faq" style="color: #B6C3DA; text-decoration: none">Điều khoản dịch vụ</a>
+<a href="#top" style="color: #FFFFFF; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px">Lên đầu trang<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></a>
+</div>
+</div>
+
+</div>
+</footer>
+
+<!-- Floating Zalo button -->
+<a href="https://zalo.me/" class="zalo-fab" aria-label="Chat Zalo với Trang Anh AI" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; background: #0068FF; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 20px; border-radius: 999px; min-height: 52px; box-sizing: border-box">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"></path></svg>Chat Zalo
+</a>
+
+</div>
+</body>
+</html>
